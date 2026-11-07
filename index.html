@@ -12,6 +12,7 @@
     <style>
         /* ===== СБРОС И БАЗА ===== */
         * {
+        
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -429,8 +430,18 @@
             }
             .nav-links.open { display: flex; }
             .hamburger { display: flex; }
+        }         .hero-logo-img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+            border: 1px solid #222;
+            transition: transform 0.5s;
         }
-    </style>
+        .hero-logo-img:hover {
+            transform: scale(1.02);
+        }   </style>
 </head>
 <body>
 
@@ -469,11 +480,8 @@
                 </div>
             </div>
             <div class="hero-logo-block">
-                <!-- Сюда потом можно вставить картинку логотипа: <img src="logo.png" class="ogt-img"> -->
-                <div class="ogt-symbol">
-                    OG<span style="color:#D4AF37;">T</span>
-                    <span class="sub">TECH</span>
-                </div>
+                <img src="logo.png" alt="OGT Logo" class="hero-logo-img">
+            </div>
             </div>
         </div>
     </section>
