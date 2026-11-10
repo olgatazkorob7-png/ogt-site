@@ -268,23 +268,42 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Стили для флагманских проектов */
+        .flagship-card {
+            background: #111;
+            border: 1px solid #333;
+            border-top: 4px solid #D4AF37; /* Золотой акцент сверху */
+            padding: 35px;
+        }
+
+        /* Стили для дополнительных проектов */
+        .extra-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 25px;
+            opacity: 0.9;
+            transition: opacity 0.3s, border-color 0.3s;
+        }
+        
+        .extra-card:hover {
+            opacity: 1;
+            border-color: #555;
         }
 
         .portfolio-item {
             position: relative;
-            background: #111;
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid #1a1a1a;
-            transition: all 0.4s;
-            padding: 30px;
+            transition: transform 0.4s, box-shadow 0.4s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .portfolio-item:hover {
-            border-color: #D4AF37;
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
@@ -300,20 +319,25 @@
         .portfolio-item h3 {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #fff;
         }
+        
+        .flagship-card h3 { color: #D4AF37; font-size: 24px; }
 
         .portfolio-item p {
             color: #888;
             font-size: 14px;
             margin-bottom: 10px;
         }
+        
+        .portfolio-item p strong { color: #ccc; }
 
         .portfolio-item .p-tech {
             font-family: monospace;
             color: #58a6ff;
             font-size: 13px;
+            margin-top: 15px;
             margin-bottom: 20px;
         }
 
@@ -333,6 +357,24 @@
         .portfolio-item .btn-code:hover {
             background: #D4AF37;
             color: #0A0A0A;
+        }
+        
+        .portfolio-item .btn-demo {
+            display: inline-block;
+            background: #D4AF37;
+            color: #0A0A0A;
+            border: 1px solid #D4AF37;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .portfolio-item .btn-demo:hover {
+            background: #FFD700;
         }
 
         /* ===== О НАС ===== */
@@ -444,7 +486,7 @@
                     Создаю AI-сервисы, аналитические панели и Telegram-ботов, которые экономят время, находят точки роста и приносят прибыль. Не просто пишу код — решаю бизнес-задачи.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn-gold">Смотреть кейсы</a>
+                    <a href="#flagship" class="btn-gold">Ключевые кейсы</a>
                     <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline">Обсудить проект</a>
                 </div>
                 <!-- Полоса доверия -->
@@ -455,7 +497,6 @@
                 </div>
             </div>
             <div class="hero-logo-block">
-                <!-- Убедитесь, что файл logo.png лежит в папке с сайтом -->
                 <img src="logo.png" alt="OGT Logo" class="hero-logo-img">
             </div>
         </div>
@@ -497,93 +538,118 @@
         </div>
     </section>
 
-    <!-- ===== ПОРТФОЛИО ===== -->
-    <section class="portfolio" id="portfolio">
+    <!-- ===== ПОРТФОЛИО (ОСНОВНЫЕ) ===== -->
+    <section class="portfolio" id="flagship">
         <div class="container">
-            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Кейсы</span>
-            <h2 class="section-title">Избранные <span class="gold">проекты</span></h2>
-            <p class="section-subtitle">Реальные задачи, которые я реализовала от идеи до деплоя.</p>
+            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Ключевые компетенции</span>
+            <h2 class="section-title">Флагманские <span class="gold">проекты</span></h2>
+            <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
 
             <div class="portfolio-grid">
                 
-                <!-- Проект 1: Тропа -->
-                <div class="portfolio-item">
+                <!-- Флагман 1: Тропа -->
+                <div class="portfolio-item flagship-card">
                     <span class="number">01</span>
                     <h3>Тропа: AI-Консультант</h3>
                     <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
-                    <p><strong>Решение:</strong> AI-ассистент на базе Google Gemini, который отвечает строго по базе знаний магазина (RAG).</p>
-                    <p><strong>Результат:</strong> Снижение нагрузки на поддержку, мгновенные ответы 24/7 без галлюцинаций.</p>
+                    <p><strong>Решение:</strong> AI-ассистент на базе Google Gemini, отвечающий строго по базе знаний (RAG).</p>
+                    <p><strong>Моя роль:</strong> Разработка бэкенда и настройка RAG-системы для исключения галлюцинаций.</p>
+                    <p><strong>Результат:</strong> Снижение нагрузки на поддержку, ответы 24/7.</p>
                     <p class="p-tech">Google AI Studio • Gemini API • RAG</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="ССЫЛКА_НА_ДЕМО" target="_blank" class="btn-demo">Открыть демо</a>
                         <a href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" class="btn-code">Код</a>
                     </div>
                 </div>
 
-                <!-- Проект 2: Green Mall BI -->
-                <div class="portfolio-item">
+                <!-- Флагман 2: Green Mall -->
+                <div class="portfolio-item flagship-card">
                     <span class="number">02</span>
                     <h3>Green Mall: BI-Дашборд</h3>
-                    <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания, какие категории приносят убыток.</p>
-                    <p><strong>Решение:</strong> Расширение BI-системы: написана SQL RPC-функция в Supabase для анализа выручки по месяцам.</p>
-                    <p><strong>Результат:</strong> Наглядный Multi-line график динамики продаж, позволяющий принимать решения на основе цифр.</p>
+                    <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания убыточных категорий.</p>
+                    <p><strong>Решение:</strong> Расширение BI-системы: SQL RPC-функция в Supabase для анализа выручки.</p>
+                    <p><strong>Моя роль:</strong> Написание сложных SQL-запросов и создание визуализации на дашборде.</p>
+                    <p><strong>Результат:</strong> Наглядный Multi-line график для принятия решений на основе цифр.</p>
                     <p class="p-tech">SQL • Supabase • PostgreSQL • Google AI Studio</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="https://ai.studio/apps/16ed98c8-abc1-4ed5-9df1-42014d011612" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="ССЫЛКА_НА_ДЕМО" target="_blank" class="btn-demo">Открыть демо</a>
                         <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" class="btn-code">Код</a>
                     </div>
                 </div>
 
-                <!-- Проект 3: AI-Chef -->
-                <div class="portfolio-item">
+                <!-- Флагман 3: AI-Chef -->
+                <div class="portfolio-item flagship-card">
                     <span class="number">03</span>
                     <h3>AI-Chef Assistant</h3>
-                    <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты в холодильнике, которые портятся.</p>
-                    <p><strong>Решение:</strong> Бэкенд на FastAPI с распознаванием фото (OpenAI Vision), генерацией рецептов (GPT-4o) и озвучкой (TTS).</p>
-                    <p><strong>Результат:</strong> Пользователь загружает фото холодильника и получает 3 готовых рецепта за 10 секунд.</p>
+                    <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
+                    <p><strong>Решение:</strong> Бэкенд с распознаванием фото (Vision), генерацией рецептов (GPT-4o) и озвучкой (TTS).</p>
+                    <p><strong>Моя роль:</strong> Проектирование API, интеграция трех разных AI-моделей в один пайплайн.</p>
+                    <p><strong>Результат:</strong> Пользователь загружает фото и получает 3 рецепта за 10 секунд.</p>
                     <p class="p-tech">FastAPI • OpenAI API • Vision • TTS</p>
                     <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Смотреть код</a>
                 </div>
 
-                <!-- Проект 4: Транскрибатор -->
-                <div class="portfolio-item">
+                <!-- Флагман 4: Транскрибатор -->
+                <div class="portfolio-item flagship-card">
                     <span class="number">04</span>
                     <h3>AI-Транскрибатор видео</h3>
-                    <p><strong>Боль:</strong> Ручная расшифровка видео и аудио занимает часы, а платные API стоят дорого.</p>
-                    <p><strong>Решение:</strong> Микросервис на Celery + Redis для фоновой обработки. Использована бесплатная локальная модель faster-whisper.</p>
-                    <p><strong>Результат:</strong> Автоматическая транскрибация файлов до 25 МБ без затрат на API и без блокировки сервера.</p>
+                    <p><strong>Боль:</strong> Ручная расшифровка видео занимает часы, платные API стоят дорого.</p>
+                    <p><strong>Решение:</strong> Микросервис на Celery + Redis для фоновой обработки. Локальная модель faster-whisper.</p>
+                    <p><strong>Моя роль:</strong> Настройка очередей задач, работа с фоновыми процессами и локальными нейросетями.</p>
+                    <p><strong>Результат:</strong> Автоматическая транскрибация без затрат на API и блокировки сервера.</p>
                     <p class="p-tech">Python • FastAPI • Celery • Redis • Whisper</p>
                     <a href="https://github.com/olgatazkorob7-png/video-transcriber" target="_blank" class="btn-code">Смотреть код</a>
                 </div>
 
-                <!-- Проект 5: AI-Content -->
-                <div class="portfolio-item">
-                    <span class="number">05</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПОРТФОЛИО (ДОПОЛНИТЕЛЬНЫЕ) ===== -->
+    <section class="portfolio" id="portfolio" style="padding-top: 0;">
+        <div class="container">
+            <span style="color:#888; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Дополнительный опыт</span>
+            <h2 class="section-title" style="font-size: 36px;">Другие <span class="gold">работы</span></h2>
+            <p class="section-subtitle">Проекты, демонстрирующие широкий стек технологий и разносторонние навыки.</p>
+
+            <div class="portfolio-grid">
+                
+                <!-- Доп 1: AI-Content -->
+                <div class="portfolio-item extra-card">
                     <h3>AI-Content Generator</h3>
-                    <p><strong>Боль:</strong> Создание B2B-контента (кейсы, email, подкасты) отнимает много времени.</p>
-                    <p><strong>Решение:</strong> Модульная система из 6 генераторов на TypeScript с жестким контролем JSON и защитой от галлюцинаций.</p>
-                    <p><strong>Результат:</strong> Автоматизация написания текстов с сохранением Tone of Voice компании.</p>
+                    <p>Модульная система из 6 генераторов B2B-контента на TypeScript.</p>
                     <p class="p-tech">Next.js • TypeScript • OpenAI API</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="https://ai-kontent-meiker-87.ai.studio" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-                        <a href="https://github.com/olgatazkorob7-png/ai-content-generator" target="_blank" class="btn-code">Код</a>
+                        <a href="ССЫЛКА_НА_ДЕМО_AI_STUDIO" target="_blank" class="btn-demo" style="padding: 6px 12px; font-size: 12px;">Демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/ai-content-generator" target="_blank" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
                     </div>
                 </div>
 
-                <!-- Проект 6: Кофейный сомелье -->
-                <div class="portfolio-item">
-                    <span class="number">06</span>
+                <!-- Доп 2: Кофейный сомелье -->
+                <div class="portfolio-item extra-card">
                     <h3>Кофейный сомелье</h3>
-                    <p><strong>Боль:</strong> Покупатели не могут выбрать сорт кофе и уходят без покупки.</p>
-                    <p><strong>Решение:</strong> AI-консультант на Next.js с динамической базой знаний из Google Sheets и интеграцией Gemini.</p>
-                    <p><strong>Результат:</strong> Персональный подбор кофе по вкусовым предпочтениям в реальном времени.</p>
+                    <p>AI-консультант на Next.js с динамической базой из Google Sheets.</p>
                     <p class="p-tech">Next.js 15 • React • TypeScript • Gemini API</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <a href="https://coffee-sommelier-2-1.onrender.com" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-                        <a href="https://ai.studio/apps/b6479b14-d822-4ecf-8d79-f1681866aca8"
-                        <a href=https://github.com/olgatazkorob7-png/coffee-sommelier-2" target="_blank" class="btn-code">Код</a>
-                        
+                        <a href="https://coffee-sommelier-2-1.onrender.com" target="_blank" class="btn-demo" style="padding: 6px 12px; font-size: 12px;">Демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/coffee-sommelier-2" target="_blank" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
                     </div>
+                </div>
+
+                <!-- Доп 3: Telegram Bot -->
+                <div class="portfolio-item extra-card">
+                    <h3>Командный планировщик (TG Bot)</h3>
+                    <p>Асинхронный бот для управления задачами и суммаризации чатов.</p>
+                    <p class="p-tech">Python • aiogram • OpenAI API</p>
+                    <a href="ССЫЛКА_НА_КОД_БОТА" target="_blank" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
+                </div>
+
+                <!-- Доп 4: CRM -->
+                <div class="portfolio-item extra-card">
+                    <h3>TrailCamp CRM</h3>
+                    <p>Веб-приложение для управления лидами с ролевой моделью доступа.</p>
+                    <p class="p-tech">HTML5 • Tailwind CSS • Vanilla JS</p>
+                    <a href="https://github.com/olgatazkorob7-png/trailcamp-crm" target="_blank" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
                 </div>
 
             </div>
@@ -658,4 +724,4 @@
     </script>
 
 </body>
-</html>
+</html>s
