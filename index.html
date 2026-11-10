@@ -1,10 +1,9 @@
-
-           <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>OGT — AI & Data Solutions</title>
+    <title>Ольга Тяжкороб — Python & AI Разработчик</title>
 
     <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -12,7 +11,6 @@
     <style>
         /* ===== СБРОС И БАЗА ===== */
         * {
-        
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -88,6 +86,7 @@
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .btn-outline:hover {
@@ -200,44 +199,24 @@
 
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
-        /* Заглушка для логотипа (вставим картинку позже) */
         .hero-logo-block {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .ogt-symbol {
-            width: 280px;
-            height: 280px;
-            border: 2px solid #222;
+        .hero-logo-img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
             border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 100px;
-            font-weight: 900;
-            color: #fff;
-            position: relative;
-            transition: all 0.5s;
-            background: radial-gradient(circle at 30% 30%, #1a1a1a, #0A0A0A);
-        }
-
-        .ogt-symbol:hover {
-            border-color: #D4AF37;
-            box-shadow: 0 0 80px rgba(212, 175, 55, 0.1);
-            transform: rotate(3deg) scale(1.02);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+            border: 1px solid #222;
+            transition: transform 0.5s;
         }
         
-        .ogt-symbol .sub {
-            position: absolute;
-            bottom: 30px;
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: #555;
-            text-transform: uppercase;
+        .hero-logo-img:hover {
+            transform: scale(1.02);
         }
 
         /* ===== СЕКЦИЯ НАВЫКОВ ===== */
@@ -328,7 +307,7 @@
         .portfolio-item p {
             color: #888;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .portfolio-item .p-tech {
@@ -400,7 +379,7 @@
         /* ===== КОНТАКТЫ / CTA ===== */
         .cta { padding: 100px 0; border-top: 1px solid #111; text-align: center; }
         .cta h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; }
-        .cta p { color: #888; font-weight: 300; font-size: 18px; max-width: 500px; margin: 0 auto 32px; }
+        .cta p { color: #888; font-weight: 300; font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
 
         /* ===== ПОДВАЛ ===== */
         footer {
@@ -430,18 +409,8 @@
             }
             .nav-links.open { display: flex; }
             .hamburger { display: flex; }
-        }         .hero-logo-img {
-            width: 100%;
-            max-width: 380px;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
-            border: 1px solid #222;
-            transition: transform 0.5s;
         }
-        .hero-logo-img:hover {
-            transform: scale(1.02);
-        }   </style>
+    </style>
 </head>
 <body>
 
@@ -465,27 +434,29 @@
     <section class="hero" id="home">
         <div class="container hero-grid">
             <div class="hero-left">
-                <span class="hero-tag">AI & Data Solutions</span>
+                <span class="hero-tag">AI-разработчик | Python-инженер</span>
                 <h1 class="hero-title">
-                    СОЗДАЮ<br />
-                    <span class="gold">AI-СЕРВИСЫ</span><br />
-                    ДЛЯ БИЗНЕСА
+                    АВТОМАТИЗИРУЮ<br />
+                    <span class="gold">РУТИНУ</span><br />
+                    С ПОМОЩЬЮ ИИ
                 </h1>
                 <p class="hero-desc">
-                    Python-разработчик и AI-инженер. Создаю сервисы, которые автоматизируют рутину, анализируют данные и используют мощь нейросетей для решения бизнес-задач.
+                    Создаю AI-сервисы, аналитические панели и Telegram-ботов, которые экономят время, находят точки роста и приносят прибыль. Не просто пишу код — решаю бизнес-задачи.
                 </p>
                 <div class="hero-buttons">
-                    
-                    <p style="margin-top: 24px; color: #888; font-size: 14px;">
-                        ✅ Открыта к проектам и стажировкам. Отвечаю в течение дня.
-                    </p>
-                    <a href="#portfolio" class="btn-gold">Мои проекты</a>
-                    <a href="#contact" class="btn-outline">Связаться</a>
+                    <a href="#portfolio" class="btn-gold">Смотреть кейсы</a>
+                    <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline">Обсудить проект</a>
+                </div>
+                <!-- Полоса доверия -->
+                <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; color: #888;">
+                    <span>✅ 8+ реализованных проектов</span>
+                    <span>✅ Python • AI • Data</span>
+                    <span>✅ Открыта к предложениям</span>
                 </div>
             </div>
             <div class="hero-logo-block">
-                <img src="logo.png.png" alt="OGT Logo" class="hero-logo-img">
-            </div>
+                <!-- Убедитесь, что файл logo.png лежит в папке с сайтом -->
+                <img src="logo.png" alt="OGT Logo" class="hero-logo-img">
             </div>
         </div>
     </section>
@@ -508,7 +479,7 @@
                     <span class="icon">🤖</span>
                     <h3>AI & LLM</h3>
                     <p>Интеграция языковых моделей, работа с локальными нейросетями и компьютерным зрением.</p>
-                    <div class="tech-list"><span>OpenAI</span><span>Whisper</span><span>faster-whisper</span></div>
+                    <div class="tech-list"><span>OpenAI</span><span>Whisper</span><span>faster-whisper</span><span>Gemini</span></div>
                 </div>
                 <div class="skill-card">
                     <span class="icon">📊</span>
@@ -531,92 +502,89 @@
         <div class="container">
             <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Кейсы</span>
             <h2 class="section-title">Избранные <span class="gold">проекты</span></h2>
-            <p class="section-subtitle">Реальные задачи, которые я реализовал от идеи до деплоя.</p>
+            <p class="section-subtitle">Реальные задачи, которые я реализовала от идеи до деплоя.</p>
 
             <div class="portfolio-grid">
-                                <!-- Проект 1: Green Mall BI -->
-                                <div class="portfolio-item">
-                                    <span class="number">06</span>
-                                    <h3>Green Mall: BI Extension</h3>
-                                    <p><strong>Задача:</strong> Расширение BI-системы кастомными аналитическими инструментами.</p>
-                                    <p><strong>Результат:</strong> Написана SQL RPC-функция для Supabase, обновлен промпт AI-ассистента для вызова новой функции, построен Multi-line график динамики продаж.</p>
-                                    <p class="p-tech">SQL • Supabase • PostgreSQL • Google AI Studio</p>
-                                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                                        <a href="ССЫЛКА_НА_ВАШЕ_ПРИЛОЖЕНИЕ_В_AI_STUDIO" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-                                        <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" class="btn-code">Смотреть код</a>
-                                    </div>
-                                </div>
-                                <!-- Проект 2: AI-Chef Assistant -->
-                                <div class="portfolio-item">
-                                    <span class="number">01</span>
-                                    <h3>AI-Chef Assistant</h3>
-                                    <p><strong>Задача:</strong> Создание умного кулинарного ассистента, который распознает продукты по фото и предлагает рецепты.</p>
-                                    <p><strong>Результат:</strong> Полноценный бэкенд на FastAPI с интеграцией OpenAI Vision (распознавание фото), GPT-4o (генерация рецептов) и TTS (озвучка).</p>
-                                    <p class="p-tech">FastAPI • OpenAI API • Vision • TTS • Python</p>
-                                    <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Смотреть код</a>
-                                </div>
-               <!-- Проект: Тропа -->
-<div class="portfolio-item">
-    <span class="number">07</span>
-    <h3>Тропа: AI-Консультант</h3>
-    <p><strong>Задача:</strong> Разработка AI-ассистента по документам для интернет-магазина снаряжения.</p>
-    <p><strong>Результат:</strong> Реализован RAG-подход (строго по базе знаний), исключающий галлюцинации. Интегрирована модель Google Gemini.</p>
-    <p class="p-tech">Google AI Studio • Gemini API • RAG</p>
-    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-        <a href="https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2ССЫЛКА_НА_ДЕМО_В_AI_STUDIO
-        " target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-        <a href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" class="btn-code">Смотреть код</a>
-    </div>
-</div>
-
-                              <!-- Проект 4: Кофейный сомелье -->
-                              <div class="portfolio-item">
-                                <span class="number">03</span>
-                                <h3>Кофейный сомелье</h3>
-                                <p><strong>Задача:</strong> AI-ассистент для интернет-магазина обжарщика кофе (подбор сорта, помола, консультации).</p>
-                                <p><strong>Результат:</strong> Динамическая база знаний из Google Sheets, интеграция Gemini API, асинхронное логирование.</p>
-                                <p class="p-tech">Next.js 15 • React • TypeScript • Gemini API</p>
-                                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                                    <a href="https://coffee-sommelier-2-1.onrender.com" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-                                    <a href="https://github.com/olgatazkorob7-png/coffee-sommelier-2" target="_blank" class="btn-code">Смотреть код</a>
-                                </div>
-                            </div> 
-
-                               <!-- Проект 5: AI Content Generator -->
-                               <div class="portfolio-item">
-                                <span class="number">04</span>
-                                <h3>AI Content Generator</h3>
-                                <p><strong>Задача:</strong> Мультифункциональный AI-ассистент для генерации B2B-контента (кейсы, email, подкасты, КП, видео).</p>
-                                <p><strong>Результат:</strong> Модульная архитектура на TypeScript, интеграция Gemini API, умное управление Tone of Voice и защита от галлюцинаций нейросети.</p>
-                                <p class="p-tech">React • TypeScript • Next.js • Gemini API</p>
-                                <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                                    <a href="https://ai.studio/apps/ccf61148-7a3d-40e9-a676-1f49410f3a16" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
-                                    <a href="https://github.com/olgatazkorob7-png/ai-content-generator" target="_blank" class="btn-code">Смотреть код</a>
-                                </div>
-                            </div>
-
                 
-                                <!-- Проект 7: TrailCamp CRM -->
-                                <div class="portfolio-item">
-                                    <span class="number">05</span>
-                                    <h3>TrailCamp CRM</h3>
-                                    <p><strong>Задача:</strong> Разработка системы управления лидами для туристического кемпа.</p>
-                                    <p><strong>Результат:</strong> Готовое веб-приложение с хранением данных и интерактивным интерфейсом.</p>
-                                    <p class="p-tech">HTML5 • Tailwind CSS • Vanilla JS • LocalStorage</p>
-                                    <a href="https://github.com/olgatazkorob7-png/trailcamp-crm" target="_blank" class="btn-code">Смотреть код</a>
-                                </div>
-                             <!-- Проект: AI-Транскрибатор видео -->
-                             <div class="portfolio-item">
-                                <span class="number">08</span>
-                                <h3>AI-Транскрибатор видео</h3>
-                                <p><strong>Задача:</strong> Распознавание речи из видеофайлов в фоновом режиме без блокировки сервера.</p>
-                                <p><strong>Результат:</strong> Очередь задач на Celery + Redis, интеграция локальной модели Whisper для бесплатной транскрибации.</p>
-                                <p class="p-tech">Python • FastAPI • Celery • Redis • Whisper</p>
-                                <a href="https://github.com/olgatazkorob7-png/video-transcriber" target="_blank" class="btn-code">Смотреть код</a>
-                            </div>                   
- 
-               
-                
+                <!-- Проект 1: Тропа -->
+                <div class="portfolio-item">
+                    <span class="number">01</span>
+                    <h3>Тропа: AI-Консультант</h3>
+                    <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
+                    <p><strong>Решение:</strong> AI-ассистент на базе Google Gemini, который отвечает строго по базе знаний магазина (RAG).</p>
+                    <p><strong>Результат:</strong> Снижение нагрузки на поддержку, мгновенные ответы 24/7 без галлюцинаций.</p>
+                    <p class="p-tech">Google AI Studio • Gemini API • RAG</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Проект 2: Green Mall BI -->
+                <div class="portfolio-item">
+                    <span class="number">02</span>
+                    <h3>Green Mall: BI-Дашборд</h3>
+                    <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания, какие категории приносят убыток.</p>
+                    <p><strong>Решение:</strong> Расширение BI-системы: написана SQL RPC-функция в Supabase для анализа выручки по месяцам.</p>
+                    <p><strong>Результат:</strong> Наглядный Multi-line график динамики продаж, позволяющий принимать решения на основе цифр.</p>
+                    <p class="p-tech">SQL • Supabase • PostgreSQL • Google AI Studio</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai.studio/apps/16ed98c8-abc1-4ed5-9df1-42014d011612" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Проект 3: AI-Chef -->
+                <div class="portfolio-item">
+                    <span class="number">03</span>
+                    <h3>AI-Chef Assistant</h3>
+                    <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты в холодильнике, которые портятся.</p>
+                    <p><strong>Решение:</strong> Бэкенд на FastAPI с распознаванием фото (OpenAI Vision), генерацией рецептов (GPT-4o) и озвучкой (TTS).</p>
+                    <p><strong>Результат:</strong> Пользователь загружает фото холодильника и получает 3 готовых рецепта за 10 секунд.</p>
+                    <p class="p-tech">FastAPI • OpenAI API • Vision • TTS</p>
+                    <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Смотреть код</a>
+                </div>
+
+                <!-- Проект 4: Транскрибатор -->
+                <div class="portfolio-item">
+                    <span class="number">04</span>
+                    <h3>AI-Транскрибатор видео</h3>
+                    <p><strong>Боль:</strong> Ручная расшифровка видео и аудио занимает часы, а платные API стоят дорого.</p>
+                    <p><strong>Решение:</strong> Микросервис на Celery + Redis для фоновой обработки. Использована бесплатная локальная модель faster-whisper.</p>
+                    <p><strong>Результат:</strong> Автоматическая транскрибация файлов до 25 МБ без затрат на API и без блокировки сервера.</p>
+                    <p class="p-tech">Python • FastAPI • Celery • Redis • Whisper</p>
+                    <a href="https://github.com/olgatazkorob7-png/video-transcriber" target="_blank" class="btn-code">Смотреть код</a>
+                </div>
+
+                <!-- Проект 5: AI-Content -->
+                <div class="portfolio-item">
+                    <span class="number">05</span>
+                    <h3>AI-Content Generator</h3>
+                    <p><strong>Боль:</strong> Создание B2B-контента (кейсы, email, подкасты) отнимает много времени.</p>
+                    <p><strong>Решение:</strong> Модульная система из 6 генераторов на TypeScript с жестким контролем JSON и защитой от галлюцинаций.</p>
+                    <p><strong>Результат:</strong> Автоматизация написания текстов с сохранением Tone of Voice компании.</p>
+                    <p class="p-tech">Next.js • TypeScript • OpenAI API</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai-kontent-meiker-87.ai.studio" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/ai-content-generator" target="_blank" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Проект 6: Кофейный сомелье -->
+                <div class="portfolio-item">
+                    <span class="number">06</span>
+                    <h3>Кофейный сомелье</h3>
+                    <p><strong>Боль:</strong> Покупатели не могут выбрать сорт кофе и уходят без покупки.</p>
+                    <p><strong>Решение:</strong> AI-консультант на Next.js с динамической базой знаний из Google Sheets и интеграцией Gemini.</p>
+                    <p><strong>Результат:</strong> Персональный подбор кофе по вкусовым предпочтениям в реальном времени.</p>
+                    <p class="p-tech">Next.js 15 • React • TypeScript • Gemini API</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://coffee-sommelier-2-1.onrender.com" target="_blank" class="btn-code" style="background: #D4AF37; color: #0A0A0A; border-color: #D4AF37;">Открыть демо</a>
+                        <a href="https://ai.studio/apps/b6479b14-d822-4ecf-8d79-f1681866aca8"
+                        <a href=https://github.com/olgatazkorob7-png/coffee-sommelier-2" target="_blank" class="btn-code">Код</a>
+                        
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -634,16 +602,16 @@
                 </div>
                 <div class="about-text">
                     <p>
-                        Я Python-разработчик, специализирующийся на создании AI-инструментов и автоматизации бизнес-процессов. 
-                    </p>
-                    <p>
-                        Мой путь начался с анализа данных, но я быстро понял(а), что настоящее волшебство происходит на стыке кода, данных и искусственного интеллекта.
+                        Привет! Я Ольга — Python-разработчик и AI-инженер. Мой путь начался с анализа данных, но я быстро поняла, что настоящее волшебство происходит на стыке кода, данных и искусственного интеллекта.
                     </p>
                     <div class="quote">
-                        «Не просто пишу код. Создаю инструменты, которые экономят время и деньги.»
+                        «Я не просто пишу код. Я создаю инструменты, которые экономят время и деньги бизнеса.»
                     </div>
                     <p>
-                        В своих проектах я использую современный стек (FastAPI, Celery, Docker) и не боюсь сложных технических вызовов — будь то настройка очередей или решение проблем совместимости библиотек.
+                        В своих проектах я использую современный стек (FastAPI, Celery, Docker) и не боюсь сложных технических вызовов — будь то настройка очередей, интеграция с LLM или решение проблем совместимости библиотек на Windows.
+                    </p>
+                    <p style="margin-top: 15px; color: #D4AF37; font-weight: 600;">
+                        Готова к интересным проектам, стажировкам и позициям Junior/Middle.
                     </p>
                 </div>
             </div>
@@ -653,11 +621,15 @@
     <!-- ===== КОНТАКТЫ ===== -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Обсудим <span class="gold">задачу?</span></h2>
-            <p>Открыт(а) к интересным проектам, стажировкам и предложениям о сотрудничестве.</p>
-            <a href="https://t.me/ваш_ник" target="_blank" class="btn-gold">Написать в Telegram</a>
-            <a href="resume.pdf" download class="btn-outline" style="margin-left: 15px;">Скачать резюме</a> 
-            <div style="margin-top:24px; color:#555; font-size:14px;">
+            <h2>Готовы <span class="gold">автоматизировать</span> рутину?</h2>
+            <p>Обсудим вашу задачу? Отвечаю в течение дня. Открыта к фрилансу, стажировкам и постоянной работе.</p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="https://t.me/ваш_ник" target="_blank" class="btn-gold">Написать в Telegram</a>
+                <a href="resume.pdf" download class="btn-outline">Скачать резюме (PDF)</a>
+            </div>
+            
+            <div style="margin-top: 24px; color: #555; font-size: 14px;">
                 Или на почту: <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a>
             </div>
         </div>
