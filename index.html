@@ -38,6 +38,31 @@
     .avatar-img:hover {
         transform: scale(1.02);
     }
+    /* ===== ФИКС РАЗМЕРА ФОТО ===== */
+    .about-avatar {
+        width: 100%;
+        max-width: 400px; /* Максимальная ширина квадрата */
+        aspect-ratio: 1 / 1; /* Делает контейнер идеально квадратным */
+        border-radius: 24px;
+        overflow: hidden; /* Обрезает всё, что вылезает за рамки */
+        border: 1px solid #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Заставляет фото заполнить квадрат, обрезая лишнее */
+        object-position: center top; /* Центрирует фото, делая акцент на лице */
+        transition: transform 0.5s;
+    }
+
+    .avatar-img:hover {
+        transform: scale(1.05);
+    }
     <style>
         /* ===== СБРОС И БАЗА ===== */
         * {
@@ -993,24 +1018,31 @@
     </section>
 
     <!-- ===== КОНТАКТЫ ===== -->
-    <section class="cta" id="contact">
-        ... (ваш старый код контактов) ...
-    <section class="cta" id="contact">
-        <div class="container">
-            <h2>Готовы <span class="gold">автоматизировать</span> рутину?</h2>
-            <p>Обсудим вашу задачу? Отвечаю в течение дня. Открыта к фрилансу, стажировкам и постоянной работе.</p>
-            
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-                <a href="https://t.me/ваш_ник" target="_blank" class="btn-gold">Написать в Telegram</a>
-                <a href="resume.pdf" download class="btn-outline">Скачать резюме (PDF)</a>
-            </div>
-            
-            <div style="margin-top: 24px; color: #555; font-size: 14px;">
-                <div style="margin-top: 24px; color: #555; font-size: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <!-- ===== КОНТАКТЫ ===== -->
+        <section class="cta" id="contact">
+            <div class="container">
+                <h2>Готовы <span class="gold">автоматизировать</span> рутину?</h2>
+                <p>Обсудим вашу задачу? Отвечаю в течение дня. Открыта к фрилансу, стажировкам и постоянной работе.</p>
+                
+                <!-- Блок с гарантиями (из советов нейросети) -->
+                <p style="color: #aaa; margin-bottom: 30px; font-size: 16px; line-height: 1.8;">
+                    🎁 Первичная консультация и оценка проекта — <span style="color:#D4AF37; font-weight:600;">бесплатно</span>.<br>
+                    🔒 Гарантирую конфиденциальность. Отвечаю в течение 2 часов.
+                </p>
+    
+                <!-- Кнопки -->
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://t.me/ваш_ник" target="_blank" class="btn-gold">Написать в Telegram</a>
+                    <a href="resume.pdf" download class="btn-outline">Скачать резюме (PDF)</a>
+                </div>
+                
+                <!-- Город и почта -->
+                <div style="margin-top: 30px; color: #888; font-size: 15px; display: flex; flex-direction: column; gap: 10px;">
                     <span>📍 <strong>Город:</strong> Москва / Удаленно</span>
                     <span>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></span>
-                </div>             
-        </div>
+                </div>
+            </div>
+        </section>
     </section>
 
     <!-- ===== ПОДВАЛ ===== -->
