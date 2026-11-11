@@ -432,6 +432,36 @@
             font-size: 14px;
         }
         footer .brand { color: #D4AF37; font-weight: 600; }
+                /* ===== ФИЛЬТР ПРОЕКТОВ ===== */
+                .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            color: #888;
+            border: 1px solid #333;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #D4AF37;
+            color: #0A0A0A;
+            border-color: #D4AF37;
+            font-weight: 600;
+        }
+        
+        .portfolio-item.hide {
+            display: none !important;
+        }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 992px) {
@@ -483,9 +513,10 @@
                     С ПОМОЩЬЮ ИИ
                 </h1>
                 <p class="hero-desc">
-                    Создаю AI-сервисы, аналитические панели и Telegram-ботов, которые экономят время, находят точки роста и приносят прибыль. Не просто пишу код — решаю бизнес-задачи.
-                </p>
-                <div class="hero-buttons">
+                    <p class="hero-desc">
+                        <p class="hero-desc">
+                            Создаю <span class="gold" style="font-weight: 600;">AI-сервисы и Telegram-ботов</span>, которые экономят бизнесу время и деньги. Не просто пишу код — решаю бизнес-задачи.
+                        </p> 
                     <a href="#flagship" class="btn-gold">Ключевые кейсы</a>
                     <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline">Обсудить проект</a>
                 </div>
@@ -543,12 +574,19 @@
         <div class="container">
             <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Ключевые компетенции</span>
             <h2 class="section-title">Флагманские <span class="gold">проекты</span></h2>
-            <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
 
+            <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
+             <!-- Кнопки фильтра -->
+             <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">Все</button>
+                <button class="filter-btn" onclick="filterProjects('python', this)">Python</button>
+                <button class="filter-btn" onclick="filterProjects('ai', this)">AI/LLM</button>
+                <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
+            </div>
             <div class="portfolio-grid">
                 
                 <!-- Флагман 1: Тропа -->
-                <div class="portfolio-item flagship-card">
+                <div class="portfolio-item flagship-card" data-tags="ai python">
                     <span class="number">01</span>
                     <h3>Тропа: AI-Консультант</h3>
                     <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
@@ -563,7 +601,9 @@
                 </div>
 
                 <!-- Флагман 2: Green Mall -->
-                <div class="portfolio-item flagship-card">
+                <div class="portfolio-item flagship-card" data-tags="python">
+
+                
                     <span class="number">02</span>
                     <h3>Green Mall: BI-Дашборд</h3>
                     <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания убыточных категорий.</p>
@@ -578,7 +618,7 @@
                 </div>
 
                 <!-- Флагман 3: AI-Chef -->
-                <div class="portfolio-item flagship-card">
+                <div class="portfolio-item flagship-card" data-tags="ai python">
                     <span class="number">03</span>
                     <h3>AI-Chef Assistant</h3>
                     <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
@@ -590,7 +630,7 @@
                 </div>
 
                 <!-- Флагман 4: Транскрибатор -->
-                <div class="portfolio-item flagship-card">
+                <div class="portfolio-item flagship-card" data-tags="python">
                     <span class="number">04</span>
                     <h3>AI-Транскрибатор видео</h3>
                     <p><strong>Боль:</strong> Ручная расшифровка видео занимает часы, платные API стоят дорого.</p>
@@ -604,6 +644,37 @@
             </div>
         </div>
     </section>
+        <!-- ===== ПРОЦЕСС РАБОТЫ ===== -->
+        <section class="process" id="process">
+            <div class="container">
+                <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Прозрачность</span>
+                <h2 class="section-title">Как я <span class="gold">работаю</span></h2>
+                <p class="section-subtitle">От первого сообщения до готового продукта.</p>
+    
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Бриф</h3>
+                        <p>Обсуждаем задачу, цели и сроки. Я задаю вопросы, чтобы понять суть бизнеса.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Архитектура</h3>
+                        <p>Подбираю стек технологий и продумываю структуру. Согласовываем план.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Разработка</h3>
+                        <p>Пишу чистый код. Показываю промежуточные результаты и вношу правки.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Деплой</h3>
+                        <p>Запускаю проект на сервере, настраиваю и передаю вам все доступы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- ===== ПОРТФОЛИО (ДОПОЛНИТЕЛЬНЫЕ) ===== -->
     <section class="portfolio" id="portfolio" style="padding-top: 0;">
@@ -615,7 +686,7 @@
             <div class="portfolio-grid">
                 
                 <!-- Доп 1: AI-Content -->
-                <div class="portfolio-item extra-card">
+                <div class="portfolio-item extra-card" data-tags="ai frontend">
                     <h3>AI-Content Generator</h3>
                     <p>Модульная система из 6 генераторов B2B-контента на TypeScript.</p>
                     <p class="p-tech">Next.js • TypeScript • OpenAI API</p>
@@ -626,7 +697,7 @@
                 </div>
 
                 <!-- Доп 2: Кофейный сомелье -->
-                <div class="portfolio-item extra-card">
+                <div class="portfolio-item extra-card" data-tags="ai frontend">
                     <h3>Кофейный сомелье</h3>
                     <p>AI-консультант на Next.js с динамической базой из Google Sheets.</p>
                     <p class="p-tech">Next.js 15 • React • TypeScript • Gemini API</p>
@@ -645,7 +716,7 @@
                 </div>
 
                 <!-- Доп 4: CRM -->
-                <div class="portfolio-item extra-card">
+                <div class="portfolio-item extra-card" data-tags="frontend">
                     <h3>TrailCamp CRM</h3>
                     <p>Веб-приложение для управления лидами с ролевой моделью доступа.</p>
                     <p class="p-tech">HTML5 • Tailwind CSS • Vanilla JS</p>
@@ -721,6 +792,24 @@
                 document.getElementById('navLinks').classList.remove('open');
             });
         });
+                // Логика фильтрации проектов
+                function filterProjects(tag, btn) {
+            // 1. Убираем класс "active" у всех кнопок и добавляем нажатой
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 2. Показываем или скрываем карточки
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                const tags = item.getAttribute('data-tags');
+                
+                // Если выбрано "Все" или тег совпадает с карточкой
+                if (tag === 'all' || (tags && tags.includes(tag))) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        }
     </script>
 
 </body>
