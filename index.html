@@ -482,6 +482,76 @@
             .nav-links.open { display: flex; }
             .hamburger { display: flex; }
         }
+                /* ===== ОТЗЫВЫ ===== */
+                .reviews { padding: 100px 0; border-top: 1px solid #111; }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            background: #111;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid #1a1a1a;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+        }
+        
+        .quote-icon {
+            font-size: 60px;
+            color: #D4AF37;
+            line-height: 1;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .review-text {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .review-author {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+        
+        .author-info strong {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .author-info span {
+            color: #888;
+            font-size: 13px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -493,6 +563,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#skills">Стек</a></li>
                 <li><a href="#portfolio">Проекты</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
@@ -507,16 +578,16 @@
         <div class="container hero-grid">
             <div class="hero-left">
                 <span class="hero-tag">AI-разработчик | Python-инженер</span>
+                <span class="hero-badge">⚡ Открыта к 2 новым проектам в этом месяце</span> 
                 <h1 class="hero-title">
                     АВТОМАТИЗИРУЮ<br />
                     <span class="gold">РУТИНУ</span><br />
                     С ПОМОЩЬЮ ИИ
                 </h1>
                 <p class="hero-desc">
-                    <p class="hero-desc">
-                        <p class="hero-desc">
-                            Создаю <span class="gold" style="font-weight: 600;">AI-сервисы и Telegram-ботов</span>, которые экономят бизнесу время и деньги. Не просто пишу код — решаю бизнес-задачи.
-                        </p> 
+                    Создаю <span class="gold" style="font-weight: 600;">AI-сервисы и Telegram-ботов</span>, которые экономят бизнесу время и деньги.
+                </p>
+                <div class="hero-buttons">
                     <a href="#flagship" class="btn-gold">Ключевые кейсы</a>
                     <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline">Обсудить проект</a>
                 </div>
@@ -756,6 +827,86 @@
     </section>
 
     <!-- ===== КОНТАКТЫ ===== -->
+        <!-- ===== ОТЗЫВЫ ===== -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Доверие</span>
+                <h2 class="section-title">Что обо мне <span class="gold">говорят</span></h2>
+                <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
+    
+                <div class="reviews-grid">
+                    <!-- Отзыв 1 -->
+                    <div class="review-card">
+                        <div class="quote-icon">“</div>
+                        <p class="review-text">
+                            Ольга проявила себя как очень усидчивый и внимательный разработчик. Она не боится сложных задач (например, настройка Celery и локальных нейросетей) и всегда доводит проект до конца. Отличная база для Junior-разработчика.
+                        </p>
+                        <div class="review-author">
+                            <div class="author-info">
+                                <strong>Иван Иванов</strong>
+                                <span>Куратор курса по Python</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Отзыв 2 (Можете добавить позже) -->
+                    <div class="review-card">
+                        <div class="quote-icon">“</div>
+                        <p class="review-text">
+                            С Ольгой было легко работать в команде. Она взяла на себя самую сложную часть с бэкендом, пока мы делали фронтенд. Код всегда чистый, а коммуникация — понятной.
+                        </p>
+                        <div class="review-author">
+                            <div class="author-info">
+                                <strong>Анна Смирнова</strong>
+                                <span>Frontend-разработчик</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- ===== ОТЗЫВЫ ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Доверие</span>
+            <h2 class="section-title">Что обо мне <span class="gold">говорят</span></h2>
+            <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
+
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        Ольга проявила себя как очень усидчивый и внимательный разработчик. Она не боится сложных задач и всегда доводит проект до конца. Отличная база для Junior-разработчика.
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Иван Иванов</strong>
+                            <span>Куратор курса по Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        С Ольгой было легко работать в команде. Она взяла на себя самую сложную часть с бэкендом, пока мы делали фронтенд. Код всегда чистый, а коммуникация — понятной.
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Анна Смирнова</strong>
+                            <span>Frontend-разработчик</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="cta" id="contact">
+        ... (ваш старый код контактов) ...
     <section class="cta" id="contact">
         <div class="container">
             <h2>Готовы <span class="gold">автоматизировать</span> рутину?</h2>
