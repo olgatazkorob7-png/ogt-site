@@ -7,7 +7,37 @@
 
     <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+    /* ===== ТЕЛЕФОН В ШАПКЕ ===== */
+    .header-phone {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: color 0.3s;
+        white-space: nowrap; /* Чтобы номер не переносился на новую строку */
+    }
 
+    .header-phone:hover {
+        color: #D4AF37;
+    }
+
+    /* Скрываем номер на мобильных телефонах, чтобы шапка не ломалась */
+    @media (max-width: 768px) {
+        .header-phone {
+            display: none;
+        }
+    }
+    .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+        border: 1px solid #1a1a1a;
+        transition: transform 0.5s;
+    }
+    .avatar-img:hover {
+        transform: scale(1.02);
+    }
     <style>
         /* ===== СБРОС И БАЗА ===== */
         * {
@@ -552,12 +582,69 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
             font-weight: 600;
         }
+                /* ===== УСЛУГИ ===== */
+                .services { padding: 100px 0; border-top: 1px solid #111; }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        .service-card { 
+            background: #111; 
+            padding: 40px; 
+            border-radius: 16px; 
+            border: 1px solid #1a1a1a; 
+            transition: 0.3s; 
+        }
+        
+        .service-card:hover { 
+            border-color: #D4AF37; 
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            color: #fff; 
+        }
+        
+        .service-card ul { 
+            list-style: none; 
+            margin-bottom: 25px; 
+        }
+        
+        .service-card li { 
+            color: #aaa; 
+            margin-bottom: 12px; 
+            padding-left: 20px; 
+            position: relative; 
+        }
+        
+        .service-card li::before { 
+            content: '✓'; 
+            position: absolute; 
+            left: 0; 
+            color: #D4AF37; 
+            font-weight: bold;
+        }
+        
+        .service-result { 
+            color: #D4AF37; 
+            font-weight: 600; 
+            font-size: 14px; 
+            border-top: 1px solid #333; 
+            padding-top: 20px; 
+        }
     </style>
 </head>
 <body>
 
     <!-- ===== ШАПКА ===== -->
     <header>
+                    <!-- Телефон в шапке -->
+                    <a href="tel:+79991234567" class="header-phone">📞 +7 (901) 555-24-03</a>
         <div class="container header-inner">
             <a href="#" class="logo">OG<span>T</span></a>
             <ul class="nav-links" id="navLinks">
@@ -596,6 +683,7 @@
                     <span>✅ 8+ реализованных проектов</span>
                     <span>✅ Python • AI • Data</span>
                     <span>✅ Открыта к предложениям</span>
+                    <span>📍 Москва / Удаленно</span>
                 </div>
             </div>
             <div class="hero-logo-block">
@@ -806,7 +894,7 @@
 
             <div class="about-grid">
                 <div class="about-avatar">
-                    <span>OG<span style="color:#D4AF37;">T</span></span>
+                    <img src="photo.jpg" alt="Ольга Тяжкороб" class="avatar-img">
                 </div>
                 <div class="about-text">
                     <p>
@@ -918,8 +1006,10 @@
             </div>
             
             <div style="margin-top: 24px; color: #555; font-size: 14px;">
-                Или на почту: <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a>
-            </div>
+                <div style="margin-top: 24px; color: #555; font-size: 14px; display: flex; flex-direction: column; gap: 8px;">
+                    <span>📍 <strong>Город:</strong> Москва / Удаленно</span>
+                    <span>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></span>
+                </div>             
         </div>
     </section>
 
