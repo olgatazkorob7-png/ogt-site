@@ -962,30 +962,106 @@
 
     <!-- ===== КОНТАКТЫ ===== -->
         <!-- ===== КОНТАКТЫ ===== -->
+        <    <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
         <section class="cta" id="contact">
             <div class="container">
-                <h2>Готовы <span class="gold">автоматизировать</span> рутину?</h2>
-                <p>Обсудим вашу задачу? Отвечаю в течение дня. Открыта к фрилансу, стажировкам и постоянной работе.</p>
+                <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
+                <p>Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
                 
-                <!-- Блок с гарантиями (из советов нейросети) -->
-                <p style="color: #aaa; margin-bottom: 30px; font-size: 16px; line-height: 1.8;">
-                    🎁 Первичная консультация и оценка проекта — <span style="color:#D4AF37; font-weight:600;">бесплатно</span>.<br>
-                    🔒 Гарантирую конфиденциальность. Отвечаю в течение 2 часов.
-                </p>
+                <div class="contact-container">
+                    <!-- Форма -->
+                    <form action="https://formspree.io/f/xqpqkqoj" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="4" placeholder="Кратко опишите задачу (например: нужен Telegram-бот для приема заказов)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold"
+                        /* ===== СТИЛИ ДЛЯ ФОРМЫ ===== */
+                        .contact-container {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 40px;
+                            text-align: left;
+                            max-width: 900px;
+                            margin: 0 auto;
+                        }
+                
+                        .contact-form {
+                            background: #111;
+                            padding: 30px;
+                            border-radius: 16px;
+                            border: 1px solid #1a1a1a;
+                        }
+                
+                        .form-group {
+                            margin-bottom: 15px;
+                        }
+                
+                        .contact-form input,
+                        .contact-form textarea {
+                            width: 100%;
+                            padding: 15px;
+                            background: #0A0A0A;
+                            border: 1px solid #333;
+                            border-radius: 8px;
+                            color: #fff;
+                            font-family: 'Inter', sans-serif;
+                            font-size: 15px;
+                            transition: border-color 0.3s;
+                        }
+                
+                        .contact-form input:focus,
+                        .contact-form textarea:focus {
+                            outline: none;
+                            border-color: #D4AF37;
+                        }
+                
+                        .form-note {
+                            text-align: center;
+                            color: #555;
+                            font-size: 12px;
+                            margin-top: 15px;
+                        }
+                
+                        .contact-alt {
+                            padding-top: 30px;
+                        }
+                
+                        .contact-alt h3 {
+                            color: #fff;
+                            margin-bottom: 20px;
+                            font-size: 20px;
+                        }
+                
+                        @media (max-width: 768px) {
+                            .contact-container {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                         style="width: 100%;">Отправить заявку</button>
+                        <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
+                    </form>
     
-                <!-- Кнопки -->
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://t.me/ваш_ник" target="_blank" class="btn-gold">Написать в Telegram</a>
-                    <a href="resume.pdf" download class="btn-outline">Скачать резюме (PDF)</a>
-                </div>
-                
-                <!-- Город и почта -->
-                <div style="margin-top: 30px; color: #888; font-size: 15px; display: flex; flex-direction: column; gap: 10px;">
-                    <span>📍 <strong>Город:</strong> Москва / Удаленно</span>
-                    <span>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></span>
+                    <!-- Альтернативные контакты -->
+                    <div class="contact-alt">
+                        <h3>Или напишите напрямую:</h3>
+                        <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline" style="margin-bottom: 15px; display: block;">Написать в Telegram</a>
+                        <a href="resume.pdf" download class="btn-outline" style="display: block;">Скачать резюме (PDF)</a>
+                        
+                        <div style="margin-top: 30px; color: #888; font-size: 15px;">
+                            <p>📍 <strong>Город:</strong> Москва / Удаленно</p>
+                            <p>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        
     
 
     <!-- ===== ПОДВАЛ ===== -->
