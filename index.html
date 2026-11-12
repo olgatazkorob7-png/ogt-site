@@ -642,7 +642,20 @@
             border-top: 1px solid #333; 
             padding-top: 20px; 
         }
-    </style>
+            /* ===== СКРИНШОТЫ В КАРТОЧКАХ ПРОЕКТОВ ===== */
+            .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .project-img {
+            transform: scale(1.02);
+        }</style>
 
     <!-- ===== ШАПКА ===== -->
     <header>
@@ -778,10 +791,12 @@
                         <a href="ССЫЛКА_НА_ДЕМО" target="_blank" class="btn-demo">Открыть демо</a>
                         <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" class="btn-code">Код</a>
                     </div>
-                </div>
+                
 
                 <!-- Флагман 3: AI-Chef -->
                 <div class="portfolio-item flagship-card" data-tags="ai python">
+                    <img src="chef-recipe.png" alt="Интерфейс AI-Chef" class="project-img">
+
                     <span class="number">03</span>
                     <h3>AI-Chef Assistant</h3>
                     <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
@@ -789,7 +804,12 @@
                     <p><strong>Моя роль:</strong> Проектирование API, интеграция трех разных AI-моделей в один пайплайн.</p>
                     <p><strong>Результат:</strong> Пользователь загружает фото и получает 3 рецепта за 10 секунд.</p>
                     <p class="p-tech">FastAPI • OpenAI API • Vision • TTS</p>
-                    <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Смотреть код</a>
+                                       
+                                       
+                                        <divy: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                                            <a href="https://ai-kylinar.ai.studio" target="_blank" class="btn-demo">Открыть демо</a>
+                                            <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Код</a>
+                                        </div>
                 </div>
 
                 <!-- Флагман 4: Транскрибатор -->
