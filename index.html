@@ -7,44 +7,9 @@
 
     <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
-    /* ===== ТЕЛЕФОН В ШАПКЕ ===== */
-    .header-phone {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 15px;
-        transition: color 0.3s;
-        white-space: nowrap; /* Чтобы номер не переносился на новую строку */
-    }
+
     <style>
-        /* ===== ТЕЛЕФОН В ШАПКЕ ===== */
-        .header-phone {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.3s;
-            white-space: nowrap;
-            margin-left: 20px;
-            margin-right: auto;
-        }
-        .header-phone:hover {
-            color: #D4AF37;
-        }
-
-        /* Скрываем номер на мобильных телефонах */
-        @media (max-width: 768px) {
-            .header-phone {
-                display: none;
-            }
-        }
-
         /* ===== СБРОС И БАЗА ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -156,6 +121,20 @@
 
         .logo span { color: #D4AF37; }
 
+        .header-phone {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+            white-space: nowrap;
+            margin-left: 20px;
+            margin-right: auto;
+        }
+        .header-phone:hover {
+            color: #D4AF37;
+        }
+
         .nav-links {
             display: flex;
             gap: 32px;
@@ -216,6 +195,18 @@
             display: block;
         }
 
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+        }
+
         .hero-title {
             font-size: clamp(40px, 6vw, 72px);
             font-weight: 900;
@@ -254,7 +245,7 @@
             transform: scale(1.02);
         }
 
-        /* ===== СЕКЦИЯ НАВЫКОВ ===== */
+        /* ===== НАВЫКИ ===== */
         .skills { padding: 100px 0; border-top: 1px solid #111; }
         
         .skills-grid {
@@ -296,8 +287,90 @@
             font-family: monospace;
         }
 
-        /* ===== СЕКЦИЯ ПОРТФОЛИО ===== */
+        /* ===== УСЛУГИ ===== */
+        .services { padding: 100px 0; border-top: 1px solid #111; }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        .service-card { 
+            background: #111; 
+            padding: 40px; 
+            border-radius: 16px; 
+            border: 1px solid #1a1a1a; 
+            transition: 0.3s; 
+        }
+        
+        .service-card:hover { 
+            border-color: #D4AF37; 
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+            color: #fff; 
+        }
+        
+        .service-card ul { 
+            list-style: none; 
+            margin-bottom: 25px; 
+        }
+        
+        .service-card li { 
+            color: #aaa; 
+            margin-bottom: 12px; 
+            padding-left: 20px; 
+            position: relative; 
+        }
+        
+        .service-card li::before { 
+            content: '✓'; 
+            position: absolute; 
+            left: 0; 
+            color: #D4AF37; 
+            font-weight: bold;
+        }
+        
+        .service-result { 
+            color: #D4AF37; 
+            font-weight: 600; 
+            font-size: 14px; 
+            border-top: 1px solid #333; 
+            padding-top: 20px; 
+        }
+
+        /* ===== ПОРТФОЛИО ===== */
         .portfolio { padding: 100px 0; border-top: 1px solid #111; }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            color: #888;
+            border: 1px solid #333;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #D4AF37;
+            color: #0A0A0A;
+            border-color: #D4AF37;
+            font-weight: 600;
+        }
 
         .portfolio-grid {
             display: grid;
@@ -305,29 +378,6 @@
             gap: 24px;
             margin-bottom: 60px;
             align-items: start; /* Прижимает карточки к верху */
-        } 
-        
-
-        /* Стили для флагманских проектов */
-        .flagship-card {
-            background: #111;
-            border: 1px solid #333;
-            border-top: 4px solid #D4AF37; /* Золотой акцент сверху */
-            padding: 35px;
-        }
-
-        /* Стили для дополнительных проектов */
-        .extra-card {
-            background: #0d0d0d;
-            border: 1px solid #1a1a1a;
-            padding: 25px;
-            opacity: 0.9;
-            transition: opacity 0.3s, border-color 0.3s;
-        }
-        
-        .extra-card:hover {
-            opacity: 1;
-            border-color: #555;
         }
 
         .portfolio-item {
@@ -343,6 +393,44 @@
         .portfolio-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .portfolio-item.hide { display: none !important; }
+
+        .flagship-card {
+            background: #111;
+            border: 1px solid #333;
+            border-top: 4px solid #D4AF37;
+            padding: 35px;
+        }
+
+        .extra-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 25px;
+            opacity: 0.9;
+            transition: opacity 0.3s, border-color 0.3s;
+        }
+        
+        .extra-card:hover {
+            opacity: 1;
+            border-color: #555;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top center;
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .project-img {
+            transform: scale(1.02);
         }
 
         .portfolio-item .number {
@@ -378,17 +466,21 @@
             margin-bottom: 20px;
         }
 
-        .portfolio-item .btn-code {
+        .portfolio-item .btn-code, 
+        .portfolio-item .btn-demo {
             display: inline-block;
-            background: transparent;
-            color: #D4AF37;
-            border: 1px solid #D4AF37;
             padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 14px;
             transition: all 0.3s;
             text-align: center;
+        }
+
+        .portfolio-item .btn-code {
+            background: transparent;
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
         }
 
         .portfolio-item .btn-code:hover {
@@ -397,24 +489,57 @@
         }
         
         .portfolio-item .btn-demo {
-            display: inline-block;
             background: #D4AF37;
             color: #0A0A0A;
             border: 1px solid #D4AF37;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 14px;
             font-weight: 600;
-            transition: all 0.3s;
-            text-align: center;
         }
         
         .portfolio-item .btn-demo:hover {
             background: #FFD700;
         }
 
-        /* ===== О НАС ===== */
+        /* ===== ПРОЦЕСС РАБОТЫ ===== */
+        .process { padding: 100px 0; border-top: 1px solid #111; }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        
+        .process-step {
+            background: #111;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #1a1a1a;
+            position: relative;
+            transition: all 0.4s;
+        }
+        
+        .process-step:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #D4AF37;
+            color: #0A0A0A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .process-step h3 { font-size: 20px; margin-bottom: 10px; color: #fff; }
+        .process-step p { color: #888; font-size: 14px; line-height: 1.5; }
+
+        /* ===== ОБО МНЕ ===== */
         .about { padding: 100px 0; border-top: 1px solid #111; }
 
         .about-grid {
@@ -426,17 +551,27 @@
 
         .about-avatar {
             width: 100%;
+            max-width: 350px; /* Размер фото */
             aspect-ratio: 1/1;
-            background: radial-gradient(circle at 30% 30%, #1a1a1a, #0A0A0A);
             border-radius: 24px;
+            overflow: hidden;
             border: 1px solid #1a1a1a;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            font-size: 80px;
-            font-weight: 900;
-            color: #fff;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.5s;
+        }
+
+        .avatar-img:hover {
+            transform: scale(1.05);
         }
 
         .about-text p {
@@ -455,72 +590,8 @@
             margin: 24px 0;
         }
 
-        /* ===== КОНТАКТЫ / CTA ===== */
-        .cta { padding: 100px 0; border-top: 1px solid #111; text-align: center; }
-        .cta h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; }
-        .cta p { color: #888; font-weight: 300; font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
-
-        /* ===== ПОДВАЛ ===== */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid #111;
-            text-align: center;
-            color: #444;
-            font-size: 14px;
-        }
-        footer .brand { color: #D4AF37; font-weight: 600; }
-                /* ===== ФИЛЬТР ПРОЕКТОВ ===== */
-                .filter-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: transparent;
-            color: #888;
-            border: 1px solid #333;
-            padding: 8px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background: #D4AF37;
-            color: #0A0A0A;
-            border-color: #D4AF37;
-            font-weight: 600;
-        }
-        
-        .portfolio-item.hide {
-            display: none !important;
-        }
-
-        /* ===== АДАПТИВ ===== */
-        @media (max-width: 992px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-desc { margin-left: auto; margin-right: auto; }
-            .hero-buttons { justify-content: center; }
-            .hero-logo-block { margin-top: 40px; }
-            .about-grid { grid-template-columns: 1fr; text-align: center; }
-            .about-text .quote { border-left: none; border-top: 3px solid #D4AF37; padding-left: 0; padding-top: 16px; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; flex-direction: column; background: #0A0A0A;
-                position: absolute; top: 70px; right: 24px; padding: 24px;
-                border: 1px solid #1a1a1a; border-radius: 12px; gap: 16px; min-width: 180px;
-            }
-            .nav-links.open { display: flex; }
-            .hamburger { display: flex; }
-        }
-                /* ===== ОТЗЫВЫ ===== */
-                .reviews { padding: 100px 0; border-top: 1px solid #111; }
+        /* ===== ОТЗЫВЫ ===== */
+        .reviews { padding: 100px 0; border-top: 1px solid #111; }
         
         .reviews-grid {
             display: grid;
@@ -578,97 +649,111 @@
             color: #888;
             font-size: 13px;
         }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: #D4AF37;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            font-weight: 600;
-        }
-                /* ===== УСЛУГИ ===== */
-                .services { padding: 100px 0; border-top: 1px solid #111; }
-        
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-        }
-        
-        .service-card { 
-            background: #111; 
-            padding: 40px; 
-            border-radius: 16px; 
-            border: 1px solid #1a1a1a; 
-            transition: 0.3s; 
-        }
-        
-        .service-card:hover { 
-            border-color: #D4AF37; 
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 { 
-            font-size: 24px; 
-            margin-bottom: 20px; 
-            color: #fff; 
-        }
-        
-        .service-card ul { 
-            list-style: none; 
-            margin-bottom: 25px; 
-        }
-        
-        .service-card li { 
-            color: #aaa; 
-            margin-bottom: 12px; 
-            padding-left: 20px; 
-            position: relative; 
-        }
-        
-        .service-card li::before { 
-            content: '✓'; 
-            position: absolute; 
-            left: 0; 
-            color: #D4AF37; 
-            font-weight: bold;
-        }
-        
-        .service-result { 
-            color: #D4AF37; 
-            font-weight: 600; 
-            font-size: 14px; 
-            border-top: 1px solid #333; 
-            padding-top: 20px; 
-        }
-            /* ===== СКРИНШОТЫ В КАРТОЧКАХ ПРОЕКТОВ ===== */
-            .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-            transition: transform 0.3s;
+
+        /* ===== КОНТАКТЫ И ФОРМА ===== */
+        .cta { padding: 100px 0; border-top: 1px solid #111; text-align: center; }
+        .cta h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; }
+        .cta p { color: #888; font-weight: 300; font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .portfolio-item:hover .project-img {
-            transform: scale(1.02);
-        }</style>
+        .contact-form {
+            background: #111;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: #0A0A0A;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        .form-note {
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .contact-alt {
+            padding-top: 30px;
+        }
+
+        .contact-alt h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #111;
+            text-align: center;
+            color: #444;
+            font-size: 14px;
+        }
+        footer .brand { color: #D4AF37; font-weight: 600; }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-desc { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-logo-block { margin-top: 40px; }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .about-text .quote { border-left: none; border-top: 3px solid #D4AF37; padding-left: 0; padding-top: 16px; }
+            .contact-container { grid-template-columns: 1fr; }
+            .header-phone { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; flex-direction: column; background: #0A0A0A;
+                position: absolute; top: 70px; right: 24px; padding: 24px;
+                border: 1px solid #1a1a1a; border-radius: 12px; gap: 16px; min-width: 180px;
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+        }
+    </style>
+</head>
+<body>
 
     <!-- ===== ШАПКА ===== -->
     <header>
-                    <!-- Телефон в шапке -->
-                    
         <div class="container header-inner">
             <a href="#" class="logo">OG<span>T</span></a>
-            <a href="tel:+79991234567" class="header-phone">📞 +7 (901) 555-24-03</a>
+            <a href="tel:+79015552403" class="header-phone">📞 +7 (901) 555-24-03</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#skills">Стек</a></li>
-                <li><a href="#portfolio">Проекты</a></li>
+                <li><a href="#flagship">Проекты</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#contact">Контакты</a></li>
@@ -747,20 +832,52 @@
         </div>
     </section>
 
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Что я делаю</span>
+            <h2 class="section-title">Мои <span class="gold">услуги</span></h2>
+            <p class="section-subtitle">Создаю продукты, которые решают задачи бизнеса.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💻 Веб-приложения</h3>
+                    <ul>
+                        <li>Личные кабинеты и дашборды</li>
+                        <li>Парсеры и аналитика данных</li>
+                        <li>AI-интеграции (OpenAI, Gemini)</li>
+                    </ul>
+                    <p class="service-result">Срок: от 1 до 3 недель</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🤖 Telegram-боты</h3>
+                    <ul>
+                        <li>Боты для приема заказов</li>
+                        <li>Автоматизация рассылок</li>
+                        <li>Интеграция с базами данных</li>
+                    </ul>
+                    <p class="service-result">Срок: от 3 до 7 дней</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== ПОРТФОЛИО (ОСНОВНЫЕ) ===== -->
     <section class="portfolio" id="flagship">
         <div class="container">
             <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Ключевые компетенции</span>
             <h2 class="section-title">Флагманские <span class="gold">проекты</span></h2>
-
             <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
-             <!-- Кнопки фильтра -->
-             <div class="filter-buttons">
+            
+            <!-- Кнопки фильтра -->
+            <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProjects('all', this)">Все</button>
                 <button class="filter-btn" onclick="filterProjects('python', this)">Python</button>
                 <button class="filter-btn" onclick="filterProjects('ai', this)">AI/LLM</button>
                 <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
             </div>
+            
             <div class="portfolio-grid">
                 
                 <!-- Флагман 1: Тропа -->
@@ -780,8 +897,6 @@
 
                 <!-- Флагман 2: Green Mall -->
                 <div class="portfolio-item flagship-card" data-tags="python">
-
-                
                     <span class="number">02</span>
                     <h3>Green Mall: BI-Дашборд</h3>
                     <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания убыточных категорий.</p>
@@ -793,12 +908,11 @@
                         <a href="ССЫЛКА_НА_ДЕМО" target="_blank" class="btn-demo">Открыть демо</a>
                         <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" class="btn-code">Код</a>
                     </div>
-                
+                </div>
 
                 <!-- Флагман 3: AI-Chef -->
                 <div class="portfolio-item flagship-card" data-tags="ai python">
                     <img src="chef-recipe.png" alt="Интерфейс AI-Chef" class="project-img">
-
                     <span class="number">03</span>
                     <h3>AI-Chef Assistant</h3>
                     <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
@@ -806,12 +920,10 @@
                     <p><strong>Моя роль:</strong> Проектирование API, интеграция трех разных AI-моделей в один пайплайн.</p>
                     <p><strong>Результат:</strong> Пользователь загружает фото и получает 3 рецепта за 10 секунд.</p>
                     <p class="p-tech">FastAPI • OpenAI API • Vision • TTS</p>
-                                       
-                                       
-                                        <divy: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                                            <a href="https://ai-kylinar.ai.studio" target="_blank" class="btn-demo">Открыть демо</a>
-                                            <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Код</a>
-                                        </div>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai-kylinar.ai.studio" target="_blank" class="btn-demo">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" class="btn-code">Код</a>
+                    </div>
                 </div>
 
                 <!-- Флагман 4: Транскрибатор -->
@@ -829,37 +941,38 @@
             </div>
         </div>
     </section>
-        <!-- ===== ПРОЦЕСС РАБОТЫ ===== -->
-        <section class="process" id="process">
-            <div class="container">
-                <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Прозрачность</span>
-                <h2 class="section-title">Как я <span class="gold">работаю</span></h2>
-                <p class="section-subtitle">От первого сообщения до готового продукта.</p>
-    
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h3>Бриф</h3>
-                        <p>Обсуждаем задачу, цели и сроки. Я задаю вопросы, чтобы понять суть бизнеса.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h3>Архитектура</h3>
-                        <p>Подбираю стек технологий и продумываю структуру. Согласовываем план.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h3>Разработка</h3>
-                        <p>Пишу чистый код. Показываю промежуточные результаты и вношу правки.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h3>Деплой</h3>
-                        <p>Запускаю проект на сервере, настраиваю и передаю вам все доступы.</p>
-                    </div>
+
+    <!-- ===== ПРОЦЕСС РАБОТЫ ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Прозрачность</span>
+            <h2 class="section-title">Как я <span class="gold">работаю</span></h2>
+            <p class="section-subtitle">От первого сообщения до готового продукта.</p>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Бриф</h3>
+                    <p>Обсуждаем задачу, цели и сроки. Я задаю вопросы, чтобы понять суть бизнеса.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Архитектура</h3>
+                    <p>Подбираю стек технологий и продумываю структуру. Согласовываем план.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Разработка</h3>
+                    <p>Пишу чистый код. Показываю промежуточные результаты и вношу правки.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Деплой</h3>
+                    <p>Запускаю проект на сервере, настраиваю и передаю вам все доступы.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- ===== ПОРТФОЛИО (ДОПОЛНИТЕЛЬНЫЕ) ===== -->
     <section class="portfolio" id="portfolio" style="padding-top: 0;">
@@ -940,151 +1053,81 @@
         </div>
     </section>
 
-    <!-- ===== КОНТАКТЫ ===== -->
-        <!-- ===== ОТЗЫВЫ ===== -->
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Доверие</span>
-                <h2 class="section-title">Что обо мне <span class="gold">говорят</span></h2>
-                <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
-    
-                <div class="reviews-grid">
-                    <!-- Отзыв 1 -->
-                    <div class="review-card">
-                        <div class="quote-icon">“</div>
-                        <p class="review-text">
-                            Ольга проявила себя как очень усидчивый и внимательный разработчик. Она не боится сложных задач (например, настройка Celery и локальных нейросетей) и всегда доводит проект до конца. Отличная база для Junior-разработчика.
-                        </p>
-                        <div class="review-author">
-                            <div class="author-info">
-                                <strong>Иван Иванов</strong>
-                                <span>Куратор курса по Python</span>
-                            </div>
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <span style="color:#D4AF37; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Доверие</span>
+            <h2 class="section-title">Что обо мне <span class="gold">говорят</span></h2>
+            <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
+
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        Ольга проявила себя как очень усидчивый и внимательный разработчик. Она не боится сложных задач (например, настройка Celery и локальных нейросетей) и всегда доводит проект до конца. Отличная база для Junior-разработчика.
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Иван Иванов</strong>
+                            <span>Куратор курса по Python</span>
                         </div>
                     </div>
-    
-                    <!-- Отзыв 2 (Можете добавить позже) -->
-                    <div class="review-card">
-                        <div class="quote-icon">“</div>
-                        <p class="review-text">
-                            С Ольгой было легко работать в команде. Она взяла на себя самую сложную часть с бэкендом, пока мы делали фронтенд. Код всегда чистый, а коммуникация — понятной.
-                        </p>
-                        <div class="review-author">
-                            <div class="author-info">
-                                <strong>Анна Смирнова</strong>
-                                <span>Frontend-разработчик</span>
-                            </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        С Ольгой было легко работать в команде. Она взяла на себя самую сложную часть с бэкендом, пока мы делали фронтенд. Код всегда чистый, а коммуникация — понятной.
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Анна Смирнова</strong>
+                            <span>Frontend-разработчик</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-       
+        </div>
     </section>
 
-    <!-- ===== КОНТАКТЫ ===== -->
-        <!-- ===== КОНТАКТЫ ===== -->
-        <    <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
-        <section class="cta" id="contact">
-            <div class="container">
-                <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
-                <p>Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
-                
-                <div class="contact-container">
-                    <!-- Форма -->
-                    <form action="https://formspree.io/f/xqpqkqoj" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" rows="4" placeholder="Кратко опишите задачу (например: нужен Telegram-бот для приема заказов)" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-gold"
-                        /* ===== СТИЛИ ДЛЯ ФОРМЫ ===== */
-                        .contact-container {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr;
-                            gap: 40px;
-                            text-align: left;
-                            max-width: 900px;
-                            margin: 0 auto;
-                        }
-                
-                        .contact-form {
-                            background: #111;
-                            padding: 30px;
-                            border-radius: 16px;
-                            border: 1px solid #1a1a1a;
-                        }
-                
-                        .form-group {
-                            margin-bottom: 15px;
-                        }
-                
-                        .contact-form input,
-                        .contact-form textarea {
-                            width: 100%;
-                            padding: 15px;
-                            background: #0A0A0A;
-                            border: 1px solid #333;
-                            border-radius: 8px;
-                            color: #fff;
-                            font-family: 'Inter', sans-serif;
-                            font-size: 15px;
-                            transition: border-color 0.3s;
-                        }
-                
-                        .contact-form input:focus,
-                        .contact-form textarea:focus {
-                            outline: none;
-                            border-color: #D4AF37;
-                        }
-                
-                        .form-note {
-                            text-align: center;
-                            color: #555;
-                            font-size: 12px;
-                            margin-top: 15px;
-                        }
-                
-                        .contact-alt {
-                            padding-top: 30px;
-                        }
-                
-                        .contact-alt h3 {
-                            color: #fff;
-                            margin-bottom: 20px;
-                            font-size: 20px;
-                        }
-                
-                        @media (max-width: 768px) {
-                            .contact-container {
-                                grid-template-columns: 1fr;
-                            }
-                        }
-                         style="width: 100%;">Отправить заявку</button>
-                        <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
-                    </form>
-    
-                    <!-- Альтернативные контакты -->
-                    <div class="contact-alt">
-                        <h3>Или напишите напрямую:</h3>
-                        <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline" style="margin-bottom: 15px; display: block;">Написать в Telegram</a>
-                        <a href="resume.pdf" download class="btn-outline" style="display: block;">Скачать резюме (PDF)</a>
-                        
-                        <div style="margin-top: 30px; color: #888; font-size: 15px;">
-                            <p>📍 <strong>Город:</strong> Москва / Удаленно</p>
-                            <p>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></p>
-                        </div>
+    <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
+            <p>Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
+            
+            <div class="contact-container">
+                <!-- Форма -->
+                <form action="https://formspree.io/f/xqpqkqoj" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Кратко опишите задачу (например: нужен Telegram-бот для приема заказов)" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Отправить заявку</button>
+                    <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
+                </form>
+
+                <!-- Альтернативные контакты -->
+                <div class="contact-alt">
+                    <h3>Или напишите напрямую:</h3>
+                    <a href="https://t.me/ваш_ник" target="_blank" class="btn-outline" style="margin-bottom: 15px; display: block;">Написать в Telegram</a>
+                    <a href="resume.pdf" download class="btn-outline" style="display: block;">Скачать резюме (PDF)</a>
+                    
+                    <div style="margin-top: 30px; color: #888; font-size: 15px;">
+                        <p>📍 <strong>Город:</strong> Москва / Удаленно</p>
+                        <p>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color:#D4AF37; text-decoration: none;">olgatyahkorob@mail.ru</a></p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-    
+        </div>
+    </section>
 
     <!-- ===== ПОДВАЛ ===== -->
     <footer>
@@ -1106,17 +1149,14 @@
                 document.getElementById('navLinks').classList.remove('open');
             });
         });
-                // Логика фильтрации проектов
-                function filterProjects(tag, btn) {
-            // 1. Убираем класс "active" у всех кнопок и добавляем нажатой
+
+        // Логика фильтрации проектов
+        function filterProjects(tag, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // 2. Показываем или скрываем карточки
             document.querySelectorAll('.portfolio-item').forEach(item => {
                 const tags = item.getAttribute('data-tags');
-                
-                // Если выбрано "Все" или тег совпадает с карточкой
                 if (tag === 'all' || (tags && tags.includes(tag))) {
                     item.classList.remove('hide');
                 } else {
@@ -1127,4 +1167,4 @@
     </script>
 
 </body>
-</html>s
+</html>
