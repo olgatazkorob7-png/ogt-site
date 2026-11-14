@@ -178,6 +178,7 @@
         .service-card {
             background: #172238; padding: 40px; border-radius: 16px;
             border: 1px solid #26333E; transition: 0.3s;
+            display: flex; flex-direction: column;
         }
         .service-card:hover { border-color: #38D6A0; transform: translateY(-5px); }
         .service-card h3 { font-size: 24px; margin-bottom: 20px; color: #fff; }
@@ -191,7 +192,7 @@
         }
         
         .btn-service {
-            display: block; text-align: center; margin-top: 15px; padding: 10px;
+            display: block; text-align: center; margin-top: auto; padding: 10px;
             background: transparent; color: #38D6A0; border: 1px solid #38D6A0;
             border-radius: 6px; text-decoration: none; font-size: 14px; transition: all 0.3s;
         }
@@ -520,4 +521,401 @@
                         <li>Автоматическая отчетность</li>
                     </ul>
                     <p class="service-result">Срок: от 3 до 7 дней</p>
-                    <p class="service-price">Стоимость: от 25 000
+                    <p class="service-price">Стоимость: от 25 000 ₽</p>
+                    <a href="#contact" class="btn-service">Получить оценку</a>
+                </div>
+
+                <!-- Услуга 3 -->
+                <div class="service-card">
+                    <h3>💻 AI-приложения под ключ</h3>
+                    <p style="color: #aaa; margin-bottom: 15px;">Разработка веб-сервисов с искусственным интеллектом, личными кабинетами и аналитикой.</p>
+                    <ul>
+                        <li>Backend на FastAPI + базы данных</li>
+                        <li>Интеграция OpenAI, Gemini, Whisper</li>
+                        <li>Современный интерфейс и деплой</li>
+                    </ul>
+                    <p class="service-result">Срок: от 3 до 5 недель</p>
+                    <p class="service-price">Стоимость: от 70 000 ₽</p>
+                    <a href="#contact" class="btn-service">Получить оценку</a>
+                </div>
+
+                <!-- Услуга 4 -->
+                <div class="service-card">
+                    <h3>📊 Аналитика и данные</h3>
+                    <p style="color: #aaa; margin-bottom: 15px;">Превращаю хаос данных в понятные дашборды и отчеты для принятия решений.</p>
+                    <ul>
+                        <li>Написание сложных SQL-запросов</li>
+                        <li>Построение BI-дашбордов</li>
+                        <li>Сбор и парсинг данных</li>
+                    </ul>
+                    <p class="service-result">Срок: от 3 до 5 дней</p>
+                    <p class="service-price">Стоимость: от 20 000 ₽</p>
+                    <a href="#contact" class="btn-service">Получить оценку</a>
+                </div>
+
+                <!-- Блок стоимости -->
+                <div style="background: #172238; padding: 20px; border-radius: 12px; border: 1px dashed #38D6A0; margin-top: 20px; width: 100%; text-align: center; grid-column: 1 / -1;">
+                    <p style="color: #38D6A0; font-weight: 600; margin-bottom: 5px;">Как формируется стоимость?</p>
+                    <p style="color: #aaa; font-size: 14px;">AI-консультант — оценка после анализа базы знаний. <br>Автоматизация — оценка после обсуждения задачи. <br>Индивидуальная разработка — оценка по техническому заданию.</p>
+                </div>
+                
+                <!-- Сноска про сроки -->
+                <p style="color: #666; font-size: 13px; text-align: center; margin-top: 20px; width: 100%; grid-column: 1 / -1;">
+                    * Указаны ориентировочные сроки для типовых проектов. Точный срок зависит от сложности задачи и согласованного объёма работ.
+                </p>
+            </div> <!-- Закрытие services-grid -->
+        </div> <!-- Закрытие container -->
+    </section> <!-- Закрытие services -->
+
+    <!-- ===== ПОРТФОЛИО (ОСНОВНЫЕ) ===== -->
+    <section class="portfolio" id="flagship">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Ключевые компетенции</span>
+            <h2 class="section-title">Флагманские <span class="gold">проекты</span></h2>
+            <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all', this)">Все</button>
+                <button class="filter-btn" onclick="filterProjects('python', this)">Python</button>
+                <button class="filter-btn" onclick="filterProjects('ai', this)">AI/LLM</button>
+                <button class="filter-btn" onclick="filterProjects('frontend', this)">Frontend</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Флагман 1: Тропа -->
+                <div class="portfolio-item flagship-card" data-tags="ai python">
+                    <span class="number">01</span>
+                    <h3>Тропа: AI-Консультант</h3>
+                    <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
+                    <p><strong>Решение:</strong> AI-ассистент на базе Google Gemini, отвечающий строго по базе знаний (RAG).</p>
+                    <p><strong>Моя роль:</strong> Разработка бэкенда и настройка RAG-системы для снижения риска неподтверждённых ответов.</p>
+                    <p><strong>Результат:</strong> Снижение нагрузки на поддержку, ответы 24/7.</p>
+                    <p class="p-tech">Google AI Studio • Gemini API • RAG</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2" target="_blank" rel="noopener noreferrer" class="btn-demo">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Флагман 2: Green Mall -->
+                <div class="portfolio-item flagship-card" data-tags="python">
+                    <span class="number">02</span>
+                    <h3>Green Mall: BI-Дашборд</h3>
+                    <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания убыточных категорий.</p>
+                    <p><strong>Решение:</strong> Расширение BI-системы: SQL RPC-функция в Supabase для анализа выручки.</p>
+                    <p><strong>Моя роль:</strong> Написание сложных SQL-запросов и создание визуализации на дашборде.</p>
+                    <p><strong>Результат:</strong> Наглядный Multi-line график для принятия решений на основе цифр.</p>
+                    <p class="p-tech">SQL • Supabase • PostgreSQL • Google AI Studio</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai.studio/apps/16ed98c8-abc1-4ed5-9df1-42014d011612" target="_blank" rel="noopener noreferrer" class="btn-demo">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/green-mall-bi" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Флагман 3: AI-Chef -->
+                <div class="portfolio-item flagship-card" data-tags="ai python">
+                    <img src="chef-recipe.png" alt="Интерфейс AI-Chef" class="project-img">
+                    <span class="number">03</span>
+                    <h3>AI-Chef Assistant</h3>
+                    <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
+                    <p><strong>Решение:</strong> Бэкенд с распознаванием фото (Vision), генерацией рецептов (GPT-4o) и озвучкой (TTS).</p>
+                    <p><strong>Моя роль:</strong> Проектирование API, интеграция трех разных AI-моделей в один пайплайн.</p>
+                    <p><strong>Результат:</strong> Пользователь загружает фото и получает 3 рецепта за 10 секунд.</p>
+                    <p class="p-tech">FastAPI • OpenAI API • Vision • TTS</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai-kylinar.ai.studio" target="_blank" rel="noopener noreferrer" class="btn-demo">Открыть демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/ai-chef-assistant" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
+                    </div>
+                </div>
+
+                <!-- Флагман 4: Транскрибатор -->
+                <div class="portfolio-item flagship-card" data-tags="python">
+                    <span class="number">04</span>
+                    <h3>AI-Транскрибатор видео</h3>
+                    <p><strong>Боль:</strong> Ручная расшифровка видео занимает часы, платные API стоят дорого.</p>
+                    <p><strong>Решение:</strong> Микросервис на Celery + Redis для фоновой обработки. Локальная модель faster-whisper.</p>
+                    <p><strong>Моя роль:</strong> Настройка очередей задач, работа с фоновыми процессами и локальными нейросетями.</p>
+                    <p><strong>Результат:</strong> Автоматическая транскрибация без затрат на API и блокировки сервера.</p>
+                    <p class="p-tech">Python • FastAPI • Celery • Redis • Whisper</p>
+                    <a href="https://github.com/olgatazkorob7-png/video-transcriber" target="_blank" rel="noopener noreferrer" class="btn-code">Смотреть код</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРОЦЕСС РАБОТЫ ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Прозрачность</span>
+            <h2 class="section-title">Как я <span class="gold">работаю</span></h2>
+            <p class="section-subtitle">От первого сообщения до готового продукта.</p>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Бриф</h3>
+                    <p>Обсуждаем задачу, цели и сроки. Я задаю вопросы, чтобы понять суть бизнеса.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Архитектура</h3>
+                    <p>Подбираю стек технологий и продумываю структуру. Согласовываем план.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Разработка</h3>
+                    <p>Пишу чистый код. Показываю промежуточные результаты и вношу правки.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Деплой</h3>
+                    <p>Запускаю проект на сервере, настраиваю и передаю вам все доступы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПОРТФОЛИО (ДОПОЛНИТЕЛЬНЫЕ) ===== -->
+    <section class="portfolio" id="portfolio" style="padding-top: 0;">
+        <div class="container">
+            <span style="color:#888; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Дополнительный опыт</span>
+            <h2 class="section-title" style="font-size: 36px;">Другие <span class="gold">работы</span></h2>
+            <p class="section-subtitle">Проекты, демонстрирующие широкий стек технологий и разносторонние навыки.</p>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item extra-card" data-tags="ai frontend">
+                    <h3>AI-Content Generator</h3>
+                    <p>Модульная система из 6 генераторов B2B-контента на TypeScript.</p>
+                    <p class="p-tech">Next.js • TypeScript • OpenAI API</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://ai-kontent-meiker-87.ai.studio" target="_blank" rel="noopener noreferrer" class="btn-demo" style="padding: 6px 12px; font-size: 12px;">Демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/ai-content-generator" target="_blank" rel="noopener noreferrer" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item extra-card" data-tags="ai frontend">
+                    <h3>Кофейный сомелье</h3>
+                    <p>AI-консультант на Next.js с динамической базой из Google Sheets.</p>
+                    <p class="p-tech">Next.js 15 • React • TypeScript • Gemini API</p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="https://coffee-sommelier-2-1.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-demo" style="padding: 6px 12px; font-size: 12px;">Демо</a>
+                        <a href="https://github.com/olgatazkorob7-png/coffee-sommelier-2" target="_blank" rel="noopener noreferrer" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item extra-card">
+                    <h3>Командный планировщик (TG Bot)</h3>
+                    <p>Асинхронный бот для управления задачами и суммаризации чатов.</p>
+                    <p class="p-tech">Python • aiogram • OpenAI API</p>
+                    <a href="https://github.com/olgatazkorob7-png" target="_blank" rel="noopener noreferrer" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
+                </div>
+
+                <div class="portfolio-item extra-card" data-tags="frontend">
+                    <h3>TrailCamp CRM</h3>
+                    <p>Веб-приложение для управления лидами с ролевой моделью доступа.</p>
+                    <p class="p-tech">HTML5 • Tailwind CSS • Vanilla JS</p>
+                    <a href="https://github.com/olgatazkorob7-png/trailcamp-crm" target="_blank" rel="noopener noreferrer" class="btn-code" style="padding: 6px 12px; font-size: 12px;">Код</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ОБО МНЕ ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Обо мне</span>
+            <h2 class="section-title">Привет, я <span class="gold">Ольга</span></h2>
+            <div class="about-grid">
+                <div class="about-avatar">
+                    <img src="photo.jpg" alt="Ольга Тяжкороб" class="avatar-img">
+                </div>
+
+                <div class="about-text">
+                    <p>
+                        Привет! Меня зовут Ольга. Я Python-разработчик и AI-инженер. Мое главное удовольствие в работе — это момент, когда сложный код наконец-то запускается и начинает приносить пользу. 
+                    </p>
+                    <p style="color: #ddd; font-weight: 500; margin-top: 20px;">
+                        Мой подход — помочь вам пройти весь путь: от анализа бизнес-процесса и выбора архитектуры до запуска, тестирования и передачи проекта. Моя цель — сделать решение понятным, поддерживаемым и удобным для дальнейшего развития.
+                    </p>
+                    <div class="quote">
+                        «Для меня хороший код — это не просто набор символов, а инструмент, который решает конкретную боль бизнеса.»
+                    </div>
+                    <p>
+                        Я специализируюсь на создании AI-ассистентов и веб-приложений. В своем стеке я делаю ставку на современные инструменты: FastAPI для быстрых API, Celery для фоновых задач и Docker для стабильного деплоя. Отдельное место в моем сердце занимают языковые модели — от GPT-4 до локальных Whisper и Gemini.
+                    </p>
+                    <p style="margin-top: 15px; color: #38D6A0; font-weight: 600;">
+                        Открыта к интересным задачам, где можно применить Python, поработать с AI и создать что-то действительно крутое.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Доверие</span>
+            <h2 class="section-title">Что обо мне <span class="gold">говорят</span></h2>
+            <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        «Ольга проявила внимательность к архитектуре проекта, уверенно работала с Celery и локальными нейросетями, последовательно решала технические задачи и доводила работу до результата.»
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Иван Иванов</strong>
+                            <span>Куратор курса по Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">
+                        С Ольгой было легко работать в команде. Она взяла на себя самую сложную часть с бэкендом, пока мы делали фронтенд. Код всегда чистый, а коммуникация — понятной.
+                    </p>
+                    <div class="review-author">
+                        <div class="author-info">
+                            <strong>Анна Смирнова</strong>
+                            <span>Frontend-разработчик</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Вопросы</span>
+            <h2 class="section-title">Часто задаваемые <span class="gold">вопросы</span></h2>
+            <p class="section-subtitle">Ответы на то, что обычно интересует заказчиков.</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Сколько стоит разработка? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Стоимость зависит от сложности задачи, объёма функционала и сроков. Я не беру фиксированную цену «из воздуха». Сначала мы обсуждаем задачу, я составляю техническое задание и план, после чего называю точную стоимость. Оценка проекта — бесплатно.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Какие сроки выполнения? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Для простого Telegram-бота или AI-консультанта — от 1 до 2 недель. Для сложных веб-приложений с базами данных и интеграциями — от 3 до 5 недель. Сроки всегда фиксируются в договоре перед началом работ.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Что нужно от меня для старта? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Минимум: описание задачи, какие функции должны быть, и доступ к вашим документам (если нужен AI-консультант). Если у вас нет готового ТЗ — не страшно, я помогу его составить на этапе анализа.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Вы работаете по договору? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">
+                        <p>Да. Я работаю официально или как самозанятая (по договору оказания услуг). Вы получаете закрывающие документы, а ваши данные защищены. После сдачи проекта я обеспечиваю техническую поддержку.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
+            <p>Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
+            
+            <div class="contact-container">
+                <form action="https://formspree.io/f/xqpqkqoj" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="budget">
+                            <option value="" disabled selected>Ориентировочный бюджет (необязательно)</option>
+                            <option value="до 15 000">До 15 000 ₽</option>
+                            <option value="15 000 - 30 000">15 000 – 30 000 ₽</option>
+                            <option value="30 000 - 50 000">30 000 – 50 000 ₽</option>
+                            <option value="50 000+">Более 50 000 ₽</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Кратко опишите задачу" required></textarea>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;">
+                        <input type="checkbox" name="privacy" id="privacy" required style="width: auto; margin-top: 4px; accent-color: #38D6A0;">
+                        <label for="privacy" style="color: #888; font-size: 13px; cursor: pointer;">
+                            Я согласен(на) на обработку персональных данных
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Отправить заявку</button>
+                    <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
+                </form>
+
+                <div class="contact-alt">
+                    <h3>Или напишите напрямую:</h3>
+                    <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-bottom: 15px; display: block;">Написать в Telegram</a>
+                    <a href="resume.pdf" download class="btn-outline" style="display: block;">Скачать резюме (PDF)</a>
+                    
+                    <div style="margin-top: 30px; color: #888; font-size: 15px;">
+                        <p>📍 <strong>Город:</strong> Москва / Удаленно</p>
+                        <p>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color: #38D6A0; text-decoration: none;">olgatyahkorob@mail.ru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 <span class="brand">O.G.T. Tech</span> — AI & Data Solutions
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        function filterProjects(tag, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                const tags = item.getAttribute('data-tags');
+                if (tag === 'all' || (tags && tags.includes(tag))) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        }
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
+              
