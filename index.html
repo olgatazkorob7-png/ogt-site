@@ -36,13 +36,6 @@
   <noscript><div><img src="https://mc.yandex.ru/watch/114259385" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
   <style>
-    /* ===== РЕЗУЛЬТАТ ===== */
-    .deliverables { padding: 100px 0; border-top: 1px solid #FFFFFF; background: #0B1020; }
-    .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
-    .deliverable-card { display: flex; gap: 15px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; align-items: flex-start; }
-    .deliverable-card .check-icon { font-size: 20px; }
-    .deliverable-card p { color: #ddd; font-size: 15px; line-height: 1.5; margin: 0; }
-
     /* ===== СБРОС И БАЗА ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -90,8 +83,8 @@
     .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; text-decoration: none; color: #2D3436; }
     .logo span { color: #38D6A0; }
     
-    .header-phone { color: #2D3436; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s; white-space: nowrap; margin-left: 20px; margin-right: auto; }
-    .header-phone:hover { color: #38D6A0; }
+    .header-tg { color: #2D3436; text-decoration: none; font-weight: 600; font-size: 15px; transition: color 0.3s; white-space: nowrap; margin-left: 20px; margin-right: auto; display: flex; align-items: center; gap: 5px; }
+    .header-tg:hover { color: #38D6A0; }
 
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a { color: #636E72; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; text-transform: uppercase; letter-spacing: 1px; }
@@ -147,17 +140,6 @@
     .for-whom-card h3 { font-size: 20px; margin-bottom: 15px; color: #2D3436; }
     .for-whom-card p { color: #636E72; font-size: 15px; line-height: 1.6; }
 
-    /* ===== НАВЫКИ ===== */
-    .skills { padding: 100px 0; border-top: 1px solid #FFFFFF; }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .skill-card { background: #FFFFFF; padding: 40px 30px; border-radius: 16px; border: 1px solid #E2E8F0; transition: all 0.4s; }
-    .skill-card:hover { border-color: #38D6A0; transform: translateY(-8px); }
-    .skill-card .icon { font-size: 40px; margin-bottom: 16px; display: block; }
-    .skill-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #2D3436; }
-    .skill-card p { color: #636E72; font-weight: 300; font-size: 15px; }
-    .skill-card .tech-list { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-card .tech-list span { background: #0B1020; color: #38D6A0; font-size: 12px; padding: 4px 10px; border-radius: 4px; font-family: monospace; }
-
     /* ===== УСЛУГИ ===== */
     .services { padding: 100px 0; border-top: 1px solid #FFFFFF; }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -206,6 +188,24 @@
     .step-number { width: 40px; height: 40px; background: #38D6A0; color: #0B1020; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; margin-bottom: 20px; }
     .process-step h3 { font-size: 20px; margin-bottom: 10px; color: #2D3436; }
     .process-step p { color: #636E72; font-size: 14px; line-height: 1.5; }
+
+    /* ===== РЕЗУЛЬТАТ ===== */
+    .deliverables { padding: 100px 0; border-top: 1px solid #FFFFFF; background: #0B1020; }
+    .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+    .deliverable-card { display: flex; gap: 15px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; align-items: flex-start; }
+    .deliverable-card .check-icon { font-size: 20px; }
+    .deliverable-card p { color: #ddd; font-size: 15px; line-height: 1.5; margin: 0; }
+
+    /* ===== НАВЫКИ ===== */
+    .skills { padding: 100px 0; border-top: 1px solid #FFFFFF; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .skill-card { background: #FFFFFF; padding: 40px 30px; border-radius: 16px; border: 1px solid #E2E8F0; transition: all 0.4s; }
+    .skill-card:hover { border-color: #38D6A0; transform: translateY(-8px); }
+    .skill-card .icon { font-size: 40px; margin-bottom: 16px; display: block; }
+    .skill-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #2D3436; }
+    .skill-card p { color: #636E72; font-weight: 300; font-size: 15px; }
+    .skill-card .tech-list { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-card .tech-list span { background: #0B1020; color: #38D6A0; font-size: 12px; padding: 4px 10px; border-radius: 4px; font-family: monospace; }
 
     /* ===== ОБО МНЕ ===== */
     .about { padding: 100px 0; border-top: 1px solid #FFFFFF; }
@@ -273,7 +273,7 @@
         .about-grid { grid-template-columns: 1fr; text-align: center; }
         .about-text .quote { border-left: none; border-top: 3px solid #38D6A0; padding-left: 0; padding-top: 16px; }
         .contact-container { grid-template-columns: 1fr; }
-        .header-phone { display: none; }
+        .header-tg { display: none; }
     }
   </style>
 </head>
@@ -283,7 +283,9 @@
     <header>
         <div class="container header-inner">
             <a href="#" class="logo">OG<span>T</span></a>
-            <a href="tel:+79015552403" class="header-phone">📞 +7 (901) 555-24-03</a>
+            <a href="https://t.me/olga_taz" target="_blank" class="header-tg">
+                <span style="font-size: 18px;">✈️</span> Написать в Telegram
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#skills">Стек</a></li>
                 <li><a href="#flagship">Проекты</a></li>
@@ -393,41 +395,6 @@
         </div>
     </section>
 
-    <!-- ===== НАВЫКИ ===== -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Экспертиза</span>
-            <h2 class="section-title">Мой <span class="gold">стек</span></h2>
-            <p class="section-subtitle">Инструменты, которыми я решаю задачи.</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <span class="icon">⚙️</span>
-                    <h3>Backend & API</h3>
-                    <p>Создание надежных API, микросервисов и фоновых задач для высоких нагрузок.</p>
-                    <div class="tech-list"><span>FastAPI</span><span>Celery</span><span>Redis</span></div>
-                </div>
-                <div class="skill-card">
-                    <span class="icon">🤖</span>
-                    <h3>AI & LLM</h3>
-                    <p>Интеграция языковых моделей, работа с локальными нейросетями и компьютерным зрением.</p>
-                    <div class="tech-list"><span>OpenAI</span><span>Whisper</span><span>faster-whisper</span><span>Gemini</span></div>
-                </div>
-                <div class="skill-card">
-                    <span class="icon">📊</span>
-                    <h3>Data & Analytics</h3>
-                    <p>Сбор, очистка, анализ данных и построение наглядных дашбордов.</p>
-                    <div class="tech-list"><span>Pandas</span><span>Matplotlib</span><span>SQL</span></div>
-                </div>
-                <div class="skill-card">
-                    <span class="icon">🚀</span>
-                    <h3>Infrastructure</h3>
-                    <p>Контейнеризация, деплой и настройка окружения для стабильной работы сервисов.</p>
-                    <div class="tech-list"><span>Docker</span><span>Git</span><span>Linux</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== УСЛУГИ ===== -->
     <section class="services" id="services">
         <div class="container">
@@ -510,8 +477,8 @@
     <section class="portfolio" id="flagship">
         <div class="container">
             <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Ключевые компетенции</span>
-            <h2 class="section-title">Флагманские <span class="gold">проекты</span></h2>
-            <p class="section-subtitle">Сложные архитектурные решения, интеграция AI и реальная польза для бизнеса.</p>
+            <h2 class="section-title">Мои <span class="gold">проекты и прототипы</span></h2>
+            <p class="section-subtitle">Здесь собраны мои лучшие работы: от исследовательских прототипов до сложных архитектурных решений с интеграцией AI.</p>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProjects('all', this)">Все</button>
@@ -529,7 +496,7 @@
                     <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
                     <p><strong>Решение:</strong> AI-ассистент на базе Google Gemini, отвечающий строго по базе знаний (RAG).</p>
                     <p><strong>Моя роль:</strong> Разработка бэкенда и настройка RAG-системы для снижения риска неподтверждённых ответов.</p>
-                    <p><strong>Результат:</strong> Снижение нагрузки на поддержку, ответы 24/7.</p>
+                    <p><strong>Результат:</strong> Автоматизирует типовые обращения и даёт ответ клиенту мгновенно, без ожидания менеджера.</p>
                     <p class="p-tech">Google AI Studio • Gemini API • RAG</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
                         <a href="https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2" target="_blank" rel="noopener noreferrer" class="btn-demo">Открыть демо</a>
@@ -695,6 +662,41 @@
         </div>
     </section>
 
+    <!-- ===== НАВЫКИ (Стек) ===== -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <span style="color: #38D6A0; font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px;">Экспертиза</span>
+            <h2 class="section-title">Мой <span class="gold">стек</span></h2>
+            <p class="section-subtitle">Инструменты, которыми я решаю задачи.</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="icon">⚙️</span>
+                    <h3>Backend & API</h3>
+                    <p>Создание надежных API, микросервисов и фоновых задач для высоких нагрузок.</p>
+                    <div class="tech-list"><span>FastAPI</span><span>Celery</span><span>Redis</span></div>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">🤖</span>
+                    <h3>AI & LLM</h3>
+                    <p>Интеграция языковых моделей, работа с локальными нейросетями и компьютерным зрением.</p>
+                    <div class="tech-list"><span>OpenAI</span><span>Whisper</span><span>faster-whisper</span><span>Gemini</span></div>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">📊</span>
+                    <h3>Data & Analytics</h3>
+                    <p>Сбор, очистка, анализ данных и построение наглядных дашбордов.</p>
+                    <div class="tech-list"><span>Pandas</span><span>Matplotlib</span><span>SQL</span></div>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">🚀</span>
+                    <h3>Infrastructure</h3>
+                    <p>Контейнеризация, деплой и настройка окружения для стабильной работы сервисов.</p>
+                    <div class="tech-list"><span>Docker</span><span>Git</span><span>Linux</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== ОБО МНЕ ===== -->
     <section class="about" id="about">
         <div class="container">
@@ -734,19 +736,6 @@
             <p class="section-subtitle">Мнения людей, с которыми я работала над проектами.</p>
 
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="quote-icon">“</div>
-                    <p class="review-text">
-                        «Ольга проявила внимательность к архитектуре проекта, уверенно работала с Celery и локальными нейросетями, последовательно решала технические задачи и доводила работу до результата.»
-                    </p>
-                    <div class="review-author">
-                        <div class="author-info">
-                            <strong>Иван Иванов</strong>
-                            <span>Куратор курса по Python</span>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="review-card">
                     <div class="quote-icon">“</div>
                     <p class="review-text">
