@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="ru">
-      <!-- Open Graph для красивых ссылок в Telegram и соцсетях -->
+<head>
+  <!-- Кодировка и адаптивность -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph для красивых ссылок в Telegram -->
   <meta property="og:title" content="AI-ассистенты и Telegram-боты для бизнеса под ключ" />
-  <meta property="og:description" content="Сокращаю ручную работу, ускоряю обработку заявок. MVP от 7 дней. Первая оценка задачи — бесплатно." />
+  <meta property="og:description" content="Сокращаю ручную работу и ускоряю обработку заявок. MVP от 7 дней. Первая оценка задачи — бесплатно." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://olgatazkorob7-png.github.io/ogt-site/" />
-  <meta property="og:image" content="https://olgatazkorob7-png.github.io/ogt-site/1.jpg" /> <!-- Замените 1.jpg на вашу самую крутую картинку, если нужно -->
-  
-  <!-- Иконка сайта (Favicon) -->
-  <link rel="icon" type="image/png" href="logo.png" /> <!-- Если logo.png нет, можно пока удалить эту строку -->
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Python-разработчик и AI-инженер. Создаю веб-приложения, Telegram-ботов и AI-сервисы. Портфолио и кейсы.">
-    
-    <title>Ольга Тяжкороб — Python & AI Разработчик</title>
-    
-    
-    
-    <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <meta property="og:image" content="https://olgatazkorob7-png.github.io/ogt-site/1.jpg" />
 
+  <!-- Иконка сайта -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- SEO Заголовок и описание -->
+  <title>AI-ассистенты и Telegram-боты для бизнеса | Ольга Тязкороб</title>
+  <meta name="description" content="Разрабатываю AI-ассистентов, Telegram-ботов и автоматизацию для бизнеса под ключ. Сокращаю ручную работу, ускоряю обработку заявок. MVP от 7–21 дня." />
+
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ⬇️ ВСТАВЬТЕ СЮДА КОД ЯНДЕКС.МЕТРИКИ ⬇️ -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114259385', 'ym');
+
+    ym(114259385, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114259385" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  <!-- ⬆️ КОНЕЦ КОДА МЕТРИКИ ⬆️ -->
+
+  <!-- Ваши стили (оставляем как есть)
     <style>
+   
+/* Принудительно делаем все поля формы белыми с темным текстом */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Чтобы подсказки внутри полей (placeholder) тоже были видны */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888888 !important;
+}
+
+/* Чтобы выпадающий список (бюджет) был читаемым */
+.contact-form select option {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+    
         /* ===== СБРОС И БАЗА ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -940,95 +979,50 @@
     </section>
 
     <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
-            <p>Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
-            
-            <div class="contact-container">
-                <form action="https://formspree.io/f/xqpqkqoj" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
-                    </div>
-                    <div class="form-group">
-                        <select name="budget">
-                            <option value="" disabled selected>Ориентировочный бюджет (необязательно)</option>
-                            <option value="до 15 000">До 15 000 ₽</option>
-                            <option value="15 000 - 30 000">15 000 – 30 000 ₽</option>
-                            <option value="30 000 - 50 000">30 000 – 50 000 ₽</option>
-                            <option value="50 000+">Более 50 000 ₽</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="4" placeholder="Кратко опишите задачу" required></textarea>
-                    </div>
-                    <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;">
-                        <input type="checkbox" name="privacy" id="privacy" required style="width: auto; margin-top: 4px; accent-color: #38D6A0;">
-                        <label for="privacy" style="color: #636E72;
- font-size: 13px; cursor: pointer;">
-                            Я согласен(на) на обработку персональных данных
-                        </label>
-                    </div>
-                    <button type="submit" class="btn-gold" style="width: 100%;">Отправить заявку</button>
-                    <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
-                </form>
-
-                <div class="contact-alt">
-                    <h3>Или напишите напрямую:</h3>
-                    <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-bottom: 15px; display: block;">Написать в Telegram</a>
-                    <a href="resume.pdf" download class="btn-outline" style="display: block;">Скачать резюме (PDF)</a>
-                    
-                    <div style="margin-top: 30px; color: #636E72;
- font-size: 15px;">
-                        <p>📍 <strong>Город:</strong> Москва / Удаленно</p>
-                        <p>📧 <strong>Почта:</strong> <a href="mailto:olgatyahkorob@mail.ru" style="color: #38D6A0; text-decoration: none;">olgatyahkorob@mail.ru</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ===== БЛОК ЗАЯВКИ ===== -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="contact-box">
+<section class="cta" id="contact">
+    <div class="container">
+      <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
+      <p style="margin-bottom: 20px;">Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
       
-      <div class="contact-info">
-        <h2>Получить бесплатный разбор задачи</h2>
-        <p>Заполните форму. Я свяжусь с вами в течение 2 часов, задам пару уточняющих вопросов и расскажу, что реально стоит автоматизировать в первую очередь.</p>
-        <ul class="contact-benefits">
-          <li>✅ Без обязательств и навязчивых звонков</li>
-          <li>✅ Честная оценка сроков и бюджета</li>
-          <li>✅ Скажу, если ваша задача решается проще и дешевле</li>
-        </ul>
+      <div class="contact-container">
+        <form action="https://formspree.io/f/xqqqkqoj" method="POST" onsubmit="ym(114259385, 'reachGoal', 'form_submit'); return true;" class="contact-form">
+          
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
+          </div>
+          
+          <div class="form-group">
+            <select name="budget">
+              <option value="" disabled selected>Ориентировочный бюджет (необязательно)</option>
+              <option value="до 15 000">До 15 000 ₽</option>
+              <option value="15 000 - 30 000">15 000 - 30 000 ₽</option>
+              <option value="30 000 - 50 000">30 000 - 50 000 ₽</option>
+              <option value="50 000+">Более 50 000 ₽</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <textarea name="message" rows="4" placeholder="Кратко опишите задачу" required></textarea>
+          </div>
+          
+          <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+            <input type="checkbox" name="privacy" id="privacy" required style="margin-top: 3px;">
+            <label for="privacy" style="font-size: 13px; color: #636672; cursor: pointer; line-height: 1.4;">
+              Я согласен(на) на обработку персональных данных
+            </label>
+          </div>
+          
+          <button type="submit" class="btn-gold" style="width: 100%;">Отправить</button>
+          <p class="form-note">🔒 Ваши данные защищены. Без спама.</p>
+          
+        </form>
       </div>
-
-      <form class="contact-form" action="https://formspree.io/f/ВАШ_ID" method="POST">
-        <div class="form-group">
-          <label for="name">Ваше имя</label>
-          <input type="text" id="name" name="name" placeholder="Иван" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="contact">Telegram или телефон</label>
-          <input type="text" id="contact" name="contact" placeholder="@username или +7..." required>
-        </div>
-
-        <div class="form-group">
-          <label for="task">Что хотите автоматизировать?</label>
-          <textarea id="task" name="task" rows="3" placeholder="Например: нужен бот для приема заявок в Telegram..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-submit">Отправить заявку</button>
-        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-      </form>
-
     </div>
-  </div>
-</section>
-<!-- ===== КОНЕЦ БЛОКА ЗАЯВКИ ===== -->
+  </section>
 
     <!-- ===== ПОДВАЛ ===== -->
     <footer>
