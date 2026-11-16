@@ -10,7 +10,7 @@
   <meta property="og:description" content="Сокращаю ручную работу и ускоряю обработку заявок. MVP от 7 дней. Первая оценка задачи — бесплатно." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://olgatazkorob7-png.github.io/ogt-site/" />
-  <meta property="og:image" content="https://olgatazkorob7-png.github.io/ogt-site/1.jpg" />
+  <meta property="og:image" content="https://olgatazkorab7-png.github.io/ogt-site/photo.jpg" />
 
   <!-- Иконка сайта -->
   <link rel="icon" type="image/png" href="logo.png" />
@@ -456,6 +456,10 @@
                     <a href="#about">Обо мне</a>
                     <a href="#contact">Контакты</a>
                 </nav>
+                
+                <!-- Кнопка для мобильного меню -->
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
+                
                 <a href="#contact" class="btn-header-cta">Обсудить проект</a>
             </div>
         </header>
@@ -687,7 +691,7 @@
             <div class="portfolio-grid">
                 <!-- Флагман 1: Тропа -->
                 <div class="portfolio-item flagship-card" data-tags="ai python">
-                    <span class="number">01</span>
+                    <span class="number">02</span>
                     <h3>Тропа: AI-Консультант</h3>
                     <span style="display: inline-block; font-size: 11px; background: #333; color: #ccc; padding: 2px 8px; border-radius: 4px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Demo / Pet-проект</span>
                     <p><strong>Боль:</strong> Клиенты задают одни и те же вопросы про доставку и возврат, поддержка не справляется.</p>
@@ -725,7 +729,7 @@
                 </div>
                 <!-- Проект: B2B AI-Ассистент -->
                 <div class="portfolio-item flagship-card" data-tags="ai python">
-                    <span class="number">05</span>
+                    <span class="number">01<span>
                     <h3>B2B AI-Ассистент продаж</h3>
                     <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Telegram-бот / AI</span>
                     
@@ -736,15 +740,14 @@
                     <p class="p-tech">Python • aiogram 3 • Google Gemini • Tool Calling</p>
                     
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        <!-- ВСТАВЬТЕ ВАШУ ССЫЛКУ НА БОТА -->
-                        <a href="https://t.me/kursk_dacha_watch_bot" target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #2AABEE; color: #fff; border-color: #2AABEE;">Открыть бота в Telegram</a>
+                        target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #2AABEE; color: #fff; border-color: #2AABEE;">Открыть бота в Telegram</a>
                         <a href="https://github.com/olgatazkorob7-png/b2b-sales-ai-bot" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
                     </div>
                 </div>
                 
                                <!-- Флагман 2: Green Mall -->
                                <div class="portfolio-item flagship-card" data-tags="python">
-                                <span class="number">02</span>
+                                <span class="number">03</span>
                                 <h3>Green Mall: BI-Дашборд</h3>
                                 <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Pet-проект</span>
                                 <p><strong>Боль:</strong> Данные о продажах разрознены, нет понимания убыточных категорий.</p>
@@ -761,7 +764,7 @@
                             <!-- Флагман 3: AI-Chef -->
                             <div class="portfolio-item flagship-card" data-tags="ai python">
                                 <img src="chef-recipe.png" alt="Интерфейс AI-Chef" class="project-img">
-                                <span class="number">03</span>
+                                <span class="number">04</span>
                                 <h3>AI-Chef Assistant</h3>
                                 <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Pet-проект</span>
                                 <p><strong>Боль:</strong> Ежедневный вопрос «Что приготовить?» и продукты, которые портятся.</p>
@@ -778,12 +781,12 @@
     
                                                <!-- Флагман 4: Транскрибатор -->
                 <div class="portfolio-item flagship-card" data-tags="python">
-                    <span class="number">04</span>
+                    <span class="number">05</span>
                     <h3>AI-Транскрибатор видео</h3>
                     <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Demo / Pet-проект</span>
                     <p><strong>Боль:</strong> Ручная расшифровка видео занимает часы, платные API стоят дорого.</p>
                     <p><strong>Решение:</strong> Микросервис на Celery + Redis для фоновой обработки. Локальная модель faster-whisper.</p>
-                    <p><strong>Моя роль:</strong> Настройка очередей задач, работа с оновыми процесами локалными нейросетями p>.</p>
+                    <p><strong>Моя роль:</strong> Настройка очередей задач, работа с фоновыми процесами и локальными нейросетями /p>
                     <p class="p-tech">Python • FastAPI • Celery • Redis • Whisper</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
                         <a href="https://github.com/olgatazkorob7-png/video-transcriber" target="_blank" rel="noopener noreferrer" class="btn-code">Смотреть код</a>
@@ -1073,12 +1076,12 @@
                     </div>
                     
                     <div class="form-group">
-                        <select name="budget">
-                            <option value="" disabled selected>Ориентировочный бюджет (необязательно)</option>
-                            <option value="до 15 000">До 15 000 ₽</option>
-                            <option value="15 000 - 30 000">15 000 - 30 000 ₽</option>
-                            <option value="30 000 - 50 000">30 000 - 50 000 ₽</option>
-                            <option value="50 000+">Более 50 000 ₽</option>
+                        <s
+                        <option value="" disabled selected>Ориентировочный бюджет</option>
+                        <option value="от 20 000">От 20 000 ₽</option>
+                        <option value="20 000 - 50 000">20 000 - 50 000 ₽</option>
+                        <option value="50 000 - 100 000">50 000 - 100 000 ₽</option>
+                        <option value="100 000+">Более 100 000 ₽</option>
                         </select>
                     </div>
 
@@ -1099,7 +1102,7 @@
                     <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;">
                         <input type="checkbox" name="privacy" id="privacy" required style="width: 20px !important; height: 20px !important; min-width: 20px !important; cursor: pointer; margin-top: 2px;">
                         <label for="privacy" style="font-size: 13px; color: #636672; cursor: pointer; line-height: 1.4;">
-                            Я согласен(на) на обработку персональных данных
+                            Я согласен(на) на <a href="privacy.html" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">обработку персональных данных</a>
                         </label>
                     </div>
                     
