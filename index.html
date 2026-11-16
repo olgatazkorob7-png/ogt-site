@@ -705,7 +705,7 @@
                         <div style="max-width: 315px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: var(--white);">
                             <iframe 
                                 width="100%" 
-                                height="560" 
+                                height="400" 
                                 src="https://www.youtube.com/embed/LWaR1hibjGo?rel=0" 
                                 title="Видеодемонстрация" 
                                 frameborder="0" 
@@ -727,23 +727,22 @@
                         <a href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
                     </div>
                 </div>
-                <!-- Проект: B2B AI-Ассистент -->
-                <div class="portfolio-item flagship-card" data-tags="ai python">
-                    <span class="number">01<span>
-                    <h3>B2B AI-Ассистент продаж</h3>
-                    <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Telegram-бот / AI</span>
-                    
-                    <p><strong>Боль:</strong> Менеджеры тратят часы на поиск данных в CRM и написание рутинных писем клиентам.</p>
-                    <p><strong>Решение:</strong> Telegram-бот с использованием <strong>Tool Calling (Function Calling)</strong>. Нейросеть сама решает, когда вызвать функцию для получения данных из CRM.</p>
-                    <p><strong>Результат:</strong> Мгновенная сводка по лидам и генерация follow-up писем за 2 секунды прямо в мессенджере.</p>
-                    
-                    <p class="p-tech">Python • aiogram 3 • Google Gemini • Tool Calling</p>
-                    
-                    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
-                        target="_blank" rel="noopener noreferrer" class="btn-demo" style="background: #2AABEE; color: #fff; border-color: #2AABEE;">Открыть бота в Telegram</a>
-                        <a href="https://github.com/olgatazkorob7-png/b2b-sales-ai-bot" target="_blank" rel="noopener noreferrer" class="btn-code">Код</a>
-                    </div>
-                </div>
+                               <!-- Проект: B2B AI-Ассистент -->
+                               <div class="portfolio-item flagship-card" data-tags="ai python">
+                                <span class="number">01</span>
+                                <h3>B2B AI-Ассистент продаж</h3>
+                                <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Telegram-бот / AI</span>
+                                
+                                <p><strong>Боль:</strong> Менеджеры тратят часы на поиск данных в CRM и написание рутинных писем клиентам.</p>
+                                <p><strong>Решение:</strong> Telegram-бот с использованием <strong>Tool Calling (Function Calling)</strong>. Нейросеть сама решает, когда вызвать функцию для получения данных из CRM.</p>
+                                <p><strong>Результат:</strong> Мгновенная сводка по лидам и генерация follow-up писем за 2 секунды прямо в мессенджере.</p>
+                                
+                                <p class="p-tech">Python • aiogram 3 • Google Gemini • Tool Calling</p>
+                                
+                                <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                                    <a href="https://github.com/olgatazkorob7-png/b2b-sales-ai-bot" target="_blank" rel="noopener noreferrer" class="btn-code">Смотреть код</a>
+                                </div>
+                            </div>
                 
                                <!-- Флагман 2: Green Mall -->
                                <div class="portfolio-item flagship-card" data-tags="python">
@@ -1058,8 +1057,7 @@
     <section class="cta" id="contact">
         <div class="container">
             <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
-            <p style="margin-bottom: 20px;">Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
-            
+            ><p style="margin-bottom: 20px;">Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
             <div class="contact-container">
                 <form action="https://formspree.io/f/xqpqkqoj" method="POST" onsubmit="ym(114259385, 'reachGoal', 'form_submit'); return true;" class="contact-form">
                     
@@ -1076,22 +1074,22 @@
                     </div>
                     
                     <div class="form-group">
-                        <s
-                        <option value="" disabled selected>Ориентировочный бюджет</option>
-                        <option value="от 20 000">От 20 000 ₽</option>
-                        <option value="20 000 - 50 000">20 000 - 50 000 ₽</option>
-                        <option value="50 000 - 100 000">50 000 - 100 000 ₽</option>
-                        <option value="100 000+">Более 100 000 ₽</option>
+                        <select name="budget" required>
+                            <option value="" disabled selected>Ориентировочный бюджет</option>
+                            <option value="от 20 000">От 20 000 ₽</option>
+                            <option value="20 000 - 50 000">20 000 - 50 000 ₽</option>
+                            <option value="50 000 - 100 000">50 000 - 100 000 ₽</option>
+                            <option value="100 000+">Более 100 000 ₽</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <select name="timeline">
+                        <select name="timeline" required>
                             <option value="" disabled selected>Желаемый срок запуска</option>
-                            <option value="Срочно (1-3 дня)">Срочно (1-3 дня)</option>
+                            <option value="От 1 недели">От 1 недели</option>
                             <option value="1-2 недели">1-2 недели</option>
                             <option value="3-4 недели">3-4 недели</option>
-                            <option value="Без жестких рамок">Пока просто изучаю рынок</option>
+                            <option value="Без жестких рамок">Пока изучаю рынок</option>
                         </select>
                     </div>
                     
@@ -1100,7 +1098,7 @@
                     </div>
                     
                     <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;">
-                        <input type="checkbox" name="privacy" id="privacy" required style="width: 20px !important; height: 20px !important; min-width: 20px !important; cursor: pointer; margin-top: 2px;">
+                        <input type="checkbox" name="privacy" id="privacy" required>
                         <label for="privacy" style="font-size: 13px; color: #636672; cursor: pointer; line-height: 1.4;">
                             Я согласен(на) на <a href="privacy.html" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">обработку персональных данных</a>
                         </label>
