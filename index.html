@@ -479,7 +479,22 @@
             border-bottom: 1px solid var(--border-color); 
             font-size: 16px;
         }
-    } </style>
+    }
+        /* Фикс для раскрытия FAQ */
+        .faq-answer { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-out; 
+        padding: 0 20px; 
+    }
+    .faq-item.active .faq-answer { 
+        max-height: 500px; 
+        transition: max-height 0.3s ease-in; 
+    }
+    .faq-item.active .faq-icon { 
+        transform: rotate(45deg); 
+    }
+     </style>
 </head>
 <body>
 
@@ -1071,11 +1086,11 @@
                 <div class="faq-item">
                     <button class="faq-question">Вы работаете по договору? <span class="faq-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Да. Я работаю официально или как самозанятая (по договору оказания услуг). Вы получаете закрывающие документы, а ваши данные защищены. После сдачи проекта я обеспечиваю техническую поддержку.</p>
+                        <p>Да. Я работаю как <strong>самозанятая</strong> по договору оказания услуг. Вы получаете закрывающие документы (чеки), а ваши данные защищены. После сдачи проекта я обеспечиваю техническую поддержку.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        
     </section>
 
     <!-- ===== КОНТАКТЫ С ФОРМОЙ ===== -->
