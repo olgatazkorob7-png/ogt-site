@@ -443,7 +443,43 @@
     /* Футер */
     footer { border-top: 1px solid var(--border-color) !important; color: var(--text-muted) !important; }
     footer .brand { color: var(--accent-emerald) !important; }
-  </style>
+     /* === МОБИЛЬНОЕ МЕНЮ === */
+    /* По умолчанию (на компьютере) кнопка скрыта */
+    .mobile-menu-btn { 
+        display: none; 
+        cursor: pointer; 
+        font-size: 28px; 
+        color: var(--text-main); 
+    }
+
+    /* Показываем бургер только на экранах меньше 992px (телефоны и планшеты) */
+    @media (max-width: 992px) {
+        .mobile-menu-btn { 
+            display: block; 
+        }
+        .nav-links { 
+            display: none; 
+            flex-direction: column; 
+            position: absolute; 
+            top: 80px; 
+            left: 0; 
+            width: 100%; 
+            background: var(--bg-main); 
+            padding: 20px; 
+            border-bottom: 1px solid var(--border-color); 
+            box-shadow: 0 10px 15px ragba(0,0,0,0.05);
+            z-index: 999; 
+        }
+        .nav-links.active { 
+            display: flex; 
+        }
+        /* Чтобы ссылки в мобильном меню были покрупнее */
+        .nav-links a { 
+            padding: 12px 0; 
+            border-bottom: 1px solid var(--border-color); 
+            font-size: 16px;
+        }
+    } </style>
 </head>
 <body>
 
@@ -1046,14 +1082,23 @@
     <section class="cta" id="contact">
         <div class="container">
             <h2>Обсудим <span class="gold">вашу задачу?</span></h2>
-            ><p style="margin-bottom: 20px;">Заполните форму ниже, и я свяжусь с вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
+            
+            <p style="margin-bottom: 20px;">Заполните форму ниже, и я свяжусь  c вами в течение 2 часов. Или напишите мне напрямую в Telegram.</p>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #2AABEE; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s;">
+                    <span style="font-size: 20px;">✈️</span> Написать в Telegram
+                </a>
+            </div>
+
             <div class="contact-container">
                 <form action="https://formspree.io/f/xqpqkqoj" method="POST" onsubmit="ym(114259385, 'reachGoal', 'form_submit'); return true;" class="contact-form">
+                    <input type="hidden" name="_next" value="https://olgatazkorob7-png.github.io/ogt-site/thanks.html" />
                     
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Ваше имя" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <input type="text" name="contact" placeholder="Telegram или Email для связи" required>
                     </div>
@@ -1061,6 +1106,7 @@
                     <div class="form-group">
                         <input type="text" name="niche" placeholder="Ваша ниша (например: интернет-магазин, EdTech)" required>
                     </div>
+                  
                     
                     <div class="form-group">
                         <select name="budget" required>
@@ -1111,16 +1157,44 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('open');
+                function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
         }
 
+        // Закрываем меню при клике на любую ссылку
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('open');
+                document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
+        function filterProjects(tag, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                const tags = item.getAttribute('data-tags');
+                if (tag === 'all' || (tags && tags.includes(tag))) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        }
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+       function toggleMobileMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+} 
+
+     
         function filterProjects(tag, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
