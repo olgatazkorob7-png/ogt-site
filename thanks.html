@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заявка отправлена | OGT</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#F8F9F7">
+    <title>Заявка отправлена | Ольга Тяжкороб</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background: #F8F9F7; color: #18231F; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .container { max-width: 500px; padding: 40px; background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { font-size: 28px; margin-bottom: 20px; color: #168568; }
-        p { color: #555; margin-bottom: 30px; line-height: 1.6; }
-        .btn { display: inline-block; background: #168568; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 15px; }
-        .btn-tg { background: #2AABEE; }
+        :root { --bg: #F8F9F7; --text: #18231F; --muted: #5E6B64; --accent: #147A5F; --telegram: #2AABEE; }
+        * { box-sizing: border-box; }
+        body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-align: center; }
+        main { width: min(100%, 560px); padding: 44px 36px; background: #fff; border: 1px solid #E5EAE6; border-radius: 20px; box-shadow: 0 10px 30px rgba(24, 35, 31, 0.08); }
+        .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+        h1 { margin: 0 0 18px; font-size: clamp(28px, 5vw, 38px); line-height: 1.15; }
+        p { margin: 0 auto 14px; max-width: 40ch; color: var(--muted); line-height: 1.6; }
+        .actions { display: grid; gap: 12px; margin-top: 28px; }
+        .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 12px 20px; border: 1px solid var(--accent); border-radius: 9px; color: var(--accent); font-weight: 700; text-decoration: none; }
+        .btn-telegram { border-color: var(--telegram); background: var(--telegram); color: #fff; }
+        .btn:hover { filter: brightness(0.96); }
+        .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+        @media (max-width: 480px) { main { padding: 36px 22px; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Спасибо! Заявка отправлена 🎉</h1>
-        <p>Я получила ваше сообщение и свяжусь с вами в течение 2 часов.</p>
-        <p>Если вам нужно срочно, напишите мне напрямую в Telegram:</p>
-        <a href="https://t.me/olga_taz" class="btn btn-tg">Написать в Telegram</a>
-        <br>
-        <a href="index.html" style="color: #777; font-size: 14px; text-decoration: underline;">Вернуться на главную</a>
-    </div>
+    <main>
+        <p class="eyebrow">Заявка отправлена</p>
+        <h1>Спасибо! Я получила ваше сообщение</h1>
+        <p>Отвечу в течение 2 рабочих часов. Если вопрос срочный, напишите напрямую в Telegram.</p>
+        <div class="actions">
+            <a href="https://t.me/olga_taz" class="btn btn-telegram">Написать в Telegram</a>
+            <a href="index.html" class="btn">Вернуться на главную</a>
+        </div>
+    </main>
 </body>
 </html>
