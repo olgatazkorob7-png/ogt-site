@@ -467,7 +467,7 @@
             background: var(--bg-main); 
             padding: 20px; 
             border-bottom: 1px solid var(--border-color); 
-            box-shadow: 0 10px 15px ragba(0,0,0,0.05);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
             z-index: 999; 
         }
         .nav-links.active { 
@@ -493,6 +493,19 @@
     }
     .faq-item.active .faq-icon { 
         transform: rotate(45deg); 
+    }
+       /* ===== ФИКС ГАЛОЧКИ СОГЛАСИЯ ===== */
+       .contact-form input[type="checkbox"] {
+        -webkit-appearance: checkbox !important;
+        appearance: auto !important;
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px;
+        padding: 0 !important;
+        margin-top: 2px;
+        flex-shrink: 0;
+        accent-color: var(--accent-emerald);
+        cursor: pointer;
     }
      </style>
 </head>
@@ -821,7 +834,7 @@
                 </div>
 
                 <!-- 05: AI-Транскрибатор -->
-                <div class="portfolio-item flagship-card" data-tags="python">
+                <div class="portfolio-item flagship-card" data-tags="ai python">
                     <span class="number">05</span>
                     <h3>AI-Транскрибатор видео</h3>
                     <span style="display: inline-block; font-size: 11px; background: var(--bg-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 6px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Demo / Pet-проект</span>
@@ -836,6 +849,12 @@
                 </div>
 
             </div>
+
+            <div id="filter-empty" style="display: none; text-align: center; padding: 30px; border: 1px dashed var(--border-color); border-radius: 12px; color: var(--text-muted); margin-bottom: 60px;">
+                В основных проектах нет работ этой категории — смотрите ниже,
+                <a href="#portfolio" style="color: var(--accent-emerald); font-weight: 600;">в разделе «Другие работы» ↓</a>
+            </div>
+        </div>
     </section>
 
     <!-- ===== ПРОЦЕСС РАБОТЫ ===== -->
@@ -928,7 +947,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item extra-card">
+                <div class="portfolio-item extra-card" data-tags="ai python">
                     <h3>Командный планировщик (TG Bot)</h3>
                     <p>Асинхронный бот для управления задачами и суммаризации чатов.</p>
                     <p class="p-tech">Python • aiogram • OpenAI API</p>
@@ -1172,64 +1191,45 @@
     </footer>
 
     <script>
-                function toggleMobileMenu() {
-            const nav = document.querySelector('.nav-links');
-            nav.classList.toggle('active');
+           // ===== Мобильное меню =====
+        function toggleMobileMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
         }
-
-        // Закрываем меню при клике на любую ссылку
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
+        // ===== Фильтр проектов =====
         function filterProjects(tag, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             document.querySelectorAll('.portfolio-item').forEach(item => {
-                const tags = item.getAttribute('data-tags');
-                if (tag === 'all' || (tags && tags.includes(tag))) {
-                    item.classList.remove('hide');
-                } else {
-                    item.classList.add('hide');
-                }
+                const tags = (item.dataset.tags || '').split(' ');
+                item.classList.toggle('hide', tag !== 'all' && !tags.includes(tag));
             });
+
+            // В основных проектах пусто — показываем подсказку со ссылкой вниз
+            const flagshipVisible = document.querySelectorAll('#flagship .portfolio-item:not(.hide)').length;
+            document.getElementById('filter-empty').style.display = flagshipVisible ? 'none' : 'block';
+
+            // В «Других работах» пусто — прячем раздел целиком
+            const extraVisible = document.querySelectorAll('#portfolio .portfolio-item:not(.hide)').length;
+            document.getElementById('portfolio').style.display = extraVisible ? '' : 'none';
         }
 
+        // ===== FAQ =====
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
+                button.parentElement.classList.toggle('active');
             });
         });
-       function toggleMobileMenu() {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
-} 
 
-     
-        function filterProjects(tag, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
 
-            document.querySelectorAll('.portfolio-item').forEach(item => {
-                const tags = item.getAttribute('data-tags');
-                if (tag === 'all' || (tags && tags.includes(tag))) {
-                    item.classList.remove('hide');
-                } else {
-                    item.classList.add('hide');
-                }
-            });
-        }
 
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
+
     </script>
 
 </body>
