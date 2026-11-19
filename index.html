@@ -223,6 +223,7 @@
 .quiz-success h2 { font: 800 29px/1.25 var(--font-heading); color: var(--quiz-ink); letter-spacing: -0.7px; }
 .quiz-success > p { color: var(--quiz-muted); font-size: 14px; line-height: 1.8; margin: 20px 0 24px; }
 .quiz-success-link { display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border-radius: 8px; background: #116f56; color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; }
+.quiz-email-link { display: block; width: fit-content; max-width: 100%; min-height: 44px; margin-top: 12px; padding-block: 10px; color: #11654f; font-size: 13px; text-underline-offset: 4px; overflow-wrap: anywhere; }
 .quiz-case-link { display: block; margin-top: 20px; color: #11654f; font-size: 13px; text-underline-offset: 4px; }
 .lead-quiz [hidden] { display: none; }
 .contact-direct { padding: 80px 0; background: #eef3ef; text-align: center; border-top: 1px solid #d5e1d9; scroll-margin-top: 80px; }
@@ -983,8 +984,9 @@ if (typeof document !== 'undefined') initQuiz(document);
 <span class="quiz-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
 <span class="quiz-eyebrow">Заявка принята сервисом</span>
 <h2 id="quiz-success-title">Спасибо! Обсудим вашу задачу.</h2>
-<p>Отвечу по указанному контакту в течение 2 часов в рабочее время. Если нужно срочно — напишите в Telegram.</p>
+<p>Изучу задачу и отвечу по указанному контакту в рабочее время. Для прямой связи можно написать в Telegram или на почту.</p>
 <a href="https://t.me/olga_taz" class="quiz-success-link" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="mailto:olgatyahkorob@mail.ru" class="quiz-email-link" data-goal="email_click">olgatyahkorob@mail.ru</a>
 <a href="#flagship" class="quiz-case-link">Пока посмотрите кейс «Тропа» <span aria-hidden="true">↓</span></a>
 </section>
 <p class="quiz-alternative">Удобнее без анкеты? <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Напишите напрямую <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></p>
@@ -1277,7 +1279,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p>Расскажите о задаче в свободной форме. Помогу определить первый полезный шаг, формат решения и что потребуется для оценки.</p>
 <div class="contact-direct-actions">
 <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-<a href="mailto:olgatazkorob7@gmail.com" data-goal="email_click">Написать на email <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="mailto:olgatyahkorob@mail.ru" data-goal="email_click">olgatyahkorob@mail.ru <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
 <a href="#contact" class="contact-return-link">Или заполнить короткую анкету <span aria-hidden="true">↑</span></a>
 </div>
@@ -1286,7 +1288,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="footer-col"><div class="footer-brand">Ольга Тяжкороб</div><p class="footer-text">AI-ассистенты, автоматизация и веб-приложения для бизнеса.</p><p class="footer-text">Самозанятая · работаю по договору · выдаю чеки</p></div>
-<div class="footer-col"><div class="footer-title">Обсудить проект</div><a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Telegram: @olga_taz</a><a href="mailto:olgatazkorob7@gmail.com" data-goal="email_click">olgatazkorob7@gmail.com</a><a href="#contact">Короткая анкета на оценку</a></div>
+<div class="footer-col"><div class="footer-title">Обсудить проект</div><a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Telegram: @olga_taz</a><a href="mailto:olgatyahkorob@mail.ru" data-goal="email_click">olgatyahkorob@mail.ru</a><a href="#contact">Короткая анкета на оценку</a></div>
 <div class="footer-col"><div class="footer-title">Профессиональный профиль</div><a href="https://github.com/olgatazkorob7-png" target="_blank" rel="noopener noreferrer">GitHub — код проектов</a><a href="resume.pdf" target="_blank" rel="noopener noreferrer" data-goal="resume_click">Резюме · PDF</a><a href="privacy.html">Обработка данных и конфиденциальность</a><button type="button" class="analytics-settings" data-analytics-settings>Настройки статистики</button></div>
 </div>
 <div class="container footer-bottom">© 2026 Ольга Тяжкороб · AI-разработка полного цикла</div>
