@@ -795,6 +795,48 @@
   color: #116f56;
   font-weight: 600;
 }
+.case-quick-video-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #116f56;
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+.case-quick-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #a4ebd2;
+  margin-bottom: 4px;
+}
+.case-quick-video-text p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+.case-quick-video-card .case-button {
+  background: #ffffff;
+  color: #116f56;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: none;
+}
+.case-quick-video-card .case-button:hover {
+  background: #edf5f0;
+}
+@media (max-width: 640px) {
+  .case-quick-video-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 /* Sections own their anchor offset; do not double it with root scroll-padding. */
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body { background: var(--bg-main); color: var(--text-main); font: 400 16px/1.65 var(--font-body); overflow-x: hidden; }
@@ -1436,12 +1478,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p class="hero-eyebrow">Автоматизация процессов и AI-решения</p>
 <h1 class="hero-title-premium" id="offer-title">Автоматизирую рутину бизнеса: <span>заявки, документы, ответы клиентам.</span></h1>
 <p class="hero-desc-premium">Создаю AI-ассистентов, Telegram-ботов и веб-приложения. Беру на себя повторяющиеся операции, освобождая рабочие часы вашей команды. Без магии — с надёжным кодом, интеграциями и понятным результатом.</p>
-<ul class="hero-scope" aria-label="Направления"><li>AI-ассистенты и агенты</li><li>Автоматизация процессов</li><li>Веб-приложения / MVP</li></ul>
-<p class="hero-offer-terms">
-    <span>Автоматизация одной задачи — <b>от 25&nbsp;000&nbsp;<span class="ruble">₽</span></b> · Сроки от 3 дней</span>
-  </p>
-<div class="hero-actions-premium"><a href="#contact" class="btn-primary-premium">Обсудить задачу <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-tg-premium" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
-<p class="hero-microcopy-premium">Первая оценка — бесплатно · Работаю лично · Договор, фиксированный объём, передача исходного кода.</p>
+<div class="hero-actions-premium"><a href="#contact" class="btn-primary-premium">Обсудить задачу — отвечу лично <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
 <a href="#flagship" class="hero-link-projects">Посмотреть живой кейс и его устройство <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
 </div>
 </div>
@@ -1483,6 +1520,15 @@ if (typeof document !== 'undefined') initQuiz(document);
 </ul>
 </figure>
 <div class="case-story">
+<div class="case-quick-video-card">
+<div class="case-quick-video-text">
+<span class="case-quick-tag">Быстрое видеознакомство</span>
+<p><strong>Посмотрите 1-минутный ролик:</strong> как ассистент отвечает по документам магазина со ссылкой на первоисточник.</p>
+</div>
+<a class="case-button" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5z"/></svg> Смотреть видео
+</a>
+</div>
 <h3>От вопроса покупателя — к информации в документах</h3>
 <dl class="case-story-list">
 <div>
