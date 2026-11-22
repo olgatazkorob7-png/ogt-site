@@ -599,6 +599,69 @@
   padding: 80px 0;
   background: #f0f5f1;
 }
+.contact-fast-card {
+  background: #ffffff;
+  border: 1px solid #cce2d3;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgb(17 111 86 / 4%);
+}
+.contact-fast-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #11654f;
+  margin-bottom: 8px;
+}
+.contact-fast-card h3 {
+  font: 800 18px/1.35 var(--font-heading);
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+.contact-fast-card p {
+  color: #526359;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.btn-fast-tg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #116f56;
+  color: #ffffff;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 150ms;
+}
+.btn-fast-tg:hover {
+  background: #0d5844;
+}
+.contact-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #72857a;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.contact-divider::before, .contact-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #d4e3d7;
+}
+.contact-divider span {
+  padding: 0 14px;
+}
 /* Sections own their anchor offset; do not double it with root scroll-padding. */
 html { scroll-behavior: smooth; }
 body { background: var(--bg-main); color: var(--text-main); font: 400 16px/1.65 var(--font-body); }
@@ -1311,11 +1374,11 @@ if (typeof document !== 'undefined') initQuiz(document);
 </div>
 <p class="case-stack">React · TypeScript · Node.js / Express · Gemini API</p>
 <div class="case-actions">
-<a class="case-button" href="https://tropa-consultant.onrender.com" target="_blank" rel="noopener noreferrer">Открыть демо <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-<a class="case-button--secondary" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer">Видеообзор (1 мин) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="case-button" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5z"/></svg> Смотреть видеообзор (1 мин)</a>
+<a class="case-button--secondary" href="https://tropa-consultant.onrender.com" target="_blank" rel="noopener noreferrer">Открыть демо на Render <small style="opacity:0.8; font-size:11px; margin-left:4px;">(~40 сек)</small> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 <a class="case-button--secondary" href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" rel="noopener noreferrer">Код на GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
-<p class="case-host-note">💡 На бесплатном тарифе Render сервер может «просыпаться» до 40–50 секунд при первом запросе (HTTP 503 во время старта). Чтобы посмотреть работу прямо сейчас без ожидания — откройте 1-минутный видеообзор.</p>
+<p class="case-host-note">💡 Рекомендую видео: наглядный сценарий за 60 секунд без ожидания. Сервер живого прототипа на Render бесплатный и просыпается за ~40–50 сек при первом переходе.</p>
 </div>
 </div>
 <p class="case-scope-note">Это прототип с базой знаний в контексте модели. Реальные заказы и CRM не подключены; коммерческие показатели не заявляются.</p>
@@ -1404,11 +1467,33 @@ if (typeof document !== 'undefined') initQuiz(document);
 <section class="section projects-section" id="projects" aria-labelledby="projects-title">
 <div class="container">
 <div class="section-heading">
-<span class="section-kicker">02–03 / Избранные проекты</span>
+<span class="section-kicker">02–04 / Избранные проекты</span>
 <h2 class="section-title" id="projects-title">Не только диалог.<br><span>Действия и работа с данными.</span></h2>
 <p class="section-description">Ещё два исследовательских прототипа: вызов функции из чата и обработка файлов в отдельной очереди. Это примеры реализации, не истории коммерческих внедрений.</p>
 </div>
 <div class="featured-grid">
+<article class="featured-case featured-case--highlight" id="realty-case" aria-labelledby="realty-title">
+<div class="project-visual project-visual--code" role="img" aria-label="Схема работы AI-квалификатора для агентств недвижимости">
+<p class="visual-label">Архитектура решения · Проектируемый пилот</p>
+<ol class="tool-flow" aria-hidden="true">
+<li><span>01</span><div><strong>Входящий лид (24/7)</strong><small>Авито · ЦИАН · виджет на сайте · Telegram</small></div></li>
+<li><span>02</span><div><strong>AI-квалификация в чате</strong><small>Цель покупки, бюджет, ипотека, район, сроки</small></div></li>
+<li><span>03</span><div><strong>Запись в CRM и риелтору</strong><small>Готовая карточка клиента со статусом «Горячий»</small></div></li>
+</ol>
+</div>
+<div class="project-body">
+<span class="project-kicker">Недвижимость · B2B-сценарий · Проектируемый пилот</span>
+<h3 id="realty-title">«Ночной брокер»: AI-квалификатор заявок</h3>
+<dl class="project-story">
+<div><dt>Задача бизнеса</dt><dd>До 40% обращений приходят вечером и в выходные. Менеджеры отдыхают, а клиенты уходят к конкурентам, если не получают ответ за 15 минут.</dd></div>
+<div><dt>Архитектура решения</dt><dd>Чат-ассистент принимает лида в нерабочее время, задаёт 4 квалифицирующих вопроса, исключает нецелевой спам и записывает параметры в CRM с мгновенным уведомлением дежурному риелтору.</dd></div>
+<div><dt>Формат запуска</dt><dd>Проектируемое решение под ключ: согласовываем сценарий квалификации, подключаем каналы и настраиваем передачу данных.</dd></div>
+</dl>
+<p class="project-limit">Сценарий готов к внедрению в формате персонального пилота под задачи вашего агентства. Сроки и условия фиксируем в договоре до старта.</p>
+<p class="project-stack">Python · FastAPI · Webhooks · CRM API · Gemini / OpenAI</p>
+<a class="text-link" href="#contact">Обсудить пилот для недвижимости <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+</div>
+</article>
 <article class="featured-case" id="b2b-case" aria-labelledby="b2b-title" data-featured-case>
 <div class="project-visual project-visual--code" role="img" aria-label="Схема B2B-прототипа по исходному коду: сообщение в Telegram, вызов get_crm_leads с демонстрационными данными, ответ Gemini">
 <p class="visual-label">Схема по коду · не скриншот диалога</p>
@@ -1482,7 +1567,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <span class="business-scenario-tag">Интернет-магазины</span>
 <h3>Консультант по каталогу</h3>
 <p class="business-scenario-problem">Покупатели путаются в совместимости, размерах и правилах доставки, а операторы тратят часы на одни и те же ответы.</p>
-<div class="business-scenario-solution"><strong>Решение:</strong> Чат-помощник с базой знаний отвечает за 3 секунды строго по вашим документам с подтверждением источника.</div>
+<div class="business-scenario-solution"><strong>Решение:</strong> Чат-помощник с базой знаний быстро находит ответ строго по вашим документам с подтверждением источника.</div>
 </article>
 <article class="business-scenario-card">
 <span class="business-scenario-tag">Учёт и операционка</span>
@@ -1611,6 +1696,18 @@ if (typeof document !== 'undefined') initQuiz(document);
 </section>
 <section class="section quiz-section" id="contact" aria-labelledby="quiz-title">
 <div class="container" style="max-width: 620px; margin-inline: auto;">
+<div class="contact-fast-choice">
+<div class="contact-fast-card">
+<span class="contact-fast-tag">Быстрый диалог без анкеты</span>
+<h3>Хотите сразу обсудить вашу задачу?</h3>
+<p>Напишите мне напрямую в Telegram — отвечу лично, сориентирую по возможности автоматизации, ориентирам по срокам и стоимости.</p>
+<a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-fast-tg" data-goal="tg_click">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+Написать в Telegram: @olga_taz
+</a>
+</div>
+<div class="contact-divider" aria-hidden="true"><span>или заполните 2 вопроса в анкете для подробного расчёта</span></div>
+</div>
 <div class="lead-quiz" aria-labelledby="quiz-title">
 <form id="project-quiz" action="https://formspree.io/f/xqpqkqoj" method="POST" aria-labelledby="quiz-title">
 <div class="quiz-header">
