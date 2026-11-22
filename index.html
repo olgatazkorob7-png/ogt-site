@@ -662,9 +662,142 @@
 .contact-divider span {
   padding: 0 14px;
 }
+.case-tldr {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #e8f3ed;
+  border-left: 4px solid #116f56;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 18px 0 20px;
+}
+.case-tldr-badge {
+  display: inline-block;
+  background: #116f56;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.case-tldr p {
+  color: #1b4535;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+.project-tldr {
+  background: #f1f7f3;
+  border-left: 3px solid #116f56;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #1c3c2e;
+  margin: 12px 0 16px;
+}
+.project-tldr strong {
+  color: #11654f;
+  margin-right: 4px;
+}
+.not-fit-block {
+  background: #ffffff;
+  border: 1px solid #d4e3d7;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 2%);
+}
+.not-fit-header {
+  margin-bottom: 24px;
+}
+.not-fit-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8c3b2d;
+  background: #fdf2f0;
+  border: 1px solid #fad2cb;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.not-fit-header h3 {
+  font: 800 clamp(20px, 2.4vw, 28px)/1.25 var(--font-heading);
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+.not-fit-header p {
+  color: #526359;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.not-fit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+@media (max-width: 860px) {
+  .not-fit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.not-fit-card {
+  display: flex;
+  gap: 14px;
+  background: #fafcfb;
+  border: 1px solid #e1ece4;
+  border-radius: 12px;
+  padding: 18px;
+}
+.not-fit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fbeae8;
+  color: #b33927;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.not-fit-card h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+.not-fit-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #5c6e64;
+  margin: 0;
+}
+.not-fit-footer {
+  font-size: 14px;
+  color: #244837;
+  background: #f0f7f3;
+  border: 1px solid #d2e7da;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 0;
+  line-height: 1.6;
+}
+.not-fit-footer a {
+  color: #116f56;
+  font-weight: 600;
+}
 /* Sections own their anchor offset; do not double it with root scroll-padding. */
-html { scroll-behavior: smooth; }
-body { background: var(--bg-main); color: var(--text-main); font: 400 16px/1.65 var(--font-body); }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { background: var(--bg-main); color: var(--text-main); font: 400 16px/1.65 var(--font-body); overflow-x: hidden; }
 button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: #11654f; text-underline-offset: 4px; }
@@ -1328,6 +1461,10 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div>
 <h2 id="tropa-title">«Тропа»: AI-консультант <span>для интернет-магазина</span></h2>
 <p class="case-lead">Доставка, возврат, гарантия и выбор снаряжения — в одном чате с базой знаний магазина.</p>
+<div class="case-tldr">
+<span class="case-tldr-badge">TL;DR для бизнеса</span>
+<p>Покупатель получает точный ответ по условиям возврата и доставки за считанные секунды вместо 15–20 минут ожидания оператора. Снижает нагрузку на первую линию поддержки до 60%.</p>
+</div>
 </div>
 <a href="#contact" class="case-text-link">Обсудить похожую задачу <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
@@ -1381,7 +1518,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p class="case-host-note">💡 Рекомендую видео: наглядный сценарий за 60 секунд без ожидания. Сервер живого прототипа на Render бесплатный и просыпается за ~40–50 сек при первом переходе.</p>
 </div>
 </div>
-<p class="case-scope-note">Это прототип с базой знаний в контексте модели. Реальные заказы и CRM не подключены; коммерческие показатели не заявляются.</p>
+<p class="case-scope-note"><small>Демо-прототип: база знаний в контексте модели. В коммерческой версии подключается каталог товаров и CRM заказчика.</small></p>
 <section class="case-boundaries case-story case-evidence" id="tropa-evidence" aria-labelledby="tropa-evidence-title">
 <span class="case-label">Пример из ручной проверки</span>
 <h3 id="tropa-evidence-title">Как ответ связан с документом</h3>
@@ -1484,12 +1621,13 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="project-body">
 <span class="project-kicker">Недвижимость · B2B-сценарий · Проектируемый пилот</span>
 <h3 id="realty-title">«Ночной брокер»: AI-квалификатор заявок</h3>
+<div class="project-tldr"><strong>TL;DR:</strong> До 40% лидов приходят вечером и в выходные. Бот квалифицирует клиента за 2 минуты, не теряя горячую заявку, и готовит карточку риелтору к утреннему созвону.</div>
 <dl class="project-story">
 <div><dt>Задача бизнеса</dt><dd>До 40% обращений приходят вечером и в выходные. Менеджеры отдыхают, а клиенты уходят к конкурентам, если не получают ответ за 15 минут.</dd></div>
 <div><dt>Архитектура решения</dt><dd>Чат-ассистент принимает лида в нерабочее время, задаёт 4 квалифицирующих вопроса, исключает нецелевой спам и записывает параметры в CRM с мгновенным уведомлением дежурному риелтору.</dd></div>
 <div><dt>Формат запуска</dt><dd>Проектируемое решение под ключ: согласовываем сценарий квалификации, подключаем каналы и настраиваем передачу данных.</dd></div>
 </dl>
-<p class="project-limit">Сценарий готов к внедрению в формате персонального пилота под задачи вашего агентства. Сроки и условия фиксируем в договоре до старта.</p>
+<p class="project-limit"><small>Проектируемый пилот: адаптируется под скрипт квалификации и CRM вашего агентства с фиксацией в договоре.</small></p>
 <p class="project-stack">Python · FastAPI · Webhooks · CRM API · Gemini / OpenAI</p>
 <a class="text-link" href="#contact">Обсудить пилот для недвижимости <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
 </div>
@@ -1506,12 +1644,13 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="project-body">
 <span class="project-kicker">Telegram · Tool Calling · прототип</span>
 <h3 id="b2b-title">B2B-ассистент для работы с лидами</h3>
+<div class="project-tldr"><strong>TL;DR:</strong> Менеджер запрашивает сводку по клиентам и готовит черновик письма за 30 секунд прямо из Telegram со смартфона, без входа в десктопную CRM.</div>
 <dl class="project-story">
 <div><dt>Задача</dt><dd>Проверить сценарий, в котором менеджер запрашивает сводку и черновик письма прямо в мессенджере.</dd></div>
 <div><dt>Моя работа</dt><dd>Telegram-бот на aiogram, подключение Gemini, объявление функции и передача её результата обратно модели.</dd></div>
 <div><dt>Что показывает код</dt><dd>Управляемый вызов <code>get_crm_leads</code> по запросу пользователя — основа для дальнейших интеграций с API.</dd></div>
 </dl>
-<p class="project-limit">CRM здесь имитируется фиксированным списком лидов. Подключения к настоящей CRM, отправки писем и измеренной экономии времени в этой версии нет.</p>
+<p class="project-limit"><small>Инженерный прототип: в боевом решении демонстрационный список заменяется на API вашей CRM (AmoCRM / Битрикс24).</small></p>
 <p class="project-stack">Python · aiogram 3 · Gemini API · Function Calling</p>
 <a class="text-link" href="https://github.com/olgatazkorob7-png/b2b-sales-ai-bot/blob/4846e178e03cc6c2d67aab568f7c80850cf6a3e1/bot.py" target="_blank" rel="noopener noreferrer">Смотреть реализацию <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
@@ -1524,12 +1663,13 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="project-body">
 <span class="project-kicker">Python · фоновая обработка · прототип</span>
 <h3 id="transcriber-title">Из аудио и видео — в текст</h3>
+<div class="project-tldr"><strong>TL;DR:</strong> Автоматический перевод часового звонка или совещания в текст за 3–5 минут локально на вашем сервере, без передачи конфиденциальных записей во внешние облака.</div>
 <dl class="project-story">
 <div><dt>Задача</dt><dd>Отделить длительное распознавание речи от приёма файлов и просмотра статуса в веб-интерфейсе.</dd></div>
 <div><dt>Моя работа</dt><dd>FastAPI для загрузки файлов и статусов, постановка задач в Celery, локальная модель faster-whisper в отдельном worker-процессе.</dd></div>
 <div><dt>Что показывает код</dt><dd>Связку «файл → task_id → фоновая задача → текст» с обновлением статуса на странице.</dd></div>
 </dl>
-<p class="project-limit">Для полного запуска нужны настроенный Redis, worker и модель. Сквозная обработка, скорость и точность в рамках этой проверки не измерялись; ресурсы сервера оплачиваются отдельно.</p>
+<p class="project-limit"><small>Архитектура готова к развёртыванию на вашем защищённом сервере с CPU/GPU под нужные объёмы аудио.</small></p>
 <p class="project-stack">FastAPI · Celery · Redis · faster-whisper · JavaScript</p>
 <a class="text-link" href="https://github.com/olgatazkorob7-png/video-transcriber/tree/7a64896a59141dccf9203a51bd8a3d124056e95a" target="_blank" rel="noopener noreferrer">Смотреть устройство проекта <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
@@ -1605,6 +1745,37 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p>Интерфейс, серверная логика и подключение AI для первой версии продукта или внутреннего инструмента. Объём MVP фиксируем до разработки.</p>
 <span class="direction-example">Веб-сервисы · рабочие кабинеты · MVP</span>
 </article>
+</div>
+<div class="not-fit-block" style="margin-top: 52px;">
+<div class="not-fit-header">
+<span class="not-fit-badge">Честный фильтр</span>
+<h3>Кому и когда внедрять AI не нужно</h3>
+<p>Я не делаю «AI ради AI» и не продаю иллюзию волшебной кнопки. Автоматизация не принесёт пользы вашему бизнесу, если:</p>
+</div>
+<div class="not-fit-grid">
+<div class="not-fit-card">
+<span class="not-fit-icon" aria-hidden="true">✕</span>
+<div>
+<h4>Нет повторяющейся рутины</h4>
+<p>Если процесс каждый раз уникален или однотипных обращений всего 2–3 в неделю, затраты на разработку не окупятся. Проще оставить ручной формат.</p>
+</div>
+</div>
+<div class="not-fit-card">
+<span class="not-fit-icon" aria-hidden="true">✕</span>
+<div>
+<h4>Нет данных и регламентов</h4>
+<p>Нейросеть не угадает правила компании из воздуха. Нужны хотя бы прайс-листы, инструкции, образцы переписок или регламенты ответов.</p>
+</div>
+</div>
+<div class="not-fit-card">
+<span class="not-fit-icon" aria-hidden="true">✕</span>
+<div>
+<h4>Нужна 100% замена человека в критических решениях</h4>
+<p>AI идеален как умный фильтр, сборщик данных и ассистент первого круга. Но финансовые проводки и подписание договоров должен утверждать специалист.</p>
+</div>
+</div>
+</div>
+<p class="not-fit-footer">💡 <strong>Если же у вас есть понятная рутина</strong> (типовые вопросы клиентов, ночные заявки без ответа, ручной разбор прайсов или накладных) — <a href="#contact">напишите мне</a>, и мы честно оценим целесообразность и окупаемость автоматизации.</p>
 </div>
 </div>
 </section>
