@@ -554,6 +554,51 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+.premium-hero .hero-container {
+  display: block;
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
+}
+.hero-left-premium {
+  max-width: 100%;
+}
+.hero-person {
+  display: inline-flex;
+  margin-inline: auto;
+  text-align: left;
+}
+.hero-eyebrow, .hero-title-premium, .hero-desc-premium, .hero-microcopy-premium, .hero-offer-terms {
+  margin-inline: auto;
+}
+.hero-scope, .hero-actions-premium, .hero-link-projects {
+  justify-content: center;
+}
+.premium-hero .hero-trust-bar {
+  justify-content: center;
+  margin-top: 44px;
+}
+.pricing-support-card {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: #fbfdfb;
+  border: 1px dashed #b2cfba;
+  border-radius: 12px;
+}
+.pricing-support-card h4 {
+  font: 800 16px/1.3 var(--font-heading);
+  color: #11654f;
+  margin-bottom: 6px;
+}
+.pricing-support-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #3b5245;
+}
+.quiz-section {
+  padding: 80px 0;
+  background: #f0f5f1;
+}
 /* Sections own their anchor offset; do not double it with root scroll-padding. */
 html { scroll-behavior: smooth; }
 body { background: var(--bg-main); color: var(--text-main); font: 400 16px/1.65 var(--font-body); }
@@ -1171,81 +1216,6 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p class="hero-microcopy-premium">Первая оценка — бесплатно · Работаю лично · Договор, чеки, передача исходного кода и инструкций.</p>
 <a href="#flagship" class="hero-link-projects">Посмотреть живой кейс и его устройство <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
 </div>
-<section class="lead-quiz" id="contact" aria-labelledby="quiz-title">
-<form id="project-quiz" action="https://formspree.io/f/xqpqkqoj" method="POST" aria-labelledby="quiz-title">
-<div class="quiz-header">
-<span class="quiz-eyebrow">Бесплатная оценка</span>
-<h2 id="quiz-title">Подберём решение<br>под вашу задачу</h2>
-<p>Два вопроса о задаче и контакт для ответа. Без обязательств.</p>
-</div>
-<div class="quiz-progress" hidden>
-<div class="quiz-progress-caption"><span id="quiz-step-text" aria-live="polite">Шаг 1 из 3</span><span>Формат / Задача / Контакт</span></div>
-<div class="quiz-progress-track" role="progressbar" aria-label="Шаг анкеты" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-valuetext="Шаг 1 из 3: формат"><span id="quiz-progress-fill"></span></div>
-</div>
-<input type="hidden" name="_subject" value="Заявка с OGT — оценка AI-разработки">
-<input type="hidden" name="_next" value="https://olgatazkorob7-png.github.io/ogt-site/thanks.html">
-<div hidden><label for="quiz-website">Оставьте поле пустым</label><input id="quiz-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
-<fieldset class="quiz-step" data-quiz-step="0" aria-describedby="quiz-channel-error">
-<legend tabindex="-1">Где должно работать решение?</legend>
-<div class="quiz-options">
-<label class="quiz-option"><input type="radio" name="channel" value="Telegram" required><span><strong>Telegram</strong><small>Бот или рабочий сценарий в мессенджере</small></span></label>
-<label class="quiz-option"><input type="radio" name="channel" value="Сайт" required><span><strong>На сайте</strong><small>Чат, сервис или отдельное веб-приложение</small></span></label>
-<label class="quiz-option"><input type="radio" name="channel" value="Несколько систем" required><span><strong>В нескольких системах</strong><small>Нужны интеграции и общий процесс</small></span></label>
-<label class="quiz-option"><input type="radio" name="channel" value="Другое / пока не определено" required><span><strong>Другое или пока не знаю</strong><small>Помогите выбрать подходящий формат</small></span></label>
-</div>
-<p class="quiz-field-error" id="quiz-channel-error" hidden></p>
-</fieldset>
-<fieldset class="quiz-step" data-quiz-step="1" aria-describedby="quiz-task-error">
-<legend tabindex="-1">Какую задачу решаем?</legend>
-<div class="quiz-options">
-<label class="quiz-option"><input type="radio" name="task" value="AI-ассистент" required><span><strong>AI-ассистент</strong><small>Ответы, поиск по документам и помощь команде</small></span></label>
-<label class="quiz-option"><input type="radio" name="task" value="Автоматизация процесса" required><span><strong>Автоматизация процесса</strong><small>Заявки, данные, файлы или интеграции</small></span></label>
-<label class="quiz-option"><input type="radio" name="task" value="Веб-приложение / MVP" required><span><strong>Веб-приложение или MVP</strong><small>Первая версия продукта или внутренний инструмент</small></span></label>
-<label class="quiz-option"><input type="radio" name="task" value="Нужна консультация" required><span><strong>Пока нужна консультация</strong><small>Разберём процесс и найдём точку старта</small></span></label>
-</div>
-<p class="quiz-field-error" id="quiz-task-error" hidden></p>
-</fieldset>
-<fieldset class="quiz-step" data-quiz-step="2">
-<legend tabindex="-1">Куда прислать оценку?</legend>
-<p class="quiz-summary" id="quiz-summary" hidden></p>
-<div class="quiz-field">
-<label for="quiz-contact">Telegram или email <span class="quiz-required">обязательно</span></label>
-<input id="quiz-contact" name="contact" type="text" inputmode="email" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="quiz-contact-hint quiz-contact-error" placeholder="@username или name@company.ru">
-<p id="quiz-contact-hint" class="quiz-hint">Также подойдёт ссылка t.me/username.</p>
-<p class="quiz-field-error" id="quiz-contact-error" hidden></p>
-</div>
-<div class="quiz-field">
-<label for="quiz-message">Пара слов о задаче <span>необязательно</span></label>
-<textarea id="quiz-message" name="message" rows="3" maxlength="1500" aria-describedby="quiz-message-hint quiz-message-error" placeholder="Например: нужен помощник по документам или сервис для обработки заявок"></textarea>
-<p id="quiz-message-hint" class="quiz-hint">До 1500 символов. Не указывайте пароли и данные ваших клиентов.</p>
-<p class="quiz-field-error" id="quiz-message-error" hidden></p>
-</div>
-<div class="quiz-consent">
-<input id="quiz-privacy" name="privacy" value="yes" type="checkbox" required aria-describedby="quiz-privacy-error">
-<label for="quiz-privacy">Согласен(на) на обработку данных из анкеты для ответа на заявку. <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политика обработки данных</a>.</label>
-</div>
-<p class="quiz-field-error" id="quiz-privacy-error" hidden></p>
-</fieldset>
-<div class="quiz-submit-error" id="quiz-submit-error" role="alert" tabindex="-1" hidden></div>
-<div class="quiz-navigation">
-<button type="button" class="quiz-back" id="quiz-back" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5m5 5-5-5 5-5"/></svg> Назад</button>
-<button type="button" class="quiz-next" id="quiz-next" hidden>Далее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button>
-<button type="submit" class="quiz-submit" id="quiz-submit"><span class="quiz-spinner" aria-hidden="true"></span><span id="quiz-submit-label">Отправить на оценку</span></button>
-</div>
-<p class="quiz-bottom-note">Оценку подготовлю лично — это не автоматический расчёт цены.</p>
-<noscript><p class="quiz-hint">JavaScript выключен: заполните все три раздела. Подтверждение отправки откроется на стороне сервиса обработки формы.</p></noscript>
-</form>
-<section class="quiz-success" id="quiz-success" aria-labelledby="quiz-success-title" tabindex="-1" hidden>
-<span class="quiz-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
-<span class="quiz-eyebrow">Заявка принята сервисом</span>
-<h2 id="quiz-success-title">Спасибо! Обсудим вашу задачу.</h2>
-<p>Изучу задачу и отвечу по указанному контакту в рабочее время. Для прямой связи можно написать в Telegram или на почту.</p>
-<a href="https://t.me/olga_taz" class="quiz-success-link" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-<a href="mailto:olgatyahkorob@mail.ru" class="quiz-email-link" data-goal="email_click">olgatyahkorob@mail.ru</a>
-<a href="#flagship" class="quiz-case-link">Пока посмотрите кейс «Тропа» <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
-</section>
-<p class="quiz-alternative">Удобнее без анкеты? <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Напишите напрямую <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></p>
-</section>
 </div>
 <div class="container hero-bottom-bar hero-trust-bar" aria-label="Условия сотрудничества">
 <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Напрямую с разработчиком</span>
@@ -1304,15 +1274,16 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="case-impact-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></div>
 <div class="case-impact-item case-impact-item--after">
 <span class="case-impact-badge">Стало с ассистентом</span>
-<p>Мгновенный ответ за 3 секунды строго по базе знаний: с точной цитатой и открытием карточки товара в один клик.</p>
+<p>Быстрый ответ строго по базе знаний: с точной цитатой и открытием карточки товара в один клик.</p>
 </div>
 </div>
 <p class="case-stack">React · TypeScript · Node.js / Express · Gemini API</p>
 <div class="case-actions">
 <a class="case-button" href="https://tropa-consultant.onrender.com" target="_blank" rel="noopener noreferrer">Открыть демо <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-<a class="case-button--secondary" href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" rel="noopener noreferrer">Смотреть код на GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="case-button--secondary" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer">Видеообзор (1 мин) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="case-button--secondary" href="https://github.com/olgatazkorob7-png/tropa-document-consultant" target="_blank" rel="noopener noreferrer">Код на GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 </div>
-<p class="case-host-note">На Render первый запуск может занять время. Если демо ещё загружается, посмотрите видео-обзор по ссылке на скриншоте.</p>
+<p class="case-host-note">💡 На бесплатном тарифе Render сервер может «просыпаться» до 40–50 секунд при первом запросе (HTTP 503 во время старта). Чтобы посмотреть работу прямо сейчас без ожидания — откройте 1-минутный видеообзор.</p>
 </div>
 </div>
 <p class="case-scope-note">Это прототип с базой знаний в контексте модели. Реальные заказы и CRM не подключены; коммерческие показатели не заявляются.</p>
@@ -1465,8 +1436,8 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="container">
 <div class="section-heading">
 <span class="section-kicker">С какими задачами обращаются</span>
-<h2 class="section-title" id="services-title">3 понятных сценария,<br><span>где AI окупает вложения.</span></h2>
-<p class="section-description">Решения для сервисного бизнеса, ритейла и команд, которым нужно ускорить обработку заявок, снять рутину со специалистов и исключить человеческий фактор.</p>
+<h2 class="section-title" id="services-title">3 понятных сценария,<br><span>где AI помогает экономить время и ресурсы.</span></h2>
+<p class="section-description">Решения для сервисного бизнеса, ритейла и команд, которым нужно ускорить обработку заявок, снять рутину со специалистов и снизить количество ошибок ручного ввода.</p>
 </div>
 <div class="business-scenarios-grid">
 <article class="business-scenario-card">
@@ -1598,8 +1569,91 @@ if (typeof document !== 'undefined') initQuiz(document);
 <span class="price-format">Продукт под ключ</span><h3>Веб-сервис / MVP</h3><p>Индивидуальный веб-интерфейс, серверная логика, база данных и AI-функции под согласованный объём.</p><strong class="price-amount">от 70 000 <span class="ruble">₽</span></strong><span class="price-timing">Ориентир: 3–5 недель</span><ul><li>Архитектура и план первой версии</li><li>Интерфейс, база данных и API</li><li>Запуск, тестирование и передача кода</li></ul><a href="#contact" class="btn-service">Обсудить приложение</a>
 </article>
 </div>
+<div class="pricing-support-card">
+<h4>Техническое сопровождение и развитие</h4>
+<p>Для работающих решений: мониторинг доступности и расходов на API-токены, регулярное обновление базы знаний, доработка сценариев под новые задачи компании — <strong>от 15&nbsp;000&nbsp;<span class="ruble">₽</span> / мес</strong>.</p>
+</div>
 <p class="pricing-note">AI-агенты с несколькими действиями, нестандартные интеграции и поддержка оцениваются индивидуально. Расходы на внешние сервисы и инфраструктуру (AI-токены, сервер) оплачиваются отдельно. Сроки зависят от сложности задачи, готовности материалов и согласованного объёма.</p>
 <ul class="pricing-terms" aria-label="Порядок сотрудничества"><li>Первая оценка — бесплатно</li><li>Объём и этапы фиксируем до старта</li><li>Работаю по договору, выдаю чеки</li></ul>
+</div>
+</section>
+<section class="section quiz-section" id="contact" aria-labelledby="quiz-title">
+<div class="container" style="max-width: 620px; margin-inline: auto;">
+<div class="lead-quiz" aria-labelledby="quiz-title">
+<form id="project-quiz" action="https://formspree.io/f/xqpqkqoj" method="POST" aria-labelledby="quiz-title">
+<div class="quiz-header">
+<span class="quiz-eyebrow">Бесплатная оценка</span>
+<h2 id="quiz-title">Подберём решение<br>под вашу задачу</h2>
+<p>Два вопроса о задаче и контакт для ответа. Без обязательств.</p>
+</div>
+<div class="quiz-progress" hidden>
+<div class="quiz-progress-caption"><span id="quiz-step-text" aria-live="polite">Шаг 1 из 3</span><span>Формат / Задача / Контакт</span></div>
+<div class="quiz-progress-track" role="progressbar" aria-label="Шаг анкеты" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-valuetext="Шаг 1 из 3: формат"><span id="quiz-progress-fill"></span></div>
+</div>
+<input type="hidden" name="_subject" value="Заявка с OGT — оценка AI-разработки">
+<input type="hidden" name="_next" value="https://olgatazkorob7-png.github.io/ogt-site/thanks.html">
+<div hidden><label for="quiz-website">Оставьте поле пустым</label><input id="quiz-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+<fieldset class="quiz-step" data-quiz-step="0" aria-describedby="quiz-channel-error">
+<legend tabindex="-1">Где должно работать решение?</legend>
+<div class="quiz-options">
+<label class="quiz-option"><input type="radio" name="channel" value="Telegram" required><span><strong>Telegram</strong><small>Бот или рабочий сценарий в мессенджере</small></span></label>
+<label class="quiz-option"><input type="radio" name="channel" value="Сайт" required><span><strong>На сайте</strong><small>Чат, сервис или отдельное веб-приложение</small></span></label>
+<label class="quiz-option"><input type="radio" name="channel" value="Несколько систем" required><span><strong>В нескольких системах</strong><small>Нужны интеграции и общий процесс</small></span></label>
+<label class="quiz-option"><input type="radio" name="channel" value="Другое / пока не определено" required><span><strong>Другое или пока не знаю</strong><small>Помогите выбрать подходящий формат</small></span></label>
+</div>
+<p class="quiz-field-error" id="quiz-channel-error" hidden></p>
+</fieldset>
+<fieldset class="quiz-step" data-quiz-step="1" aria-describedby="quiz-task-error">
+<legend tabindex="-1">Какую задачу решаем?</legend>
+<div class="quiz-options">
+<label class="quiz-option"><input type="radio" name="task" value="AI-ассистент" required><span><strong>AI-ассистент</strong><small>Ответы, поиск по документам и помощь команде</small></span></label>
+<label class="quiz-option"><input type="radio" name="task" value="Автоматизация процесса" required><span><strong>Автоматизация процесса</strong><small>Заявки, данные, файлы или интеграции</small></span></label>
+<label class="quiz-option"><input type="radio" name="task" value="Веб-приложение / MVP" required><span><strong>Веб-приложение или MVP</strong><small>Первая версия продукта или внутренний инструмент</small></span></label>
+<label class="quiz-option"><input type="radio" name="task" value="Нужна консультация" required><span><strong>Пока нужна консультация</strong><small>Разберём процесс и найдём точку старта</small></span></label>
+</div>
+<p class="quiz-field-error" id="quiz-task-error" hidden></p>
+</fieldset>
+<fieldset class="quiz-step" data-quiz-step="2">
+<legend tabindex="-1">Куда прислать оценку?</legend>
+<p class="quiz-summary" id="quiz-summary" hidden></p>
+<div class="quiz-field">
+<label for="quiz-contact">Telegram или email <span class="quiz-required">обязательно</span></label>
+<input id="quiz-contact" name="contact" type="text" inputmode="email" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="quiz-contact-hint quiz-contact-error" placeholder="@username или name@company.ru">
+<p id="quiz-contact-hint" class="quiz-hint">Также подойдёт ссылка t.me/username.</p>
+<p class="quiz-field-error" id="quiz-contact-error" hidden></p>
+</div>
+<div class="quiz-field">
+<label for="quiz-message">Пара слов о задаче <span>необязательно</span></label>
+<textarea id="quiz-message" name="message" rows="3" maxlength="1500" aria-describedby="quiz-message-hint quiz-message-error" placeholder="Например: нужен помощник по документам или сервис для обработки заявок"></textarea>
+<p id="quiz-message-hint" class="quiz-hint">До 1500 символов. Не указывайте пароли и данные ваших клиентов.</p>
+<p class="quiz-field-error" id="quiz-message-error" hidden></p>
+</div>
+<div class="quiz-consent">
+<input id="quiz-privacy" name="privacy" value="yes" type="checkbox" required aria-describedby="quiz-privacy-error">
+<label for="quiz-privacy">Согласен(на) на обработку данных из анкеты для ответа на заявку. <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политика обработки данных</a>.</label>
+</div>
+<p class="quiz-field-error" id="quiz-privacy-error" hidden></p>
+</fieldset>
+<div class="quiz-submit-error" id="quiz-submit-error" role="alert" tabindex="-1" hidden></div>
+<div class="quiz-navigation">
+<button type="button" class="quiz-back" id="quiz-back" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5m5 5-5-5 5-5"/></svg> Назад</button>
+<button type="button" class="quiz-next" id="quiz-next" hidden>Далее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button>
+<button type="submit" class="quiz-submit" id="quiz-submit"><span class="quiz-spinner" aria-hidden="true"></span><span id="quiz-submit-label">Отправить на оценку</span></button>
+</div>
+<p class="quiz-bottom-note">Оценку подготовлю лично — это не автоматический расчёт цены.</p>
+<noscript><p class="quiz-hint">JavaScript выключен: заполните все три раздела. Подтверждение отправки откроется на стороне сервиса обработки формы.</p></noscript>
+</form>
+<section class="quiz-success" id="quiz-success" aria-labelledby="quiz-success-title" tabindex="-1" hidden>
+<span class="quiz-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
+<span class="quiz-eyebrow">Заявка принята сервисом</span>
+<h2 id="quiz-success-title">Спасибо! Обсудим вашу задачу.</h2>
+<p>Изучу задачу и отвечу по указанному контакту в рабочее время. Для прямой связи можно написать в Telegram или на почту.</p>
+<a href="https://t.me/olga_taz" class="quiz-success-link" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="mailto:olgatyahkorob@mail.ru" class="quiz-email-link" data-goal="email_click">olgatyahkorob@mail.ru</a>
+<a href="#flagship" class="quiz-case-link">Пока посмотрите кейс «Тропа» <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
+</section>
+<p class="quiz-alternative">Удобнее без анкеты? <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Напишите напрямую <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></p>
+</div>
 </div>
 </section>
 <section class="section faq-section" id="faq" aria-labelledby="faq-title">
