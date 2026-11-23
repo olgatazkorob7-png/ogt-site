@@ -23,7 +23,8 @@
 * **Архитектура:** React + TypeScript, Express.js API, Gemini API с ограничением контекста и верификацией первоисточников.
 * **Репозиторий:** [olgatazkorob7-png/tropa-document-consultant](https://github.com/olgatazkorob7-png/tropa-document-consultant)
 * **Живое демо:** [tropa-consultant.onrender.com](https://tropa-consultant.onrender.com) *(бесплатный инстанс Render просыпается за ~40 сек)*
-* **Видеообзор (1 мин):** [Смотреть на YouTube](https://youtube.com/shorts/LWaR1hibjGo)
+* **Видеодемонстрация:** [Смотреть на YouTube](https://youtube.com/shorts/q_dhd7i-VK4)
+* **Запуск в Google AI Studio:** [Открыть приложение в AI Studio](https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2)
 
 ### 2. B2B Telegram-ассистент с вызовом функций (Function Calling)
 * **Задача:** управляемый сценарий в мессенджере с извлечением параметров и вызовом внешних API.
