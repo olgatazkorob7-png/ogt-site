@@ -431,6 +431,10 @@
   --text-main: #172720;
   --text-muted: #526359;
   --accent-emerald: #116f56;
+  --accent-amber: #d97706;
+  --accent-amber-light: #fef3c7;
+  --accent-amber-dark: #92400e;
+  --accent-amber-border: #fde68a;
   --border-color: #dce5de;
   --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -614,7 +618,11 @@
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: #11654f;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #fde68a;
   margin-bottom: 8px;
 }
 .contact-fast-card h3 {
@@ -666,16 +674,17 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: #e8f3ed;
-  border-left: 4px solid #116f56;
+  background: #fffdf5;
+  border-left: 4px solid #d97706;
   border-radius: 0 10px 10px 0;
   padding: 14px 18px;
   margin: 18px 0 20px;
+  box-shadow: 0 2px 10px rgb(217 119 6 / 5%);
 }
 .case-tldr-badge {
   display: inline-block;
-  background: #116f56;
-  color: #fff;
+  background: #d97706;
+  color: #ffffff;
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
@@ -685,24 +694,65 @@
   margin-top: 2px;
 }
 .case-tldr p {
-  color: #1b4535;
+  color: #3b280c;
   font-size: 14px;
   line-height: 1.55;
   margin: 0;
 }
 .project-tldr {
-  background: #f1f7f3;
-  border-left: 3px solid #116f56;
+  background: #fffdf5;
+  border-left: 3px solid #d97706;
   padding: 10px 14px;
   border-radius: 0 8px 8px 0;
   font-size: 13.5px;
   line-height: 1.55;
-  color: #1c3c2e;
+  color: #33230a;
   margin: 12px 0 16px;
 }
 .project-tldr strong {
-  color: #11654f;
+  color: #b45309;
   margin-right: 4px;
+}
+.stat-highlight {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.hero-role-pill {
+  color: #92400e;
+  font-weight: 700;
+  background: #fef3c7;
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid #fde68a;
+  display: inline-block;
+}
+.hot-lead-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #fde68a;
+  margin-left: 4px;
+}
+.case-button--amber {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+  font-weight: 700 !important;
+}
+.case-button--amber:hover {
+  background: #fde68a !important;
+  color: #78350f !important;
+}
+.case-play svg {
+  color: #fbbf24;
 }
 .not-fit-block {
   background: #ffffff;
@@ -1474,7 +1524,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <section class="premium-hero" id="top" aria-labelledby="offer-title">
 <div class="hero-container">
 <div class="hero-left-premium">
-<div class="hero-person"><img src="data:image/webp;base64,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" alt="Ольга Тяжкороб" width="64" height="64"><div><span class="hero-person-name">Ольга Тяжкороб</span><span class="hero-person-role">15 лет в бухгалтерии и 1С · Разработка AI-решений для бизнеса</span></div></div>
+<div class="hero-person"><img src="data:image/webp;base64,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" alt="Ольга Тяжкороб" width="64" height="64"><div><span class="hero-person-name">Ольга Тяжкороб</span><span class="hero-person-role"><span class="hero-role-pill">15 лет</span> в бухгалтерии и 1С · Разработка AI-решений для бизнеса</span></div></div>
 <p class="hero-eyebrow">Автоматизация процессов и AI-решения</p>
 <h1 class="hero-title-premium" id="offer-title">Автоматизирую рутину бизнеса: <span>заявки, документы, ответы клиентам.</span></h1>
 <p class="hero-desc-premium">Создаю AI-ассистентов, Telegram-ботов и веб-приложения. Беру на себя повторяющиеся операции, освобождая рабочие часы вашей команды. Без магии — с надёжным кодом, интеграциями и понятным результатом.</p>
@@ -1500,7 +1550,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <p class="case-lead">Доставка, возврат, гарантия и выбор снаряжения — в одном чате с базой знаний магазина.</p>
 <div class="case-tldr">
 <span class="case-tldr-badge">TL;DR для бизнеса</span>
-<p>Покупатель получает точный ответ по условиям возврата и доставки за считанные секунды вместо 15–20 минут ожидания оператора. Снижает нагрузку на первую линию поддержки до 60%.</p>
+<p>Покупатель получает точный ответ по условиям возврата и доставки за считанные секунды вместо 15–20 минут ожидания оператора. Снижает нагрузку на первую линию поддержки <mark class="stat-highlight">до 60%</mark>.</p>
 </div>
 </div>
 <a href="#contact" class="case-text-link">Обсудить похожую задачу <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
@@ -1522,11 +1572,11 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="case-story">
 <div class="case-quick-video-card">
 <div class="case-quick-video-text">
-<span class="case-quick-tag">Быстрое видеознакомство</span>
-<p><strong>Посмотрите 1-минутный ролик:</strong> как ассистент отвечает по документам магазина со ссылкой на первоисточник.</p>
+<span class="case-quick-tag" style="color: #fef3c7; letter-spacing: 1px;">⚡ 1 минута</span>
+<p><strong>Посмотрите видео работы:</strong> как ассистент отвечает строго по документам магазина со ссылкой на первоисточник.</p>
 </div>
-<a class="case-button" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5z"/></svg> Смотреть видео
+<a class="case-button case-button--amber" href="https://youtube.com/shorts/LWaR1hibjGo" target="_blank" rel="noopener noreferrer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7V5z"/></svg> Смотреть видео (1 мин)
 </a>
 </div>
 <h3>От вопроса покупателя — к информации в документах</h3>
@@ -1661,13 +1711,13 @@ if (typeof document !== 'undefined') initQuiz(document);
 <ol class="tool-flow" aria-hidden="true">
 <li><span>01</span><div><strong>Входящий лид (24/7)</strong><small>Авито · ЦИАН · виджет на сайте · Telegram</small></div></li>
 <li><span>02</span><div><strong>AI-квалификация в чате</strong><small>Цель покупки, бюджет, ипотека, район, сроки</small></div></li>
-<li><span>03</span><div><strong>Запись в CRM и риелтору</strong><small>Готовая карточка клиента со статусом «Горячий»</small></div></li>
+<li><span>03</span><div><strong>Запись в CRM и риелтору</strong><small>Готовая карточка клиента со статусом <span class="hot-lead-badge">🔥 Горячий лид</span></small></div></li>
 </ol>
 </div>
 <div class="project-body">
 <span class="project-kicker">Недвижимость · B2B-сценарий · Проектируемый пилот</span>
 <h3 id="realty-title">«Ночной брокер»: AI-квалификатор заявок</h3>
-<div class="project-tldr"><strong>TL;DR:</strong> До 40% лидов приходят вечером и в выходные. Бот квалифицирует клиента за 2 минуты, не теряя горячую заявку, и готовит карточку риелтору к утреннему созвону.</div>
+<div class="project-tldr"><strong>TL;DR:</strong> До 40% лидов приходят вечером и в выходные. Бот квалифицирует клиента <mark class="stat-highlight">за 2 минуты</mark>, не теряя горячую заявку, и готовит карточку риелтору к утреннему созвону.</div>
 <dl class="project-story">
 <div><dt>Задача бизнеса</dt><dd>До 40% обращений приходят вечером и в выходные. Менеджеры отдыхают, а клиенты уходят к конкурентам, если не получают ответ за 15 минут.</dd></div>
 <div><dt>Архитектура решения</dt><dd>Чат-ассистент принимает лида в нерабочее время, задаёт 4 квалифицирующих вопроса, исключает нецелевой спам и записывает параметры в CRM с мгновенным уведомлением дежурному риелтору.</dd></div>
@@ -1690,7 +1740,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="project-body">
 <span class="project-kicker">Telegram · Tool Calling · прототип</span>
 <h3 id="b2b-title">B2B-ассистент для работы с лидами</h3>
-<div class="project-tldr"><strong>TL;DR:</strong> Менеджер запрашивает сводку по клиентам и готовит черновик письма за 30 секунд прямо из Telegram со смартфона, без входа в десктопную CRM.</div>
+<div class="project-tldr"><strong>TL;DR:</strong> Менеджер запрашивает сводку по клиентам и готовит черновик письма <mark class="stat-highlight">за 30 секунд</mark> прямо из Telegram со смартфона, без входа в десктопную CRM.</div>
 <dl class="project-story">
 <div><dt>Задача</dt><dd>Проверить сценарий, в котором менеджер запрашивает сводку и черновик письма прямо в мессенджере.</dd></div>
 <div><dt>Моя работа</dt><dd>Telegram-бот на aiogram, подключение Gemini, объявление функции и передача её результата обратно модели.</dd></div>
@@ -1709,7 +1759,7 @@ if (typeof document !== 'undefined') initQuiz(document);
 <div class="project-body">
 <span class="project-kicker">Python · фоновая обработка · прототип</span>
 <h3 id="transcriber-title">Из аудио и видео — в текст</h3>
-<div class="project-tldr"><strong>TL;DR:</strong> Автоматический перевод часового звонка или совещания в текст за 3–5 минут локально на вашем сервере, без передачи конфиденциальных записей во внешние облака.</div>
+<div class="project-tldr"><strong>TL;DR:</strong> Автоматический перевод часового звонка или совещания в текст <mark class="stat-highlight">за 3–5 минут</mark> локально на вашем сервере, без передачи конфиденциальных записей во внешние облака.</div>
 <dl class="project-story">
 <div><dt>Задача</dt><dd>Отделить длительное распознавание речи от приёма файлов и просмотра статуса в веб-интерфейсе.</dd></div>
 <div><dt>Моя работа</dt><dd>FastAPI для загрузки файлов и статусов, постановка задач в Celery, локальная модель faster-whisper в отдельном worker-процессе.</dd></div>
