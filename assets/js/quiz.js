@@ -1,10 +1,14 @@
 /** Lead form: progressive enhancement, no storage of personal data in the browser. */
 export function isValidContact(value) {
   const text = String(value ?? '').trim();
-  if (!text || text.length > 254 || /\s/.test(text)) return false;
-  return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(text)
+  if (!text || text.length > 254 || /[\s<>;"']/.test(text)) return false;
+  return /^[^\s@<>;"']+@[^\s@<>;"']+\.[^\s@<>;"']{2,}$/.test(text)
     || /^@[a-z0-9_]{3,32}$/i.test(text)
     || /^(?:https?:\/\/)?t\.me\/[a-z0-9_]{3,32}\/?$/i.test(text);
+}
+export function hasExcessiveLinks(value, maxLinks = 3) {
+  const matches = String(value ?? '').match(/https?:\/\/|www\./gi);
+  return (matches ? matches.length : 0) > maxLinks;
 }
 export class LeadSubmissionError extends Error {
   constructor(code) {
@@ -58,6 +62,8 @@ export function initQuiz(root = document) {
   const contact = form.elements.namedItem('contact');
   const message = form.elements.namedItem('message');
   const privacy = form.elements.namedItem('privacy');
+  const gotcha = form.elements.namedItem('_gotcha');
+  const loadedAt = Date.now();
   let current = 0;
   let submitting = false;
   let completed = false;
@@ -113,6 +119,7 @@ export function initQuiz(root = document) {
       if (!isValidContact(contact.value)) fail('contact', 'Укажите email, @username или ссылку t.me/username.');
       else showFieldError('contact', '');
       if (message.value.length > 1500) fail('message', 'Сократите описание до 1500 символов.');
+      else if (hasExcessiveLinks(message.value)) fail('message', 'Укажите описание задачи своими словами без массовых ссылок.');
       else showFieldError('message', '');
       if (!privacy.checked) fail('privacy', 'Для отправки нужно согласие на обработку данных заявки.');
       else showFieldError('privacy', '');
@@ -159,7 +166,14 @@ export function initQuiz(root = document) {
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (submitting || completed) return;
+    if (gotcha && String(gotcha.value || '').trim() !== '') return;
     if (current < 2) { advance(); return; }
+    if (Date.now() - loadedAt < 1500) {
+      errorBox.textContent = 'Пожалуйста, подождите пару секунд и нажмите «Отправить на оценку» снова.';
+      errorBox.hidden = false;
+      errorBox.focus();
+      return;
+    }
     for (let index = 0; index < steps.length; index++) {
       if (!validateStep(index)) return;
     }
