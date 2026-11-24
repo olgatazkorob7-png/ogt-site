@@ -157,6 +157,7 @@
   box-shadow: 0 12px 36px rgb(24 35 31 / 4%);
 }
 .case-visual { min-width: 0; margin: 0; }
+.case-figure { margin: 0; }
 .case-window-bar { gap: 5px; padding: 12px 14px; background: #eaf0ec; border: 1px solid #d8e1db; border-bottom: 0; border-radius: 12px 12px 0 0; }
 .case-window-bar > span { width: 7px; height: 7px; border-radius: 50%; background: #a2b5a8; }
 .case-window-bar p { margin-left: 8px; color: #496052; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
@@ -261,8 +262,8 @@
 .premium-hero .btn-tg-premium:hover { background: #e9f0eb; }
 .premium-hero .hero-microcopy-premium { color: #526359; max-width: 465px; font-size: 12px; line-height: 1.8; }
 .premium-hero .hero-link-projects { display: inline-flex; align-items: center; gap: 8px; color: #11654f; font-size: 13px; margin: 22px 0 0; }
-.premium-hero .hero-trust-bar { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 16px 24px; margin-top: 40px; padding-top: 24px; padding-bottom: 0; }
-.hero-trust-bar > span { display: flex; align-items: center; gap: 8px; color: #526359; font-size: 12px; }
+.premium-hero .hero-trust-bar { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 16px 24px; margin-top: 40px; padding-top: 24px; padding-bottom: 0; list-style: none; }
+.hero-trust-bar > span, .hero-trust-bar > li { display: flex; align-items: center; gap: 8px; color: #526359; font-size: 12px; }
 .hero-trust-bar svg { width: 18px; height: 18px; fill: none; stroke: #11654f; stroke-width: 2; flex-shrink: 0; }
 .lead-quiz { --quiz-ink: #182d23; --quiz-muted: #526359; --quiz-green: #116f56; min-width: 0; background: #fff; border: 1px solid #d5e1d9; border-radius: 22px; box-shadow: 0 16px 48px rgb(24 35 31 / 7%); padding: 28px; text-align: left; scroll-margin-top: 104px; }
 .quiz-header { margin-bottom: 18px; }
@@ -373,7 +374,7 @@
   .quiz-navigation { gap: 8px; }
   .quiz-navigation button { padding-inline: 12px; font-size: 12px; }
   .premium-hero .hero-trust-bar { justify-content: flex-start; padding-top: 20px; gap: 12px; margin-top: 28px; }
-  .hero-trust-bar > span { font-size: 11px; }
+  .hero-trust-bar > span, .hero-trust-bar > li { font-size: 11px; }
   .contact-direct { padding-block: 56px; }
   .contact-direct p { font-size: 14px; }
   .contact-direct-actions { flex-direction: column; }
@@ -973,8 +974,8 @@ section[id] { scroll-margin-top: 110px; }
 .premium-hero .hero-microcopy-premium { max-width: 485px; margin-top: 17px; color: var(--text-muted); font-size: 12px; line-height: 1.65; }
 .premium-hero .hero-link-projects { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; color: #11654f; font-size: 12px; font-weight: 600; text-decoration: none; }
 .hero-link-projects:hover { text-decoration: underline; }
-.premium-hero .hero-trust-bar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px 24px; margin-top: 38px; padding-top: 24px; padding-bottom: 0; border-top: 1px solid var(--border-color); }
-.hero-trust-bar > span { display: flex; align-items: center; gap: 8px; color: #526359; font-size: 11px; }
+.premium-hero .hero-trust-bar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px 24px; margin-top: 38px; padding-top: 24px; padding-bottom: 0; border-top: 1px solid var(--border-color); list-style: none; }
+.hero-trust-bar > span, .hero-trust-bar > li { display: flex; align-items: center; gap: 8px; color: #526359; font-size: 11px; }
 .hero-trust-bar svg { width: 17px; height: 17px; fill: none; stroke: #11654f; stroke-width: 2; }
 .lead-quiz { border-radius: 22px; box-shadow: 0 14px 48px rgb(23 39 32 / 6%); }
 .quiz-header h2 { font-size: 26px; }
@@ -1164,7 +1165,7 @@ section[id] { scroll-margin-top: 110px; }
   .hero-scope li { padding: 5px 8px; font-size: 9px; }
   .premium-hero .btn-primary-premium, .premium-hero .btn-tg-premium { padding-inline: 14px; font-size: 12px; }
   .premium-hero .hero-trust-bar { justify-content: flex-start; margin-top: 30px; padding-top: 22px; }
-  .hero-trust-bar > span { font-size: 10px; }
+  .hero-trust-bar > span, .hero-trust-bar > li { font-size: 10px; }
   .quiz-header h2 { font-size: 25px; }
   .case-section { padding-block: 54px; }
   .case-deep-dive > summary { padding: 17px; font-size: 12px; }
