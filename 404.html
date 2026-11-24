@@ -7,15 +7,17 @@
 <meta name="description" content="Запрошенная страница не найдена. Вернитесь на главную страницу сайта Ольги Тяжкороб.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" type="image/png" href="/ogt-site/assets/img/favicon.png">
+<link rel="stylesheet" href="/ogt-site/assets/css/fonts.css">
 <style>
 :root {
   --bg-main: #fafbf9;
   --text-main: #172720;
   --text-muted: #526359;
   --accent-emerald: #116f56;
+  --accent-link: #11654f;
   --border-color: #dce5de;
-  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -55,6 +57,12 @@ p {
   line-height: 1.6;
   margin-bottom: 28px;
 }
+.error-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
 .btn-home {
   display: inline-flex;
   align-items: center;
@@ -77,14 +85,17 @@ p {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 14px;
-  color: var(--accent-emerald);
+  color: var(--accent-link);
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
 }
 .btn-tg:hover {
   text-decoration: underline;
+}
+a:focus-visible {
+  outline: 3px solid var(--accent-link);
+  outline-offset: 4px;
 }
 </style>
 </head>
@@ -93,9 +104,10 @@ p {
 <span class="error-code" aria-hidden="true">404</span>
 <h1>Страница не найдена</h1>
 <p>Возможно, адрес изменился или страница была перемещена. Перейдите на главную страницу, чтобы посмотреть проекты и решения.</p>
+<div class="error-actions">
 <a href="https://olgatazkorob7-png.github.io/ogt-site/" class="btn-home">Вернуться на главную <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
-<br>
 <a href="https://t.me/olga_taz" class="btn-tg" target="_blank" rel="noopener noreferrer">Написать в Telegram: @olga_taz ↗</a>
+</div>
 </main>
 </body>
 </html>
