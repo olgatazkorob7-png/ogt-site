@@ -69,7 +69,7 @@ svg { vertical-align: middle; flex-shrink: 0; }
 }
 
 section[id] { scroll-margin-top: 104px; }
-.section { padding-block: 76px; }
+.section { padding-block: 84px; }
 .section-kicker {
   display: block;
   margin-bottom: 12px;
@@ -189,7 +189,7 @@ section[id] { scroll-margin-top: 104px; }
 .premium-hero {
   max-width: 1160px;
   margin-inline: auto;
-  padding: 132px 0 44px;
+  padding: 132px 0 64px;
 }
 .premium-hero .hero-container {
   display: grid;
@@ -221,7 +221,7 @@ section[id] { scroll-margin-top: 104px; }
 .hero-title-premium {
   margin-bottom: 20px;
   color: var(--text-main);
-  font: 800 clamp(32px, 3.45vw, 48px)/1.13 var(--font-heading);
+  font: 800 clamp(32px, 3.8vw, 52px)/1.13 var(--font-heading);
   letter-spacing: -1.5px;
   text-wrap: balance;
 }
@@ -412,7 +412,7 @@ section[id] { scroll-margin-top: 104px; }
 
 /* === Главный кейс «Тропа» === */
 .case-section {
-  padding-block: 76px;
+  padding-block: 84px;
   background: #f0f5f1;
   border-bottom: 1px solid var(--border-color);
 }
@@ -849,7 +849,7 @@ section[id] { scroll-margin-top: 104px; }
 
 /* === Обо мне + проверка до оплаты === */
 .about-section {
-  padding-block: 72px;
+  padding-block: 84px;
   border-block: 1px solid var(--border-color);
   background: #eff4ed;
 }
@@ -1103,7 +1103,7 @@ section[id] { scroll-margin-top: 104px; }
 
 /* === Тёмно-зелёный акцентный блок + Анкета (#contact) === */
 .quiz-section {
-  padding: 76px 0;
+  padding: 84px 0;
   background: #f0f5f1;
   border-top: 1px solid var(--border-color);
 }
@@ -1377,7 +1377,7 @@ section[id] { scroll-margin-top: 104px; }
 .quiz-case-link { display: block; margin-top: 16px; color: var(--accent-link); font-size: 14px; text-underline-offset: 4px; }
 
 /* === FAQ === */
-.faq-section { padding-block: 72px; background: #ffffff; border-top: 1px solid var(--border-color); }
+.faq-section { padding-block: 84px; background: #ffffff; border-top: 1px solid var(--border-color); }
 .faq-layout { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 48px; align-items: start; }
 .faq-item { border-bottom: 1px solid #d5e1d8; }
 .faq-item:first-child { border-top: 1px solid #d5e1d8; }
