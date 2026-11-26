@@ -46,7 +46,7 @@ export async function sendLead(action, data, { fetchImpl = globalThis.fetch, tim
 export function initQuiz(root = document) {
   const form = root.getElementById('project-quiz');
   if (!form || typeof globalThis.fetch !== 'function' || typeof AbortController !== 'function') return;
-  const card = root.getElementById('contact');
+  const quiz = form.closest('.lead-quiz') || form;
   const steps = [...form.querySelectorAll('[data-quiz-step]')];
   const next = root.getElementById('quiz-next');
   const back = root.getElementById('quiz-back');
@@ -74,10 +74,17 @@ export function initQuiz(root = document) {
   function markStarted() {
     if (!started) { started = true; goal('quiz_start'); }
   }
-  function focusCard() {
+  function focusQuizStep() {
     const target = completed ? success : steps[current].querySelector('legend');
     target.focus({ preventScroll: true });
-    card.scrollIntoView({ block: 'start', behavior: 'instant' });
+    if (typeof quiz.getBoundingClientRect === 'function' && typeof quiz.scrollIntoView === 'function') {
+      const rect = quiz.getBoundingClientRect();
+      const vh = globalThis.innerHeight || 800;
+      if (rect.top < 96 || rect.top > vh * 0.65) {
+        const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        quiz.scrollIntoView({ block: 'start', behavior: reduced ? 'auto' : 'smooth' });
+      }
+    }
   }
   function showStep(index, focus = true) {
     current = index;
@@ -94,7 +101,7 @@ export function initQuiz(root = document) {
       summary.textContent = `Формат: ${data.get('channel') || 'не выбран'}. Задача: ${data.get('task') || 'не выбрана'}.`;
       summary.hidden = false;
     }
-    if (focus) focusCard();
+    if (focus) focusQuizStep();
   }
   function showFieldError(name, text) {
     const node = root.getElementById(`quiz-${name}-error`);
@@ -141,7 +148,7 @@ export function initQuiz(root = document) {
   }
   function setBusy(value) {
     submitting = value;
-    card.setAttribute('aria-busy', String(value));
+    quiz.setAttribute('aria-busy', String(value));
     steps.forEach(step => { step.disabled = value; });
     [back, next, submit].forEach(button => { button.disabled = value; });
     submitLabel.textContent = value ? 'Отправляем…' : 'Отправить на оценку';
@@ -187,7 +194,7 @@ export function initQuiz(root = document) {
       completed = true;
       form.hidden = true;
       success.hidden = false;
-      focusCard();
+      focusQuizStep();
       goal('form_success');
       goal('form_submit'); // Existing goal is now recorded only after confirmed acceptance.
     } catch (error) {
@@ -205,13 +212,8 @@ export function initQuiz(root = document) {
       setBusy(false);
     }
   });
-  root.querySelectorAll('a[href="#contact"]').forEach(link => {
-    link.addEventListener('click', event => {
-      if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) focusCard();
-    });
-  });
   form.noValidate = true;
-  card.dataset.enhanced = 'true';
+  quiz.dataset.enhanced = 'true';
   form.querySelector('.quiz-progress').hidden = false;
   showStep(0, false);
 }

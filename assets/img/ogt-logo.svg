@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" fill="none" role="img" aria-label="OGT">
+  <!-- Geometric O, G, T with optical overshoot on rounded letters -->
+  <circle cx="40" cy="40" r="25.5" stroke="#18382d" stroke-width="16"/>
+  <path d="M 132.6 25.0 A 25.5 25.5 0 1 0 137.5 41" stroke="#18382d" stroke-width="16" stroke-linecap="butt"/>
+  <path d="M 111 35 L 145.1 35 A 33.5 33.5 0 0 1 144.3 49 L 111 49 Q 109 49 109 47 L 109 37 Q 109 35 111 35 Z" fill="#18382d"/>
+  <rect x="150" y="8" width="62" height="15" rx="2" fill="#18382d"/>
+  <rect x="173" y="8" width="16" height="64" rx="2" fill="#18382d"/>
+
+  <!-- Honey-amber integration circuit trace & nodes -->
+  <path d="M 56 40 C 73 40, 77 45.5, 96 45.5 L 116 45.5" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="56" cy="40" r="7.5" fill="#d97706"/>
+  <circle cx="56" cy="40" r="3.4" fill="#ffffff"/>
+
+  <path d="M 138 42 L 174 42" stroke="#f59e0b" stroke-width="5" stroke-linecap="butt"/>
+  <circle cx="138" cy="42" r="7.5" fill="#d97706"/>
+  <circle cx="138" cy="42" r="3.4" fill="#ffffff"/>
+</svg>
