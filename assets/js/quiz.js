@@ -101,7 +101,11 @@ export function initQuiz(root = document) {
     progressFill.style.width = `${((current + 1) / steps.length) * 100}%`;
     if (current === 2) {
       const data = new FormData(form);
-      summary.textContent = `Формат: ${data.get('channel') || 'не выбран'}. Задача: ${data.get('task') || 'не выбрана'}.`;
+      const checkedChannel = form.querySelector('[name="channel"]:checked');
+      const channelLabel = checkedChannel?.closest?.('.quiz-option')?.querySelector('strong')?.textContent
+        || data.get('channel')
+        || 'не выбран';
+      summary.textContent = `Формат: ${channelLabel}. Задача: ${data.get('task') || 'не выбрана'}.`;
       summary.hidden = false;
     }
     if (prefillBanner && current !== 0) prefillBanner.hidden = true;
