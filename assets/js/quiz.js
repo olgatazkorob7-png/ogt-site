@@ -114,7 +114,10 @@ export function initQuiz(root = document) {
       summary.textContent = `Формат: ${channelLabel}. Задача: ${data.get('task') || 'не выбрана'}.`;
       summary.hidden = false;
     }
-    if (prefillBanner && current !== 0) prefillBanner.hidden = true;
+    if (prefillBanner && current !== 0) {
+      prefillBanner.hidden = true;
+      prefillBanner.textContent = '';
+    }
     if (focus) focusQuizStep();
   }
   function showFieldError(name, text) {
