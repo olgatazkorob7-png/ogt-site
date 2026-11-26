@@ -153,6 +153,13 @@ section[id] { scroll-margin-top: 104px; }
   white-space: nowrap;
 }
 .nav-links a:hover { color: var(--accent-link); text-decoration: underline; }
+.nav-links a[aria-current="location"] {
+  color: var(--accent-link);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-amber-border);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
 .btn-header-cta {
   display: inline-flex;
   align-items: center;
@@ -1224,6 +1231,18 @@ section[id] { scroll-margin-top: 104px; }
   scroll-margin-top: 104px;
 }
 .quiz-header { margin-bottom: 18px; }
+#project-quiz { scroll-margin-top: 104px; }
+.quiz-prefill-banner {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #fcd34d;
+  background: #fffbeb;
+  color: #422b09;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 .quiz-eyebrow {
   display: block;
   color: var(--accent-link);
@@ -1459,6 +1478,52 @@ section[id] { scroll-margin-top: 104px; }
   font-size: 12px;
 }
 
+/* === Плавающая кнопка Telegram === */
+.floating-tg-cta {
+  position: fixed;
+  z-index: 950;
+  right: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 11px 18px;
+  border: 1px solid #2b5d49;
+  border-radius: 999px;
+  background: var(--bg-dark);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgb(24 56 45 / 22%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease, background 150ms ease, border-color 150ms ease, box-shadow 180ms ease;
+}
+.floating-tg-cta svg { color: var(--accent-honey-btn); }
+.floating-tg-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.floating-tg-cta:focus-visible { outline: 3px solid var(--accent-honey-btn); outline-offset: 4px; }
+
+/* === Появление блоков при прокрутке === */
+.reveal-ready [data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal-ready [data-reveal="entering"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+              transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
 /* === Согласие на аналитику === */
 .analytics-consent {
   position: fixed;
@@ -1569,6 +1634,7 @@ section[id] { scroll-margin-top: 104px; }
   .quiz-alternative { margin: 20px -22px -22px; border-radius: 0 0 18px 18px; }
   .quiz-navigation { gap: 8px; }
   .quiz-navigation button { padding-inline: 12px; font-size: 13px; }
+  .floating-tg-cta { right: 14px; bottom: 14px; min-height: 44px; padding: 10px 15px; font-size: 13px; }
   .analytics-consent { bottom: 12px; left: 12px; width: calc(100% - 24px); padding: 16px; }
 }
 
@@ -1587,6 +1653,12 @@ section[id] { scroll-margin-top: 104px; }
   .price-card--primary:hover {
     border-color: var(--accent-emerald);
     box-shadow: 0 16px 34px rgb(17 111 86 / 13%);
+  }
+  .floating-tg-cta.is-visible:hover {
+    background: #20493a;
+    border-color: var(--accent-honey-btn);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgb(24 56 45 / 28%);
   }
   .btn-primary-premium,
   .case-button,

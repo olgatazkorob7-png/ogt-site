@@ -58,6 +58,7 @@ export function initQuiz(root = document) {
   const progressText = root.getElementById('quiz-step-text');
   const progressFill = root.getElementById('quiz-progress-fill');
   const summary = root.getElementById('quiz-summary');
+  const prefillBanner = root.getElementById('quiz-prefill-banner');
   const titles = ['формат', 'задача', 'контакт'];
   const contact = form.elements.namedItem('contact');
   const message = form.elements.namedItem('message');
@@ -68,6 +69,8 @@ export function initQuiz(root = document) {
   let submitting = false;
   let completed = false;
   let started = false;
+  let lastAutoNote = '';
+  let lastAutoChannel = '';
   function goal(name) {
     try { globalThis.trackGoal?.(name); } catch { /* Analytics must never block a lead. */ }
   }
@@ -101,6 +104,7 @@ export function initQuiz(root = document) {
       summary.textContent = `Формат: ${data.get('channel') || 'не выбран'}. Задача: ${data.get('task') || 'не выбрана'}.`;
       summary.hidden = false;
     }
+    if (prefillBanner && current !== 0) prefillBanner.hidden = true;
     if (focus) focusQuizStep();
   }
   function showFieldError(name, text) {
@@ -153,6 +157,67 @@ export function initQuiz(root = document) {
     [back, next, submit].forEach(button => { button.disabled = value; });
     submitLabel.textContent = value ? 'Отправляем…' : 'Отправить на оценку';
   }
+  function selectRadio(name, value) {
+    if (!value) return null;
+    const match = [...form.querySelectorAll(`input[name="${name}"]`)].find(input => input.value === value);
+    if (!match) return null;
+    match.checked = true;
+    showFieldError(name, '');
+    return match;
+  }
+  function applyPrefill({ channel = '', task = '', note = '' }) {
+    if (submitting) return;
+    if (completed) {
+      completed = false;
+      form.hidden = false;
+      success.hidden = true;
+    }
+    if (quiz.dataset && quiz.dataset.reveal && quiz.dataset.reveal !== 'done') {
+      quiz.dataset.reveal = 'done';
+    }
+    if (!channel && lastAutoChannel) {
+      const prevAuto = [...form.querySelectorAll('input[name="channel"]')].find(input => input.checked && input.value === lastAutoChannel);
+      if (prevAuto) prevAuto.checked = false;
+      lastAutoChannel = '';
+    }
+    const channelMatch = selectRadio('channel', channel);
+    if (channelMatch) lastAutoChannel = channel;
+    const taskMatch = selectRadio('task', task);
+    if (message && (message.value.trim() === '' || message.value === lastAutoNote)) {
+      message.value = note;
+      lastAutoNote = note;
+      showFieldError('message', '');
+    }
+    if (channelMatch && taskMatch) {
+      if (prefillBanner) prefillBanner.hidden = true;
+      showStep(2, false);
+      steps[2]?.querySelector('legend')?.focus({ preventScroll: true });
+    } else if (taskMatch) {
+      const taskLabel = taskMatch.closest?.('.quiz-option')?.querySelector('strong')?.textContent || task;
+      if (prefillBanner) {
+        prefillBanner.textContent = `Выбрана задача: «${taskLabel}». Укажите площадку ниже и нажмите «Далее».`;
+        prefillBanner.hidden = false;
+      }
+      showStep(0, false);
+      steps[0]?.querySelector('legend')?.focus({ preventScroll: true });
+    } else if (channelMatch) {
+      if (prefillBanner) prefillBanner.hidden = true;
+      showStep(1, false);
+      steps[1]?.querySelector('legend')?.focus({ preventScroll: true });
+    }
+  }
+  root.querySelectorAll('[data-quiz-task], [data-quiz-channel]').forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      applyPrefill({
+        channel: trigger.dataset.quizChannel || '',
+        task: trigger.dataset.quizTask || '',
+        note: trigger.dataset.quizNote || '',
+      });
+      const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      quiz.scrollIntoView?.({ block: 'start', behavior: reduced ? 'auto' : 'smooth' });
+    });
+  });
   next.addEventListener('click', advance);
   back.addEventListener('click', () => {
     if (!submitting && current > 0) { errorBox.hidden = true; showStep(current - 1); }
@@ -166,9 +231,14 @@ export function initQuiz(root = document) {
   form.addEventListener('input', event => {
     const name = event.target.name;
     if (['channel', 'task', 'contact', 'message', 'privacy'].includes(name)) showFieldError(name, '');
+    if (name === 'message' && event.target.value !== lastAutoNote) lastAutoNote = '';
   });
   form.addEventListener('change', event => {
-    if (event.target.matches('input[type="radio"]')) markStarted();
+    if (event.target.matches('input[type="radio"]')) {
+      markStarted();
+      if (event.target.name === 'channel') lastAutoChannel = '';
+      if (event.target.name === 'task' && prefillBanner) prefillBanner.hidden = true;
+    }
   });
   form.addEventListener('submit', async event => {
     event.preventDefault();
