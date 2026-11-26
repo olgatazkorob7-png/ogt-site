@@ -1,10 +1,16 @@
 /** Lead form: progressive enhancement, no storage of personal data in the browser. */
 export function isValidContact(value) {
   const text = String(value ?? '').trim();
-  if (!text || text.length > 254 || /[\s<>;"']/.test(text)) return false;
-  return /^[^\s@<>;"']+@[^\s@<>;"']+\.[^\s@<>;"']{2,}$/.test(text)
-    || /^@[a-z0-9_]{3,32}$/i.test(text)
-    || /^(?:https?:\/\/)?t\.me\/[a-z0-9_]{3,32}\/?$/i.test(text);
+  if (!text || text.length > 254 || /[<>;"']/.test(text)) return false;
+  if (!/\s/.test(text)) {
+    if (/^[^\s@<>;"']+@[^\s@<>;"']+\.[^\s@<>;"']{2,}$/.test(text)
+      || /^@[a-z0-9_]{3,32}$/i.test(text)
+      || /^(?:https?:\/\/)?t\.me\/[a-z0-9_]{3,32}\/?$/i.test(text)) {
+      return true;
+    }
+  }
+  const phoneCompact = text.replace(/[\s().-]/g, '');
+  return /^\+?\d{10,15}$/.test(phoneCompact);
 }
 export function hasExcessiveLinks(value, maxLinks = 3) {
   const matches = String(value ?? '').match(/https?:\/\/|www\./gi);
@@ -131,7 +137,7 @@ export function initQuiz(root = document) {
       if (!form.querySelector(`[name="${name}"]:checked`)) fail(name, 'Выберите один из вариантов. Если сомневаетесь, подойдёт последний.');
       else showFieldError(name, '');
     } else {
-      if (!isValidContact(contact.value)) fail('contact', 'Укажите email, @username или ссылку t.me/username.');
+      if (!isValidContact(contact.value)) fail('contact', 'Укажите email, @username, ссылку t.me/username или номер телефона.');
       else showFieldError('contact', '');
       if (message.value.length > 1500) fail('message', 'Сократите описание до 1500 символов.');
       else if (hasExcessiveLinks(message.value)) fail('message', 'Укажите описание задачи своими словами без массовых ссылок.');

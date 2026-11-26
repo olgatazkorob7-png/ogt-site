@@ -26,10 +26,10 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css?v=20261126-11">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261126-11">
-<script src="assets/js/site.js?v=20261126-11" defer></script>
-<script type="module" src="assets/js/quiz.js?v=20261126-11"></script>
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261126-12">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261126-12">
+<script src="assets/js/site.js?v=20261126-12" defer></script>
+<script type="module" src="assets/js/quiz.js?v=20261126-12"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,6 +50,7 @@
         "https://github.com/olgatazkorob7-png",
         "https://t.me/olga_taz"
       ],
+      "telephone": "+7-901-555-24-03",
       "email": "olgatyahkorob@mail.ru"
     },
     {
@@ -125,6 +126,7 @@
           <a href="#contact" class="btn-primary-premium">Получить оценку за 2–4 часа <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
           <a href="#flagship" class="btn-secondary-hero">Посмотреть кейс <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
         </div>
+        <p class="hero-reassurance">Подскажу, стоит ли вообще делать AI в вашем случае (если нет — скажу честно).</p>
         <p class="hero-microproof">Ответ в будни за 2–4 часа (МСК) · договор / НПД · можно без ТЗ · исходники передаю</p>
       </div>
 
@@ -197,6 +199,20 @@
             <div><dt>От вас</dt><dd>примеры входных файлов и нужный результат</dd></div>
           </dl>
         </article>
+      </div>
+
+      <div class="integrations-strip" data-reveal data-reveal-delay="80">
+        <span class="integrations-strip-label">С чем связываю решения:</span>
+        <ul class="integrations-strip-list" aria-label="Поддерживаемые сервисы и интеграции">
+          <li>Telegram</li>
+          <li>AmoCRM</li>
+          <li>Битрикс24</li>
+          <li>1С (по API)</li>
+          <li>Google Таблицы</li>
+          <li>ЮКасса</li>
+          <li>OpenAI / Gemini</li>
+          <li>REST API · Webhook</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -449,7 +465,7 @@
         <span class="section-kicker">Обо мне</span>
         <h2 class="section-title" id="about-title">Инженерный подход, бизнес-логика <br><span>и полная передача кода.</span></h2>
         <p>Меня зовут Ольга Тяжкороб, я Python и AI-разработчик. До перехода в разработку я 15 лет работала в бухгалтерии, в программах 1С и «Инфокрафт», — этот опыт научил меня говорить с бизнесом на языке реальных регламентов, чётких критериев приёмки и цены ошибки.</p>
-        <p>Я не привязываю заказчиков к закрытым конструкторам: заранее обсуждаем, где нужен AI, а где достаточно надёжного бэкенда, фиксируем объём в договоре, а после запуска передаю вам весь проект с открытым кодом и инструкциями.</p>
+        <p>Вы работаете напрямую со мной — без менеджеров, испорченного телефона и наценки агентства: я сама проектирую логику, пишу код и отвечаю за результат. Не привязываю к закрытым конструкторам: заранее обсуждаем, где нужен AI, а где достаточно надёжного бэкенда, а после запуска передаю весь код и инструкции.</p>
         <ul class="about-stack" aria-label="Ключевой стек">
           <li>Python</li><li>FastAPI</li><li>aiogram</li><li>React / TypeScript</li><li>RAG · векторный поиск</li><li>Gemini / OpenAI API</li><li>PostgreSQL / SQLite</li><li>Celery · Docker</li>
         </ul>
@@ -654,11 +670,18 @@
         <div class="contact-fast-card contact-fast-card--accent" data-reveal data-reveal-delay="0">
           <span class="contact-fast-tag">Отвечу лично в будни за 2–4 часа (МСК)</span>
           <h2 id="contact-cta-title">Хотите запустить AI-консультанта, Telegram-бота или веб-сервис?</h2>
-          <p>Пришлите 2–3 примера задач или клиентских вопросов в Telegram — разберу сценарий, честно подскажу оптимальную архитектуру и сориентирую по срокам и бюджету.</p>
-          <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-fast-tg" data-goal="tg_click">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-            Написать в Telegram: @olga_taz
-          </a>
+          <p>Пришлите 2–3 примера задач или клиентских вопросов в Telegram или MAX — разберу сценарий, честно подскажу оптимальную архитектуру и сориентирую по срокам и бюджету.</p>
+          <div class="contact-fast-actions">
+            <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" class="btn-fast-tg" data-goal="tg_click">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              Написать в Telegram: @olga_taz
+            </a>
+            <a href="tel:+79015552403" class="btn-fast-secondary" data-goal="phone_click" aria-label="Связаться в мессенджере MAX или по телефону +7 901 555-24-03">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              MAX / тел.: +7 (901) 555-24-03
+            </a>
+          </div>
+          <p class="contact-fast-reassurance">Подскажу, стоит ли вообще делать AI в вашем случае (если нет — скажу честно).</p>
         </div>
         <div class="contact-divider" aria-hidden="true"><span>или заполните короткую анкету (3 шага)</span></div>
       </div>
@@ -705,9 +728,9 @@
             <legend tabindex="-1">Куда прислать оценку?</legend>
             <p class="quiz-summary" id="quiz-summary" hidden></p>
             <div class="quiz-field">
-              <label for="quiz-contact">Telegram или email <span class="quiz-required">обязательно</span></label>
-              <input id="quiz-contact" name="contact" type="text" inputmode="email" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="quiz-contact-hint quiz-contact-error" placeholder="@username или name@company.ru">
-              <p id="quiz-contact-hint" class="quiz-hint">Также подойдёт ссылка t.me/username.</p>
+              <label for="quiz-contact">Telegram, MAX (телефон) или email <span class="quiz-required">обязательно</span></label>
+              <input id="quiz-contact" name="contact" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="254" required aria-describedby="quiz-contact-hint quiz-contact-error" placeholder="@username, +7 901 555-24-03 или name@company.ru">
+              <p id="quiz-contact-hint" class="quiz-hint">Подойдёт @username, ссылка t.me/username, номер в MAX / телефон или email.</p>
               <p class="quiz-field-error" id="quiz-contact-error" hidden></p>
             </div>
             <div class="quiz-field">
@@ -737,13 +760,14 @@
           <span class="quiz-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
           <span class="quiz-eyebrow">Заявка принята сервисом</span>
           <h2 id="quiz-success-title">Спасибо! Обсудим вашу задачу.</h2>
-          <p>Изучу задачу и отвечу по указанному контакту в будни в течение 2–4 часов (МСК). Для прямой связи можно написать в Telegram или на почту.</p>
+          <p>Изучу задачу и отвечу по указанному контакту в будни в течение 2–4 часов (МСК). Для прямой связи можно написать в Telegram, MAX или на почту.</p>
           <a href="https://t.me/olga_taz" class="quiz-success-link" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Написать в Telegram <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+          <a href="tel:+79015552403" class="quiz-email-link" data-goal="phone_click">MAX / тел.: +7 (901) 555-24-03</a>
           <a href="mailto:olgatyahkorob@mail.ru" class="quiz-email-link" data-goal="email_click">olgatyahkorob@mail.ru</a>
           <a href="#flagship" class="quiz-case-link">Пока посмотрите кейс «Тропа» <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
         </section>
 
-        <p class="quiz-alternative">Удобнее на почту? <a href="mailto:olgatyahkorob@mail.ru" data-goal="email_click">olgatyahkorob@mail.ru</a></p>
+        <p class="quiz-alternative">Удобнее напрямую? <a href="tel:+79015552403" data-goal="phone_click">MAX / +7 (901) 555-24-03</a> · <a href="mailto:olgatyahkorob@mail.ru" data-goal="email_click">olgatyahkorob@mail.ru</a></p>
       </div>
     </div>
   </section>
@@ -800,6 +824,7 @@
     <div class="footer-col">
       <div class="footer-title">Обсудить проект</div>
       <a href="https://t.me/olga_taz" target="_blank" rel="noopener noreferrer" data-goal="tg_click">Telegram: @olga_taz</a>
+      <a href="tel:+79015552403" data-goal="phone_click">MAX / тел.: +7 (901) 555-24-03</a>
       <a href="mailto:olgatyahkorob@mail.ru" data-goal="email_click">olgatyahkorob@mail.ru</a>
       <a href="#contact">Короткая анкета на оценку</a>
     </div>

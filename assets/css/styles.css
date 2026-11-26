@@ -288,8 +288,20 @@ section[id] { scroll-margin-top: 104px; }
   transition: background 150ms, border-color 150ms;
 }
 .btn-secondary-hero:hover { background: #edf5f0; }
-.hero-microproof {
+.hero-reassurance {
+  max-width: 560px;
   margin-top: 14px;
+  padding: 9px 13px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-emerald);
+  background: #edf6ef;
+  color: #183d2e;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.hero-microproof {
+  margin-top: 12px;
   color: var(--text-muted);
   font-size: 13px;
   font-weight: 500;
@@ -461,6 +473,41 @@ section[id] { scroll-margin-top: 104px; }
 .business-scenario-meta > div:nth-child(-n+2) dd {
   font-weight: 700;
   color: #133b27;
+}
+
+.integrations-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: 22px;
+  padding: 16px 20px;
+  background: #f5f9f6;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+.integrations-strip-label {
+  color: var(--accent-link);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.integrations-strip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.integrations-strip-list li {
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid #d2e1d7;
+  background: #ffffff;
+  color: #214233;
+  font-size: 12.5px;
+  font-weight: 600;
 }
 
 /* === Главный кейс «Тропа» === */
@@ -1232,6 +1279,13 @@ section[id] { scroll-margin-top: 104px; }
   font-size: 15px;
   line-height: 1.65;
 }
+.contact-fast-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 .btn-fast-tg {
   display: inline-flex;
   align-items: center;
@@ -1248,6 +1302,34 @@ section[id] { scroll-margin-top: 104px; }
   transition: background 150ms;
 }
 .btn-fast-tg:hover { background: var(--accent-honey-btn-hover); }
+.btn-fast-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid rgb(216 239 227 / 42%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 7%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 150ms, border-color 150ms;
+}
+.btn-fast-secondary:hover {
+  background: rgb(255 255 255 / 14%);
+  border-color: var(--accent-honey-btn);
+}
+.contact-fast-card--accent .contact-fast-reassurance {
+  max-width: 520px;
+  margin: 16px auto 0;
+  color: #fde68a;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
 .contact-fast-card--accent a:focus-visible { outline: 3px solid #c5f0dc; outline-offset: 4px; }
 
 .contact-divider {
@@ -1687,7 +1769,9 @@ section[id] { scroll-margin-top: 104px; }
 @media (max-width: 520px) {
   .brand-name { display: none; }
   .hero-actions-premium .btn-primary-premium,
-  .hero-actions-premium .btn-secondary-hero { width: 100%; }
+  .hero-actions-premium .btn-secondary-hero,
+  .contact-fast-actions .btn-fast-tg,
+  .contact-fast-actions .btn-fast-secondary { width: 100%; }
 }
 
 @media (hover: hover) {
@@ -1712,6 +1796,7 @@ section[id] { scroll-margin-top: 104px; }
   .btn-secondary-hero,
   .case-button,
   .btn-fast-tg,
+  .btn-fast-secondary,
   .btn-header-cta,
   .project-cta,
   .quiz-next,
@@ -1722,6 +1807,7 @@ section[id] { scroll-margin-top: 104px; }
   .btn-secondary-hero:hover,
   .case-button:hover,
   .btn-fast-tg:hover,
+  .btn-fast-secondary:hover,
   .btn-header-cta:hover,
   .project-cta:hover,
   .quiz-next:hover,
