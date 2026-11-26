@@ -6,6 +6,7 @@
 
 - **Опубликованный сайт:** [olgatazkorob7-png.github.io/ogt-site](https://olgatazkorob7-png.github.io/ogt-site/)
 - **Прямой контакт в Telegram:** [@olga_taz](https://t.me/olga_taz)
+- **MAX / телефон:** +7 (901) 555-24-03
 - **Email:** [olgatyahkorob@mail.ru](mailto:olgatyahkorob@mail.ru)
 
 ---
@@ -25,8 +26,7 @@
 - **Архитектура:** React + TypeScript, Express.js API, Gemini API с ограничением контекста и проверкой источников.
 - **Репозиторий:** [olgatazkorob7-png/tropa-document-consultant](https://github.com/olgatazkorob7-png/tropa-document-consultant)
 - **Живое демо:** [tropa-consultant.onrender.com](https://tropa-consultant.onrender.com) *(бесплатный инстанс Render просыпается за ~40 сек)*
-- **AI Studio:** [Открыть приложение в Google AI Studio](https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2)
-- **Видеообзор:** [YouTube Shorts](https://youtube.com/shorts/q_dhd7i-VK4)
+- **Резервное демо:** [Открыть приложение в Google AI Studio](https://ai.studio/apps/44ad70b3-39d6-491b-8838-77b6cf7378a2)
 
 ### 2. B2B Telegram-ассистент с вызовом функций (Function Calling)
 - **Задача:** управляемый сценарий в мессенджере с извлечением параметров и вызовом внешних API.
