@@ -361,6 +361,7 @@ section[id] { scroll-margin-top: 104px; }
   background: #fafbf9;
   border: 1px solid var(--border-color);
   border-radius: 16px;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 .business-scenario-head {
   display: flex;
@@ -779,6 +780,7 @@ section[id] { scroll-margin-top: 104px; }
   border: 1px solid var(--border-color);
   border-radius: 18px;
   background: #fff;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 .project-visual {
   display: flex;
@@ -972,6 +974,7 @@ section[id] { scroll-margin-top: 104px; }
   border: 1px solid var(--border-color);
   border-radius: 18px;
   background: #ffffff;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 .price-card--primary {
   border: 2px solid var(--accent-emerald);
@@ -1571,6 +1574,50 @@ section[id] { scroll-margin-top: 104px; }
 
 @media (max-width: 520px) {
   .brand-name { display: none; }
+}
+
+@media (hover: hover) {
+  .business-scenario-card:hover,
+  .featured-case:hover,
+  .price-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(23 39 32 / 7%);
+    border-color: var(--border-strong);
+  }
+  .price-card--primary:hover {
+    border-color: var(--accent-emerald);
+    box-shadow: 0 16px 34px rgb(17 111 86 / 13%);
+  }
+  .btn-primary-premium,
+  .case-button,
+  .btn-fast-tg,
+  .btn-header-cta,
+  .project-cta,
+  .quiz-next,
+  .quiz-submit {
+    transition: background 150ms ease, border-color 150ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+  .btn-primary-premium:hover,
+  .case-button:hover,
+  .btn-fast-tg:hover,
+  .btn-header-cta:hover,
+  .project-cta:hover,
+  .quiz-next:hover,
+  .quiz-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgb(23 39 32 / 11%);
+  }
+  .btn-primary-premium:hover svg {
+    transform: translateX(3px);
+  }
+  .hero-link-projects:hover svg {
+    transform: translateY(3px);
+  }
+  .btn-primary-premium svg,
+  .hero-link-projects svg {
+    transition: transform 180ms ease;
+  }
+  .faq-question:hover { color: var(--accent-link); }
 }
 
 @media (prefers-reduced-motion: reduce) {
