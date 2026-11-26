@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://olgatazkorob7-png.github.io/ogt-site/sitemap.xml
+Sitemap: https://ogtlab.com/sitemap.xml

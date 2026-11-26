@@ -4,7 +4,7 @@
 
 Персональный сайт-портфолио **Ольги Тяжкороб**: разработка AI-консультантов с RAG-базой знаний, Telegram-ботов для приёма и квалификации заявок, API-интеграций и веб-приложений для бизнеса.
 
-- **Опубликованный сайт:** [olgatazkorob7-png.github.io/ogt-site](https://olgatazkorob7-png.github.io/ogt-site/)
+- **Опубликованный сайт:** [ogtlab.com](https://ogtlab.com/)
 - **Прямой контакт в Telegram:** [@olga_taz](https://t.me/olga_taz)
 - **MAX / телефон:** +7 (901) 555-24-03
 - **Email:** [olgatyahkorob@mail.ru](mailto:olgatyahkorob@mail.ru)
