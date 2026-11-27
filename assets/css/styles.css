@@ -1751,6 +1751,7 @@ section[id] { scroll-margin-top: 104px; }
   .case-impact-comparison { grid-template-columns: 1fr; gap: 10px; }
   .case-impact-arrow { display: none; }
   .case-actions { flex-direction: column; align-items: stretch; }
+  .case-heading > .case-text-link, .integrations-strip-label { white-space: normal; }
   .case-evidence { padding: 18px; }
   .case-deep-dive > .case-details { padding: 16px; }
 
@@ -1760,6 +1761,7 @@ section[id] { scroll-margin-top: 104px; }
   .contact-fast-card--accent { padding: 24px 18px; }
   .lead-quiz { padding: 22px; border-radius: 18px; }
   .quiz-alternative { margin: 20px -22px -22px; border-radius: 0 0 18px 18px; }
+  .quiz-alternative a { overflow-wrap: anywhere; }
   .quiz-navigation { gap: 8px; }
   .quiz-navigation button { padding-inline: 12px; font-size: 13px; }
   .floating-tg-cta { right: 14px; bottom: 14px; min-height: 44px; padding: 10px 15px; font-size: 13px; }
@@ -1772,6 +1774,16 @@ section[id] { scroll-margin-top: 104px; }
   .hero-actions-premium .btn-secondary-hero,
   .contact-fast-actions .btn-fast-tg,
   .contact-fast-actions .btn-fast-secondary { width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .quiz-alternative a { white-space: normal; }
+}
+
+@media (max-width: 380px) {
+  .header-container { padding-inline: 10px; gap: 6px; }
+  .brand-logo { width: 72px; height: 26px; }
+  .btn-header-cta { padding: 8px 11px; font-size: 11.5px; }
 }
 
 @media (hover: hover) {

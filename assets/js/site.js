@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function notifyConsentChange() {
     document.dispatchEvent(new Event('ogt:consent-change'));
   }
+  function analyticsUrl() {
+    const params = new URLSearchParams(location.search);
+    const utm = new URLSearchParams();
+    for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) {
+      const value = params.get(key);
+      if (value) utm.set(key, value);
+    }
+    const query = utm.toString();
+    return location.origin + location.pathname + (query ? `?${query}` : '');
+  }
   function start() {
     if (active || consent !== 'granted') return;
     window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
@@ -28,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clickmap: false,
       trackLinks: true,
       accurateTrackBounce: true,
-      url: location.origin + location.pathname,
+      url: analyticsUrl(),
     });
     active = true;
   }
