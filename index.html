@@ -28,7 +28,7 @@
 <link rel="preload" href="assets/fonts/inter-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=20261126-14">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261127-15">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261127-17">
 <script src="assets/js/site.js?v=20261127-15" defer></script>
 <script type="module" src="assets/js/quiz.js?v=20261126-14"></script>
 <script type="application/ld+json">
@@ -122,7 +122,7 @@
         <p class="hero-eyebrow"><span class="hero-role-pill">Python &amp; AI-разработчик</span> · Для бизнеса и команд</p>
         <h1 class="hero-title-premium" id="offer-title">Разрабатываю AI-ассистентов, ботов и веб-сервисы, <span>которые работают по вашим правилам и документам.</span></h1>
         <p class="hero-audience"><strong>Для интернет-магазинов, сервисов и команд продаж:</strong> AI-консультанты по базе знаний (RAG), боты для заявок и интеграции с CRM.</p>
-        <p class="hero-desc-premium">Без закрытых конструкторов — с чистым кодом, проверкой сценария до оплаты и полной передачей доступов.</p>
+        <p class="hero-desc-premium">Ответы строго по вашим файлам без фантазий модели — без закрытых конструкторов, с проверкой демо до оплаты и передачей всех доступов.</p>
         <div class="hero-actions-premium">
           <a href="#contact" class="btn-primary-premium">Получить оценку за 2–4 часа <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
           <a href="#flagship" class="btn-secondary-hero">Посмотреть кейс <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14m-5-5 5 5 5-5"/></svg></a>
@@ -468,7 +468,7 @@
         <p>Меня зовут Ольга Тяжкороб, я Python и AI-разработчик. До перехода в разработку я 15 лет работала в бухгалтерии, в программах 1С и «Инфокрафт», — этот опыт научил меня говорить с бизнесом на языке реальных регламентов, чётких критериев приёмки и цены ошибки.</p>
         <p>Вы работаете напрямую со мной — без менеджеров, испорченного телефона и наценки агентства: я сама проектирую логику, пишу код и отвечаю за результат. Не привязываю к закрытым конструкторам: заранее обсуждаем, где нужен AI, а где достаточно надёжного бэкенда, а после запуска передаю весь код и инструкции.</p>
         <ul class="about-stack" aria-label="Ключевой стек">
-          <li>Python</li><li>FastAPI</li><li>aiogram</li><li>React / TypeScript</li><li>RAG · векторный поиск</li><li>Gemini / OpenAI API</li><li>PostgreSQL / SQLite</li><li>Celery · Docker</li>
+          <li>Python</li><li>FastAPI</li><li>aiogram</li><li>React / TypeScript</li><li>RAG · векторный поиск</li><li>Gemini / OpenAI API</li><li>PostgreSQL / SQLite</li><li>Celery · Redis</li>
         </ul>
         <div class="about-links">
           <a class="text-link" href="https://github.com/olgatazkorob7-png" target="_blank" rel="noopener noreferrer">Исходный код на GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
@@ -535,13 +535,13 @@
             <span class="price-popular-badge">Часто выбирают</span>
           </div>
           <h3>AI-консультант</h3>
-          <p>Для магазина, сервиса или команды: подключение RAG-базы знаний (документы, регламенты, каталог) и ответы в Telegram или на сайте.</p>
+          <p>Для магазина, сервиса или команды: подключение RAG-базы знаний (документы, регламенты, каталог) — отвечает только по загруженным файлам без выдумывания условий.</p>
           <strong class="price-amount">от 35 000 <span class="ruble">₽</span></strong>
           <span class="price-timing">Срок: 2–3 недели</span>
           <ul>
             <li>Сборка RAG-базы и поиск по документам</li>
-            <li>Telegram или веб-интерфейс</li>
-            <li>Проверка ответов по первоисточникам</li>
+            <li>Защита от фантазий: ответ строго по базе и ссылка на источник</li>
+            <li>Запуск в Telegram или в веб-интерфейсе</li>
           </ul>
           <a href="#project-quiz" class="btn-service" data-quiz-task="AI-ассистент">Оценить ассистента</a>
         </article>
@@ -581,6 +581,33 @@
         <li>Чек «Мой налог» и 14 дней гарантии</li>
         <li>Код и доступы передаются заказчику</li>
       </ul>
+
+      <section class="pricing-operations" id="operations" aria-labelledby="operations-title" data-reveal data-reveal-delay="0">
+        <div class="pricing-ops-head">
+          <div>
+            <span class="pricing-ops-kicker">Эксплуатация под ключ</span>
+            <h3 id="operations-title">Как проект работает после передачи</h3>
+          </div>
+          <p class="pricing-ops-lead">Все ключи, код и доступы остаются на вашей стороне.</p>
+        </div>
+        <div class="pricing-ops-grid">
+          <article class="pricing-ops-card">
+            <span class="pricing-ops-num" aria-hidden="true">01</span>
+            <h4>Где работает и как передаётся</h4>
+            <p>Код в GitHub, запуск на облачном хостинге заказчика (Amvera, Render, Timeweb Cloud и др.) или вашем сервере. Передаю репозиторий, шаблон <code>.env.example</code> и инструкцию запуска.</p>
+          </article>
+          <article class="pricing-ops-card">
+            <span class="pricing-ops-num" aria-hidden="true">02</span>
+            <h4>Логи, лимиты токенов и доступы</h4>
+            <p>API-ключи хранятся в переменных среды хостинга, а не в коде. Настраиваются лимиты расхода AI-токенов, логирование ошибок и подтверждение важных действий в CRM человеком.</p>
+          </article>
+          <article class="pricing-ops-card">
+            <span class="pricing-ops-num" aria-hidden="true">03</span>
+            <h4>Связь и режим поддержки</h4>
+            <p>Прямой контакт со мной в Telegram или MAX без посредников. Реакция в будни — 2–4 часа (МСК). После сдачи действует 14 дней гарантии на код; присмотр по подписке — по желанию.</p>
+          </article>
+        </div>
+      </section>
 
       <div class="pricing-accordions">
         <details class="pricing-accordion">
