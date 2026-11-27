@@ -1158,6 +1158,83 @@ section[id] { scroll-margin-top: 104px; }
   font-weight: 600;
 }
 
+.pricing-operations {
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid #d5e1d9;
+  border-radius: 16px;
+  background: #ffffff;
+}
+.pricing-ops-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+.pricing-ops-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-link);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+.pricing-ops-head h3 {
+  font: 800 19px/1.3 var(--font-heading);
+  color: var(--text-main);
+  margin: 0;
+}
+.pricing-ops-lead {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.pricing-ops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.pricing-ops-card {
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid #e0e9e2;
+  border-radius: 12px;
+  background: #fafbf9;
+}
+.pricing-ops-num {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: var(--accent-amber-soft);
+  border: 1px solid var(--accent-amber-border);
+  color: #6b4300;
+  font: 700 11px/1.3 var(--font-heading);
+}
+.pricing-ops-card h4 {
+  font: 700 15px/1.35 var(--font-heading);
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+.pricing-ops-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.pricing-ops-card code {
+  font-size: 12px;
+  color: #1d4634;
+  background: #eef5f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
 .pricing-accordions { display: grid; gap: 12px; margin-top: 18px; }
 .pricing-accordion {
   border: 1px solid #d5e1d9;
@@ -1715,6 +1792,7 @@ section[id] { scroll-margin-top: 104px; }
   .business-scenarios-grid,
   .case-evidence-pipeline,
   .featured-grid,
+  .pricing-ops-grid,
   .pricing-support-grid,
   .pricing-warranty-grid,
   .pricing-legal-grid {
@@ -1757,6 +1835,7 @@ section[id] { scroll-margin-top: 104px; }
 
   .pricing-grid, .process-grid { grid-template-columns: minmax(0, 1fr); }
   .price-card { padding: 22px; }
+  .pricing-operations { padding: 18px; border-radius: 14px; }
   .about-section, .quiz-section, .faq-section { padding-block: 54px; }
   .contact-fast-card--accent { padding: 24px 18px; }
   .lead-quiz { padding: 22px; border-radius: 18px; }
